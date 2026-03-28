@@ -2,20 +2,34 @@
 
 ## Core Game (Confirmed)
 
-- Each player gets assigned 1 of 10 egg colors
-- Eggs contain 1–3 Skittles each
+- **Players:** 9 players *(CONFIRMED)* — Reuben, Raina, Swathi, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+- **Eggs:** 200 total *(CONFIRMED)*
+- **Egg colors (10):** Red, Hot Pink, Light Pink, Blue, Sky Blue, Neon Green, Dark Green, Yellow, Purple, Violet *(CONFIRMED)*
+  - Each color gets an easter-themed name *(TBD)*
+- **Color assignments:** 9 players get 1 color each; remaining 1 color is combined with another to make two-tone special eggs (top half one color, bottom half another) *(CONFIRMED)*
+- **Eggs per player:** 18 eggs per player + special eggs on top *(CONFIRMED)*
+- Eggs contain 0–3 Skittles each *(CONFIRMED)*
 - Find your color eggs → count Skittles → highest total wins
-- Winner: chocolate bunny. Everyone else: Reese's/M&M carrot consolation prize
+- **Prizes:** Prizes are a SURPRISE — do NOT reveal prize details on the website *(CONFIRMED)*
+- **Containers:** If time permits: provide baskets. Otherwise: plastic bags. *(CONFIRMED)*
+- **Location:** Garibaldi (Giuseppe) Park — 1520 W Polk St, Chicago IL 60607 *(CONFIRMED, might change to Arrigo Park)*
 
-## Special Egg System
+## Special Egg System (Confirmed)
 
-Two extra colors are reserved (not assigned to any player). Everyone can pick these up.
+Special eggs are two-toned (top/bottom halves from different colors, using pink/purple combos). Everyone can pick these up.
 
-### Task Eggs (Color TBD — suggest: GOLD)
+- **Special egg colors:** Combinations of pink and purple *(CONFIRMED — exact combo TBD)*
+- Top half / bottom half split to distinguish specials from regular eggs *(CONFIRMED)*
+
+### Task Eggs (pink/purple combo — exact colors TBD)
 - Contain a folded paper slip with a hilarious/embarrassing challenge
 - Players collect but do NOT open until the hunt is over
 - After the hunt: everyone opens task eggs simultaneously for maximum comedy
 - Completing the task = bonus Skittles reward
+- **Task difficulty mapped to color:** *(CONFIRMED)*
+  - **All pink** = Easy
+  - **Top pink** (bottom other color) = Medium
+  - **Bottom pink** (top other color) = Hard
 - **Suggested tasks (escalating embarrassment):**
   - Easy (1 bonus Skittle): Do your best chicken impression for 10 seconds
   - Easy: Hop like a bunny across the group circle
@@ -26,26 +40,28 @@ Two extra colors are reserved (not assigned to any player). Everyone can pick th
   - Extreme (5 bonus): Post a bunny-ear selfie to your Instagram story
   - Extreme: Call a friend/family member and convince them you've become a chicken
 
-### Power-Up Eggs (Color TBD — suggest: SILVER/SPARKLE)
+### Power-Up Eggs (pink/purple combo — exact colors TBD)
 - Contain a paper slip with a game-changing power
 - Also opened after the hunt
 - **Suggested power-ups:**
   - **Double Down** — Double Skittles from your 3 highest-value eggs
-  - **Color Thief** — Steal 2 eggs of your color from another player (they pick which ones)
+  - ~~**Color Thief** — Steal 2 eggs of your color from another player~~ *(REMOVED — rule is you can't pick another person's eggs, so stealing doesn't make sense)*
   - **Egg Swap** — Force a trade: give 1 of your eggs, take 1 of theirs (blind)
   - **Bonus Haul** — Get 5 bonus Skittles outright
   - **Task Dodge** — Cancel one of your task eggs (don't have to do it)
   - **Task Reassign** — Give one of your task eggs to another player
 
-## Trading Phase (Optional — Suggest YES)
+## Trading Phase (CONFIRMED — YES)
 
 After the hunt but BEFORE opening special eggs:
 1. 5-minute open trading window
-2. Players can trade: task eggs, power-up eggs, and regular eggs of any color
-3. No one knows what's inside task/power-up eggs → blind trading adds strategy
-4. Trading currency: any eggs. "I'll give you 2 of my eggs for your power-up egg"
+2. Players can trade: **task eggs ONLY** — no power-up eggs, no regular eggs *(CONFIRMED)*
+3. No one knows what's inside task eggs → blind trading adds strategy
+4. Trading currency: task eggs only
 
-**Why this works:** Adds a social strategy layer. Players who found lots of specials can trade for color eggs. Players hoarding color eggs might gamble on a power-up.
+> **Rule change from original proposal:** Trading is limited to task eggs. Power-ups and regular color eggs are NOT tradeable.
+
+**Why this works:** Adds a social strategy layer. Players who found lots of task eggs can negotiate. Players can gamble on trading away a potentially easy task for an unknown one.
 
 ## Game Flow (Proposed Timeline)
 
@@ -55,23 +71,27 @@ After the hunt but BEFORE opening special eggs:
 | 0:05 | Explain rules (have printed rule cards or show on phones via website) |
 | 0:10 | **THE HUNT** — 15 min timer. Boundaries clearly marked. |
 | 0:25 | Whistle/horn → everyone returns to base |
-| 0:25 | Trading phase (5 min) |
+| 0:25 | Trading phase — task eggs only (5 min) |
 | 0:30 | Open power-up eggs → apply effects |
 | 0:35 | Count Skittles → announce scores |
 | 0:40 | Open task eggs → performance time! |
-| 0:55 | Award prizes, photos, hang out |
+| 0:55 | Award prizes (surprise!), photos, hang out |
 
 ## Fairness Considerations
 
-- **Hiding balance:** Each player should have roughly equal number of eggs hidden (e.g., 8–10 each). Not all 10 colors need equal counts.
+- **Hiding balance:** 18 eggs per player × 9 = 162 player eggs. Remaining ~38 eggs are specials. *(numbers approximate — TBD)*
 - **Skittle distribution:** Pre-decide a rough ratio: 50% eggs with 1 Skittle, 35% with 2, 15% with 3. This creates variance and excitement.
-- **Special egg count:** Suggest 8–10 task eggs and 6–8 power-up eggs total. Enough to matter, not so many they dominate.
+- **Special egg count:** TBD — will depend on how many task vs power-up eggs we want.
 - **Hiding difficulty:** Mix easy-to-find and hard-to-find spots. Don't hide all of one player's eggs in the hardest spots.
+- **Rule:** You can NOT pick up another player's color eggs. Only your own color + specials. *(CONFIRMED)*
 
-## Open Questions for Reuben
+## Open Questions (Remaining)
 
-1. Do you like gold/silver for the special egg colors, or prefer other reserved colors from your 10-color kit?
-2. Trading phase — yes or no? (I'd recommend yes, it adds a fun strategic layer)
-3. How many eggs per player do you want to prepare? (Suggest 8–10 each = ~56–70 player eggs + ~16 special eggs ≈ 86 total)
-4. Any specific tasks you/wife already have in mind?
-5. Do friends know about the game yet, or is the invite the first they'll hear of it?
+1. ~~Do you like gold/silver for the special egg colors?~~ → **RESOLVED:** Pink/purple combos *(exact combo TBD)*
+2. ~~Trading phase — yes or no?~~ → **RESOLVED:** Yes, task eggs only
+3. ~~How many eggs per player?~~ → **RESOLVED:** 18 per player, 200 total
+4. ~~Player count~~ → **RESOLVED:** 9 players confirmed
+5. **Easter-themed color names:** What are the 10 names? *(TBD)*
+6. **Exact special egg color combo:** Which pink + which purple for the two-tone specials? *(TBD)*
+7. Any specific tasks you/wife already have in mind?
+8. Do friends know about the game yet, or is the invite the first they'll hear of it?

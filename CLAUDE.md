@@ -8,14 +8,17 @@ See [docs/plans/README.md](docs/plans/README.md) for timeline and deadlines.
 
 ## Key Facts
 
-- **Players:** 7 total (Reuben + wife + 5 friends)
-- **Eggs:** 10 colors, dozens per color. Each player assigned one color.
+- **Event name:** "Operation: Easter Egg - The Skittelling!"
+- **Players:** 9 total — Reuben, Raina, Swathi, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+- **Eggs:** 200 total, 10 colors. 18 eggs per player + specials.
 - **Hiding:** Reuben hides wife's eggs, wife hides Reuben's eggs. Both randomly hide remaining players' eggs.
 - **Scoring:** Each egg contains 1-3 Skittles. Find your color's eggs → count Skittles → most wins.
 - **Prizes:** Winner gets chocolate bunny. Everyone gets consolation prize (Reese's/M&M carrot-shaped).
-- **Special eggs:** Two reserved colors for task eggs (embarrassing challenges for bonus Skittles) and power-up eggs (score multipliers/bonuses).
-- **Possible trading system** at the end for tasks/power-ups.
-- **Venue:** A park (already scouted, lots of hiding spots).
+- **Special eggs:** 2 colors made from pink/purple combinations (top/bottom halves) for task eggs (embarrassing challenges for bonus Skittles) and power-up eggs (score multipliers/bonuses).
+- **Trading:** Yes, task eggs only.
+- **Venue:** Garibaldi (Giuseppe) Park - 1520 W Polk St, Chicago IL 60607
+- **Website:** https://reubenjohn.github.io/easter-egg-hunt/
+- **Branding:** R&R (Reuben & Raina) branding throughout
 
 ## Documentation & Plans
 
@@ -43,13 +46,14 @@ All docs use **hierarchical progressive disclosure** via README.md files:
 - **Hosting:** GitHub Pages — https://reubenjohn.github.io/easter-egg-hunt/
 - **Repo:** https://github.com/reubenjohn/easter-egg-hunt
 - **Deployment:** Auto-deploy on push to master via `.github/workflows/pages.yml`
-- **Testing:** Playwright (reference setup in `~/workspace/theact`)
+- **Testing:** pytest-playwright via uv (pattern from `~/workspace/theact`)
 
 ## Commands
 
 ```bash
 git push                             # Deploy site (auto via GitHub Actions)
-# Playwright commands TBD
+uv run pytest tests/ -v              # Run Playwright tests (serves site/ locally, takes screenshots)
+uv run pytest tests/ -v --headed     # Run tests with visible browser
 ```
 
 ## Contributing to CLAUDE.md

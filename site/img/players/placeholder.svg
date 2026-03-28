@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" width="200" height="260">
+  <!-- Egg shape background -->
+  <ellipse cx="100" cy="140" rx="85" ry="110" fill="#F9E4F0" stroke="#E8B4D8" stroke-width="3"/>
+
+  <!-- Head silhouette -->
+  <circle cx="100" cy="105" r="38" fill="#D4A9C7"/>
+
+  <!-- Neck -->
+  <rect x="88" y="140" width="24" height="18" rx="4" fill="#D4A9C7"/>
+
+  <!-- Shoulders -->
+  <ellipse cx="100" cy="185" rx="52" ry="30" fill="#D4A9C7"/>
+
+  <!-- Simple face features -->
+  <!-- Eyes -->
+  <circle cx="87" cy="100" r="4" fill="#F9E4F0"/>
+  <circle cx="113" cy="100" r="4" fill="#F9E4F0"/>
+
+  <!-- Smile -->
+  <path d="M 90 115 Q 100 125 110 115" stroke="#F9E4F0" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Small decorative dots on the egg -->
+  <circle cx="45" cy="180" r="4" fill="#E8C8DE" opacity="0.6"/>
+  <circle cx="155" cy="180" r="4" fill="#E8C8DE" opacity="0.6"/>
+  <circle cx="60" cy="80" r="3" fill="#E8C8DE" opacity="0.5"/>
+  <circle cx="140" cy="80" r="3" fill="#E8C8DE" opacity="0.5"/>
+</svg>

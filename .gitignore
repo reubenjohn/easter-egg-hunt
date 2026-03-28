@@ -2,3 +2,12 @@
 node_modules/
 .DS_Store
 *.swp
+screenshots/
+test-results/
+__pycache__/
+.pytest_cache/
+.venv/
+
+*:Zone.Identifier
+
+# Player photos go in site/img/players/ (placeholder.svg is committed; add real photos here)

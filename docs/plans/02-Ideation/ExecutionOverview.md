@@ -35,14 +35,14 @@ For timeline and phase overview, see [Master Plan](../README.md) (single source 
 - `DeployChecklist.md` — GitHub Pages setup steps
 - `InviteMessage.md` — Copy-paste message template for group chat
 
-## Key Decision Points Needing Human Input
+## Key Decision Points
 
-These are the ONLY things that need Reuben/wife decisions (everything else Claude can decide):
+These are the ONLY things that need Reuben/Raina decisions (everything else Claude can decide):
 
-1. **Player names** — need all 7 names for the website
-2. **Event name** — pick from suggestions or custom (see [WebsiteContent.md](WebsiteContent.md) for ideas)
-3. **Park name & time** — for the invitation
-4. **Gold/Silver colors** — confirm which 2 colors from the kit are for specials (see [GameMechanics.md](GameMechanics.md))
-5. **Trading: yes/no** — recommend yes (see [GameMechanics.md](GameMechanics.md) trading section)
-6. **Player photos** — include or skip? (see [WebsiteContent.md](WebsiteContent.md))
-7. **Any rules vetoes** — anything that doesn't work for your group?
+1. **Player names** — RESOLVED: 9 players — Reuben, Raina, Swathi, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+2. **Event name** — RESOLVED: "Operation: Easter Egg - The Skittelling!" (see [WebsiteContent.md](WebsiteContent.md))
+3. **Park name & time** — RESOLVED: Garibaldi (Giuseppe) Park - 1520 W Polk St, Chicago IL 60607 (time TBD) (see [WebsiteContent.md](WebsiteContent.md))
+4. **Special colors** — RESOLVED: pink/purple combinations (top/bottom halves) (see [GameMechanics.md](GameMechanics.md))
+5. **Trading: yes/no** — RESOLVED: yes, task eggs only (see [GameMechanics.md](GameMechanics.md) trading section)
+6. **Player photos** — RESOLVED: will be provided, placeholder SVGs for now (see [WebsiteContent.md](WebsiteContent.md))
+7. **Any rules vetoes** — RESOLVED: removed Color Thief power-up

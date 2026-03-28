@@ -1,0 +1,15 @@
+[project]
+name = "easter-egg-hunt"
+version = "0.1.0"
+description = "Easter Egg Hunt 2026 — static site with Playwright testing"
+requires-python = ">=3.11"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "pytest-playwright>=0.7.2",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
