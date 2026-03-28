@@ -795,15 +795,15 @@
        DATA
        ============================================== */
     const PLAYERS = [
-        { id: 'reuben',   name: 'Reuben',   color: '#e53935',   colorName: 'Red' },
-        { id: 'raina',    name: 'Raina',     color: '#ec407a',   colorName: 'Hot Pink' },
-        { id: 'swathi',   name: 'Swathi',    color: '#f8bbd0',   colorName: 'Light Pink' },
-        { id: 'jason',    name: 'Jason',     color: '#1e88e5',   colorName: 'Blue' },
-        { id: 'nikith',   name: 'Nikith',    color: '#4fc3f7',   colorName: 'Sky Blue' },
-        { id: 'shawn',    name: 'Shawn',     color: '#76ff03',   colorName: 'Neon Green' },
-        { id: 'shua',     name: 'Shua',      color: '#2e7d32',   colorName: 'Dark Green' },
-        { id: 'rutuja',   name: 'Rutuja',    color: '#fdd835',   colorName: 'Yellow' },
-        { id: 'shantanu', name: 'Shantanu',  color: '#9c27b0',   colorName: 'Purple' }
+        { id: 'reuben',   name: 'Reuben',   color: '#e53935',   colorName: 'Red',        photo: 'img/players/placeholder.svg' },
+        { id: 'raina',    name: 'Raina',     color: '#ec407a',   colorName: 'Hot Pink',   photo: 'img/players/placeholder.svg' },
+        { id: 'swathi',   name: 'Swathi',    color: '#f8bbd0',   colorName: 'Light Pink', photo: 'img/players/placeholder.svg' },
+        { id: 'jason',    name: 'Jason',     color: '#1e88e5',   colorName: 'Blue',       photo: 'img/players/placeholder.svg' },
+        { id: 'nikith',   name: 'Nikith',    color: '#4fc3f7',   colorName: 'Sky Blue',   photo: 'resources/Nikith.jpeg' },
+        { id: 'shawn',    name: 'Shawn',     color: '#76ff03',   colorName: 'Neon Green', photo: 'img/players/placeholder.svg' },
+        { id: 'shua',     name: 'Shua',      color: '#2e7d32',   colorName: 'Dark Green', photo: 'resources/Shua.jpeg' },
+        { id: 'rutuja',   name: 'Rutuja',    color: '#fdd835',   colorName: 'Yellow',     photo: 'resources/Rituja.jpeg' },
+        { id: 'shantanu', name: 'Shantanu',  color: '#9c27b0',   colorName: 'Purple',     photo: 'resources/Shantanu.jpeg' }
     ];
 
     const STORAGE_KEY = 'easterEggScoring_v1';
@@ -880,7 +880,7 @@
 
             card.innerHTML = `
                 <div class="egg-frame">
-                    <img src="img/players/placeholder.svg" alt="${player.name}">
+                    <img src="${player.photo}" alt="${player.name}">
                 </div>
                 <div class="player-name">${player.name}</div>
                 <div class="score-label">Skittles</div>
@@ -1049,7 +1049,7 @@
                 winnersHTML += `
                     <div class="tied-item">
                         <div class="winner-egg-frame" style="border-color: ${w.color};">
-                            <img src="img/players/placeholder.svg" alt="${w.name}">
+                            <img src="${w.photo}" alt="${w.name}">
                         </div>
                         <div class="tied-name">${w.name}</div>
                     </div>
@@ -1067,7 +1067,7 @@
             content.innerHTML = `
                 <div class="celebration-trophy">CHAMPION EGG HUNTER!</div>
                 <div class="winner-egg-frame" style="border-color: ${w.color};">
-                    <img src="img/players/placeholder.svg" alt="${w.name}">
+                    <img src="${w.photo}" alt="${w.name}">
                 </div>
                 <div class="winner-name">${w.name}</div>
                 <div class="winner-score">${score} Skittles</div>

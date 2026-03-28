@@ -608,8 +608,8 @@
         .step-number {
             flex-shrink: 0;
             width: 48px;
-            height: 48px;
-            border-radius: 50%;
+            height: 58px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -654,7 +654,7 @@
 
             .step-number {
                 width: 40px;
-                height: 40px;
+                height: 50px;
                 font-size: 1.1rem;
             }
         }
@@ -853,6 +853,89 @@
         }
 
         /* ============================================
+           TWO-TONE SPECIAL EGGS GUIDE
+           ============================================ */
+        .special-eggs-guide {
+            background: linear-gradient(180deg, var(--sky) 0%, var(--pink) 50%, var(--lavender) 100%);
+        }
+
+        .special-eggs-container {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .special-egg-card {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 4px 16px var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .special-egg-card:hover {
+            transform: translateX(6px);
+            box-shadow: 0 6px 24px var(--shadow-md);
+        }
+
+        .two-tone-egg {
+            width: 40px;
+            height: 52px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            overflow: hidden;
+            display: inline-block;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .two-tone-egg .top { height: 50%; }
+        .two-tone-egg .bottom { height: 50%; }
+
+        .special-egg-label {
+            font-family: 'Baloo 2', cursive;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--brown);
+        }
+
+        .special-egg-desc {
+            font-size: 0.85rem;
+            color: var(--brown-soft);
+            font-weight: 400;
+            margin-top: 0.15rem;
+        }
+
+        .special-eggs-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem 1.5rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 16px var(--shadow);
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--brown);
+        }
+
+        /* ============================================
+           PLAYER COLOR SUBTITLE
+           ============================================ */
+        .player-color-subtitle {
+            display: block;
+            font-size: 0.6rem;
+            color: var(--brown-soft);
+            margin-top: 0.15rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* ============================================
            SCROLL REVEAL ANIMATIONS
            ============================================ */
         .reveal {
@@ -943,6 +1026,7 @@
                 <li><a href="#location">Location</a></li>
                 <li><a href="#players">Players</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#special-eggs">Special Eggs</a></li>
                 <li><a href="#rules">Rules</a></li>
                 <li><a href="#prizes">Prizes</a></li>
             </ul>
@@ -969,7 +1053,7 @@
                 <span class="accent">The Skittelling!</span>
             </h1>
 
-            <p class="hero-invited">You've been invited!</p>
+            <p class="hero-invited">You've been summoned to the meadow!</p>
 
             <div class="hero-date">
                 Spring 2026 &mdash; Date coming soon!
@@ -977,7 +1061,7 @@
 
             <div class="hero-scroll-hint">
                 <a href="#location">
-                    <span>Scroll to explore</span>
+                    <span>Hop down the bunny hole</span>
                     <span class="scroll-arrow">&darr;</span>
                 </a>
             </div>
@@ -990,8 +1074,8 @@
     <section class="location" id="location">
         <div class="section-inner">
             <div class="section-divider reveal">&#127793; &#127793; &#127793;</div>
-            <h2 class="section-title reveal">The Hunting Grounds</h2>
-            <p class="section-subtitle reveal">Suit up. Show up. Hunt down.</p>
+            <h2 class="section-title reveal">The Bunny Trail Begins Here</h2>
+            <p class="section-subtitle reveal">Lace up those bunny boots and hop on over!</p>
 
             <div class="location-card reveal">
                 <iframe
@@ -1024,8 +1108,8 @@
     <section class="players" id="players">
         <div class="section-inner">
             <div class="section-divider reveal">&#127873; &#127873; &#127873;</div>
-            <h2 class="section-title reveal">The Players</h2>
-            <p class="section-subtitle reveal">9 hunters. 9 colors. 1 champion.</p>
+            <h2 class="section-title reveal">The Bunny Squad</h2>
+            <p class="section-subtitle reveal">9 hoppy hunters. 9 egg-stra special colors. 1 champion bunny!</p>
 
             <div class="players-grid">
                 <!-- Reuben - Red -->
@@ -1034,7 +1118,8 @@
                         <img src="img/players/placeholder.svg" alt="Reuben">
                     </div>
                     <div class="player-name">Reuben</div>
-                    <span class="player-color-badge">Red</span>
+                    <span class="player-color-badge">Cherry Bunny</span>
+                    <span class="player-color-subtitle">Red</span>
                 </div>
 
                 <!-- Raina - Hot Pink -->
@@ -1043,7 +1128,8 @@
                         <img src="img/players/placeholder.svg" alt="Raina">
                     </div>
                     <div class="player-name">Raina</div>
-                    <span class="player-color-badge">Hot Pink</span>
+                    <span class="player-color-badge">Flamingo Hop</span>
+                    <span class="player-color-subtitle">Hot Pink</span>
                 </div>
 
                 <!-- Swathi - Light Pink -->
@@ -1052,7 +1138,8 @@
                         <img src="img/players/placeholder.svg" alt="Swathi">
                     </div>
                     <div class="player-name">Swathi</div>
-                    <span class="player-color-badge">Light Pink</span>
+                    <span class="player-color-badge">Cotton Candy Chick</span>
+                    <span class="player-color-subtitle">Light Pink</span>
                 </div>
 
                 <!-- Jason - Blue -->
@@ -1061,16 +1148,18 @@
                         <img src="img/players/placeholder.svg" alt="Jason">
                     </div>
                     <div class="player-name">Jason</div>
-                    <span class="player-color-badge">Blue</span>
+                    <span class="player-color-badge">Bluebird Nest</span>
+                    <span class="player-color-subtitle">Blue</span>
                 </div>
 
                 <!-- Nikith - Sky Blue -->
                 <div class="player-card reveal reveal-delay-1" style="--player-color: var(--egg-skyblue);">
                     <div class="player-egg-frame">
-                        <img src="img/players/placeholder.svg" alt="Nikith">
+                        <img src="resources/Nikith.jpeg" alt="Nikith">
                     </div>
                     <div class="player-name">Nikith</div>
-                    <span class="player-color-badge">Sky Blue</span>
+                    <span class="player-color-badge">Robin's Egg</span>
+                    <span class="player-color-subtitle">Sky Blue</span>
                 </div>
 
                 <!-- Shawn - Neon Green -->
@@ -1079,34 +1168,38 @@
                         <img src="img/players/placeholder.svg" alt="Shawn">
                     </div>
                     <div class="player-name">Shawn</div>
-                    <span class="player-color-badge light-text">Neon Green</span>
+                    <span class="player-color-badge light-text">Spring Sprout</span>
+                    <span class="player-color-subtitle">Neon Green</span>
                 </div>
 
                 <!-- Shua - Dark Green -->
                 <div class="player-card reveal" style="--player-color: var(--egg-darkgreen);">
                     <div class="player-egg-frame">
-                        <img src="img/players/placeholder.svg" alt="Shua">
+                        <img src="resources/Shua.jpeg" alt="Shua">
                     </div>
                     <div class="player-name">Shua</div>
-                    <span class="player-color-badge">Dark Green</span>
+                    <span class="player-color-badge">Clover Patch</span>
+                    <span class="player-color-subtitle">Dark Green</span>
                 </div>
 
                 <!-- Rutuja - Yellow -->
                 <div class="player-card reveal reveal-delay-1" style="--player-color: var(--egg-yellow);">
                     <div class="player-egg-frame">
-                        <img src="img/players/placeholder.svg" alt="Rutuja">
+                        <img src="resources/Rituja.jpeg" alt="Rutuja">
                     </div>
                     <div class="player-name">Rutuja</div>
-                    <span class="player-color-badge light-text">Yellow</span>
+                    <span class="player-color-badge light-text">Sunny Yolk</span>
+                    <span class="player-color-subtitle">Yellow</span>
                 </div>
 
                 <!-- Shantanu - Purple -->
                 <div class="player-card reveal reveal-delay-2" style="--player-color: var(--egg-purple);">
                     <div class="player-egg-frame">
-                        <img src="img/players/placeholder.svg" alt="Shantanu">
+                        <img src="resources/Shantanu.jpeg" alt="Shantanu">
                     </div>
                     <div class="player-name">Shantanu</div>
-                    <span class="player-color-badge">Purple</span>
+                    <span class="player-color-badge">Lavender Bloom</span>
+                    <span class="player-color-subtitle">Purple</span>
                 </div>
             </div>
         </div>
@@ -1118,73 +1211,123 @@
     <section class="how-it-works" id="how-it-works">
         <div class="section-inner">
             <div class="section-divider reveal">&#127942; &#127942; &#127942;</div>
-            <h2 class="section-title reveal">How It Works</h2>
-            <p class="section-subtitle reveal">From hunt to glory in 8 easy steps</p>
+            <h2 class="section-title reveal">The Hop-by-Hop Guide</h2>
+            <p class="section-subtitle reveal">From first hop to champion bunny in 8 springy steps!</p>
 
             <div class="steps-container">
                 <div class="step-card reveal">
                     <div class="step-number">1</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#129370;</span> Find eggs of YOUR color</div>
-                        <div class="step-detail">Each player hunts for their assigned egg color only</div>
+                        <div class="step-text"><span class="step-icon">&#129370;</span> Hop to it &mdash; find YOUR eggs!</div>
+                        <div class="step-detail">Every bunny has their own color &mdash; sniff out only yours!</div>
                     </div>
                 </div>
 
                 <div class="step-card reveal">
                     <div class="step-number">2</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#10024;</span> Grab any special two-tone eggs you spot</div>
-                        <div class="step-detail">Two-tone pink/purple eggs are fair game for everyone</div>
+                        <div class="step-text"><span class="step-icon">&#10024;</span> Spot a two-tone egg? Snatch it up!</div>
+                        <div class="step-detail">These sparkly specials are free for every bunny!</div>
                     </div>
                 </div>
 
                 <div class="step-card reveal">
                     <div class="step-number">3</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#128239;</span> Return when the whistle blows</div>
-                        <div class="step-detail">15-minute hunt &mdash; when you hear it, head back!</div>
+                        <div class="step-text"><span class="step-icon">&#128239;</span> Hop back when the hunting horn sounds!</div>
+                        <div class="step-detail">The Great Hunt lasts 15 hops of the clock &mdash; then scurry home!</div>
                     </div>
                 </div>
 
                 <div class="step-card reveal">
                     <div class="step-number">4</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#129309;</span> Trading phase &mdash; swap task eggs</div>
-                        <div class="step-detail">5 minutes to negotiate blind trades with other players</div>
+                        <div class="step-text"><span class="step-icon">&#129309;</span> The Bunny Bazaar &mdash; trade your task eggs!</div>
+                        <div class="step-detail">5 minutes to wheel and deal with fellow bunnies (no peeking!)</div>
                     </div>
                 </div>
 
                 <div class="step-card reveal">
                     <div class="step-number">5</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#128171;</span> Reveal power-ups &mdash; game-changers applied!</div>
-                        <div class="step-detail">Score multipliers, bonus Skittles, and wild twists</div>
+                        <div class="step-text"><span class="step-icon">&#128171;</span> Spring surprises &mdash; power-ups unleashed!</div>
+                        <div class="step-detail">Score multipliers, bonus Skittles, and wild springtime twists!</div>
                     </div>
                 </div>
 
                 <div class="step-card reveal">
                     <div class="step-number">6</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#128290;</span> Count your Skittles</div>
-                        <div class="step-detail">Crack open your eggs and tally up the loot</div>
+                        <div class="step-text"><span class="step-icon">&#128290;</span> Crack 'em open &mdash; count your rainbow loot!</div>
+                        <div class="step-detail">Smash those shells and tally up your Skittles treasure!</div>
                     </div>
                 </div>
 
                 <div class="step-card reveal">
                     <div class="step-number">7</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#127917;</span> Open task eggs &mdash; perform hilarious challenges!</div>
-                        <div class="step-detail">Complete tasks for bonus Skittles (prepare to be embarrassed)</div>
+                        <div class="step-text"><span class="step-icon">&#127917;</span> Task egg time &mdash; silly spring challenges!</div>
+                        <div class="step-detail">Complete tasks for bonus Skittles (prepare for some egg-streme embarrassment!)</div>
                     </div>
                 </div>
 
                 <div class="step-card reveal">
                     <div class="step-number">8</div>
                     <div>
-                        <div class="step-text"><span class="step-icon">&#128081;</span> Winner crowned!</div>
-                        <div class="step-detail">Most Skittles wins &mdash; glory and prizes await</div>
+                        <div class="step-text"><span class="step-icon">&#128081;</span> The champion bunny is crowned!</div>
+                        <div class="step-detail">Most Skittles wins &mdash; eternal egg-hunting glory awaits!</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SPECIAL EGGS GUIDE
+         ============================================ -->
+    <section class="special-eggs-guide" id="special-eggs">
+        <div class="section-inner">
+            <div class="section-divider reveal">&#129370; &#10024; &#129370;</div>
+            <h2 class="section-title reveal">The Special Eggs Guide</h2>
+            <p class="section-subtitle reveal">Two-tone eggs hold secret tasks &mdash; and every bunny can grab them!</p>
+
+            <div class="special-eggs-container">
+                <div class="special-egg-card reveal">
+                    <div class="two-tone-egg">
+                        <div class="top" style="background: #f8bbd0;"></div>
+                        <div class="bottom" style="background: #f8bbd0;"></div>
+                    </div>
+                    <div>
+                        <div class="special-egg-label">&#127793; Easy Peasy Task</div>
+                        <div class="special-egg-desc">All pink, both halves &mdash; a gentle challenge even the smallest bunny can handle!</div>
+                    </div>
+                </div>
+
+                <div class="special-egg-card reveal">
+                    <div class="two-tone-egg">
+                        <div class="top" style="background: #f8bbd0;"></div>
+                        <div class="bottom" style="background: #f5f5f5;"></div>
+                    </div>
+                    <div>
+                        <div class="special-egg-label">&#127800; Medium Mischief Task</div>
+                        <div class="special-egg-desc">Top half pink, bottom half white &mdash; a bit more hop in your step required!</div>
+                    </div>
+                </div>
+
+                <div class="special-egg-card reveal">
+                    <div class="two-tone-egg">
+                        <div class="top" style="background: #f8bbd0;"></div>
+                        <div class="bottom" style="background: #9c27b0;"></div>
+                    </div>
+                    <div>
+                        <div class="special-egg-label">&#128293; Hard-Boiled Challenge</div>
+                        <div class="special-egg-desc">Top half pink, bottom half purple &mdash; only the bravest bunnies dare! Big Skittles rewards!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="special-eggs-note reveal">
+                &#128048; Remember: Two-tone eggs are free for ALL hunters &mdash; no assigned color needed! Grab every one you see!
             </div>
         </div>
     </section>
@@ -1195,63 +1338,63 @@
     <section class="rules" id="rules">
         <div class="section-inner">
             <div class="section-divider reveal">&#128220; &#128220; &#128220;</div>
-            <h2 class="section-title reveal">The Rules</h2>
-            <p class="section-subtitle reveal">Read them. Know them. No excuses.</p>
+            <h2 class="section-title reveal">The Bunny Code</h2>
+            <p class="section-subtitle reveal">Every good bunny knows the rules of the meadow!</p>
 
             <div class="rules-grid">
                 <div class="rule-card reveal">
                     <div class="rule-icon">&#9200;</div>
                     <div>
-                        <div class="rule-text">15-Minute Time Limit</div>
-                        <div class="rule-detail">The hunt clock is strict. Make every second count!</div>
+                        <div class="rule-text">The Great Hunt Lasts 15 Hops of the Clock!</div>
+                        <div class="rule-detail">When the clock runs out, even the speediest bunny has to stop hopping!</div>
                     </div>
                 </div>
 
                 <div class="rule-card reveal">
                     <div class="rule-icon">&#127758;</div>
                     <div>
-                        <div class="rule-text">Stay Within Park Boundaries</div>
-                        <div class="rule-detail">If you can't see the park, you've gone too far.</div>
+                        <div class="rule-text">Don't Wander Beyond the Bunny Trail!</div>
+                        <div class="rule-detail">If you can't see the meadow, you've hopped too far, little bunny!</div>
                     </div>
                 </div>
 
                 <div class="rule-card reveal">
                     <div class="rule-icon">&#127912;</div>
                     <div>
-                        <div class="rule-text">YOUR Color + Special Eggs Only</div>
-                        <div class="rule-detail">Find your assigned color eggs and any two-tone pink/purple specials.</div>
+                        <div class="rule-text">Your Eggs + Sparkly Specials Only!</div>
+                        <div class="rule-detail">Hop after your own color eggs and any two-tone treasures you spot!</div>
                     </div>
                 </div>
 
                 <div class="rule-card reveal">
                     <div class="rule-icon">&#128683;</div>
                     <div>
-                        <div class="rule-text">No Picking Up Other Players' Eggs</div>
-                        <div class="rule-detail">See a color that isn't yours? Walk on by.</div>
+                        <div class="rule-text">Every Bunny for Themselves!</div>
+                        <div class="rule-detail">No snatching eggs from another hunter's trail, and no whispering where the eggs are hiding &mdash; that's fowl play! &#128020;</div>
                     </div>
                 </div>
 
                 <div class="rule-card reveal">
                     <div class="rule-icon">&#129399;</div>
                     <div>
-                        <div class="rule-text">No Hiding Eggs &mdash; No Sabotage!</div>
-                        <div class="rule-detail">If you find it, take it or leave it. No re-hiding!</div>
+                        <div class="rule-text">No Egg-scape Artists Allowed!</div>
+                        <div class="rule-detail">Found an egg? Take it or leave it &mdash; no sneaky re-hiding or bunny business!</div>
                     </div>
                 </div>
 
                 <div class="rule-card reveal">
                     <div class="rule-icon">&#128227;</div>
                     <div>
-                        <div class="rule-text">Return Immediately at the Whistle</div>
-                        <div class="rule-detail">When you hear the signal, head back to base ASAP.</div>
+                        <div class="rule-text">Hop Back to the Nest When the Horn Sounds!</div>
+                        <div class="rule-detail">When the hunting horn blows, scurry back to base like a bunny who heard a fox!</div>
                     </div>
                 </div>
 
                 <div class="rule-card reveal">
                     <div class="rule-icon">&#129370;</div>
                     <div>
-                        <div class="rule-text">Special Egg Difficulty Guide</div>
-                        <div class="rule-detail">All pink = easy task. Top pink = medium. Bottom pink = hard. Choose wisely during trades!</div>
+                        <div class="rule-text">Two-Tone Eggs = Mystery Tasks!</div>
+                        <div class="rule-detail">Check the Special Eggs Guide above to decode which colors mean easy, medium, or hard &mdash; trade wisely at the Bunny Bazaar!</div>
                     </div>
                 </div>
             </div>
@@ -1264,16 +1407,16 @@
     <section class="prizes" id="prizes">
         <div class="section-inner">
             <div class="section-divider reveal">&#127881; &#127881; &#127881;</div>
-            <h2 class="section-title reveal">The Prizes</h2>
-            <p class="section-subtitle reveal">What does the champion receive?</p>
+            <h2 class="section-title reveal">The Sweet Reward</h2>
+            <p class="section-subtitle reveal">What awaits the champion bunny?</p>
 
             <div class="prizes-mystery reveal">
                 <div class="prizes-content">
                     <div class="mystery-egg">&#127873;</div>
-                    <div class="prizes-title">It's a Mystery!</div>
+                    <div class="prizes-title">Every Bunny Gets a Treat!</div>
                     <p class="prizes-text">
-                        Amazing prizes await the champion egg hunter.
-                        <br>You'll have to win to find out...
+                        And the champion egg hunter? Let's just say... it's choco-lot better than the rest! &#127851;&#128048;
+                        <br>Something sweet, something bunny-shaped, and 100% delicious. No spoilers!
                     </p>
                     <div class="prizes-sparkles">&#10024; &#129321; &#10024;</div>
                 </div>
@@ -1288,7 +1431,7 @@
         <div class="footer-brand">
             Brought to you by R<span class="footer-heart">&hearts;</span>R
         </div>
-        <div class="footer-tagline">An R&R Production</div>
+        <div class="footer-tagline">An R&R Production &mdash; Hopping into Spring!</div>
         <div class="footer-year">&copy; 2026</div>
     </footer>
 
