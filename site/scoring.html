@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoring — Operation: Easter Egg</title>
+    <style>
+        /* ============================================
+           CSS RESET & BASE
+           ============================================ */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --pastel-pink: #fce4ec;
+            --pastel-lavender: #f3e5f5;
+            --pastel-mint: #e8f5e9;
+            --pastel-sky: #e3f2fd;
+            --pastel-butter: #fffde7;
+            --text-dark: #3e2723;
+            --text-medium: #5d4037;
+            --text-light: #8d6e63;
+            --card-bg: rgba(255,255,255,0.85);
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-card: 0 2px 12px rgba(0,0,0,0.1);
+            --radius: 1rem;
+            --radius-sm: 0.6rem;
+
+            /* Player accent colors */
+            --color-reuben: #e53935;
+            --color-raina: #ec407a;
+            --color-swathi: #f8bbd0;
+            --color-jason: #1e88e5;
+            --color-nikith: #4fc3f7;
+            --color-shawn: #76ff03;
+            --color-shua: #2e7d32;
+            --color-rutuja: #fdd835;
+            --color-shantanu: #9c27b0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(160deg, var(--pastel-pink) 0%, var(--pastel-lavender) 25%, var(--pastel-sky) 50%, var(--pastel-mint) 75%, var(--pastel-butter) 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: var(--text-dark);
+            padding-bottom: 6rem;
+        }
+
+        /* ============================================
+           HEADER
+           ============================================ */
+        .header {
+            text-align: center;
+            padding: 1.5rem 1rem 1rem;
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            letter-spacing: 0.02em;
+        }
+
+        .header h1 .emoji { font-style: normal; }
+
+        .header .subtitle {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 0.25rem;
+        }
+
+        .header-actions {
+            margin-top: 0.75rem;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-header {
+            padding: 0.4rem 1rem;
+            border: none;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-reset {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+        .btn-reset:hover { background: #ef9a9a; }
+        .btn-reset:active { transform: scale(0.96); }
+
+        /* ============================================
+           PLAYER GRID
+           ============================================ */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 700px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                padding: 1.25rem;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 960px;
+            }
+        }
+
+        /* ============================================
+           PLAYER CARD
+           ============================================ */
+        .player-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-card);
+            padding: 0.75rem 0.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid var(--accent);
+        }
+
+        .player-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+
+        /* Egg-shaped photo frame */
+        .egg-frame {
+            width: 60px;
+            height: 72px;
+            margin: 0 auto 0.4rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            border: 3px solid var(--accent);
+            background: var(--pastel-lavender);
+            flex-shrink: 0;
+        }
+
+        .egg-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .player-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.4rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Score display */
+        .score-display {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            line-height: 1;
+            margin: 0.3rem 0;
+            transition: transform 0.15s;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .score-display.bumped {
+            transform: scale(1.2);
+        }
+
+        .score-label {
+            font-size: 0.65rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
+        }
+
+        /* +/- buttons */
+        .score-controls {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-score {
+            width: 48px;
+            height: 48px;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            line-height: 1;
+        }
+
+        .btn-plus {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+        .btn-plus:hover { background: #a5d6a7; }
+        .btn-plus:active { transform: scale(0.92); background: #81c784; }
+
+        .btn-minus {
+            background: #ffcdd2;
+            color: #c62828;
+        }
+        .btn-minus:hover { background: #ef9a9a; }
+        .btn-minus:active { transform: scale(0.92); background: #e57373; }
+
+        /* Power-up section */
+        .powerups {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-top: 0.4rem;
+        }
+
+        .btn-powerup {
+            padding: 0.35rem 0.4rem;
+            border: 1.5px solid;
+            border-radius: var(--radius-sm);
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: white;
+            white-space: nowrap;
+            touch-action: manipulation;
+        }
+
+        .btn-powerup:active:not(:disabled) {
+            transform: scale(0.95);
+        }
+
+        .btn-powerup:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+
+        .btn-powerup.double-down {
+            border-color: #ffb74d;
+            color: #e65100;
+        }
+        .btn-powerup.double-down:hover:not(:disabled) { background: #fff3e0; }
+
+        .btn-powerup.bonus-haul {
+            border-color: #81c784;
+            color: #1b5e20;
+        }
+        .btn-powerup.bonus-haul:hover:not(:disabled) { background: #e8f5e9; }
+
+        .btn-powerup.egg-swap {
+            border-color: #9575cd;
+            color: #4527a0;
+        }
+        .btn-powerup.egg-swap:hover:not(:disabled) { background: #ede7f6; }
+
+        .powerup-used-tag {
+            font-size: 0.55rem;
+            color: var(--text-light);
+            margin-top: 0.15rem;
+            font-style: italic;
+        }
+
+        /* ============================================
+           CROWN THE WINNER SECTION
+           ============================================ */
+        .winner-section {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .btn-crown {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            background: linear-gradient(135deg, #ffd54f, #ffb300);
+            color: #3e2723;
+            box-shadow: 0 4px 20px rgba(255, 179, 0, 0.4);
+            transition: all 0.2s;
+            touch-action: manipulation;
+        }
+
+        .btn-crown:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(255, 179, 0, 0.5);
+        }
+
+        .btn-crown:active {
+            transform: scale(0.97);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+            color: var(--text-light);
+            font-size: 0.8rem;
+        }
+
+        .footer .rr {
+            font-weight: 700;
+            color: var(--text-medium);
+        }
+
+        /* ============================================
+           EGG SWAP MODAL
+           ============================================ */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .modal h2 {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .modal label {
+            display: block;
+            text-align: left;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--text-medium);
+        }
+
+        .modal input[type="number"],
+        .modal select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            -webkit-appearance: none;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .modal-actions button {
+            flex: 1;
+            padding: 0.6rem;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-modal-cancel {
+            background: #f5f5f5;
+            color: var(--text-medium);
+        }
+
+        .btn-modal-confirm {
+            background: linear-gradient(135deg, #ce93d8, #9c27b0);
+            color: white;
+        }
+
+        .btn-modal-confirm:active,
+        .btn-modal-cancel:active {
+            transform: scale(0.96);
+        }
+
+        /* ============================================
+           WINNER CELEBRATION OVERLAY
+           ============================================ */
+        .celebration-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            background: rgba(0,0,0,0.85);
+            overflow: hidden;
+        }
+
+        .celebration-overlay.active {
+            display: block;
+        }
+
+        .celebration-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .celebration-trophy {
+            font-size: 1.2rem;
+            color: #ffd54f;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(255, 213, 79, 0.5);
+        }
+
+        .winner-name {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 0 4px 20px rgba(255,255,255,0.3);
+            margin-bottom: 0.5rem;
+            animation: nameGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes nameGlow {
+            from { text-shadow: 0 4px 20px rgba(255,255,255,0.3); }
+            to { text-shadow: 0 4px 40px rgba(255, 213, 79, 0.6), 0 0 60px rgba(255, 213, 79, 0.3); }
+        }
+
+        .winner-score {
+            font-size: 1.5rem;
+            color: #ffd54f;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .winner-egg-frame {
+            width: 140px;
+            height: 168px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            overflow: hidden;
+            border: 5px solid #ffd54f;
+            margin: 0 auto 1.5rem;
+            background: var(--pastel-lavender);
+            animation: winnerBounce 1.5s ease-in-out infinite;
+            box-shadow: 0 0 40px rgba(255, 213, 79, 0.4);
+        }
+
+        .winner-egg-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes winnerBounce {
+            0%, 100% { transform: translateY(0) rotate(-3deg); }
+            25% { transform: translateY(-30px) rotate(3deg); }
+            50% { transform: translateY(0) rotate(-3deg); }
+            75% { transform: translateY(-20px) rotate(2deg); }
+        }
+
+        .tied-winners {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .tied-winners .tied-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tied-winners .winner-egg-frame {
+            width: 100px;
+            height: 120px;
+        }
+
+        .tied-winners .tied-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            margin-top: 0.5rem;
+        }
+
+        .btn-dismiss {
+            padding: 0.75rem 2rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 2rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(4px);
+            transition: all 0.2s;
+            margin-top: 1rem;
+        }
+
+        .btn-dismiss:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* ============================================
+           CONFETTI
+           ============================================ */
+        .confetti-container {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -20px;
+            animation: confettiFall linear forwards;
+            opacity: 0.9;
+        }
+
+        .confetti-piece.circle {
+            border-radius: 50%;
+        }
+
+        .confetti-piece.square {
+            border-radius: 2px;
+        }
+
+        .confetti-piece.rect {
+            width: 6px;
+            height: 14px;
+            border-radius: 2px;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* ============================================
+           CONFIRM DIALOG (Reset)
+           ============================================ */
+        .confirm-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .confirm-overlay.active {
+            display: flex;
+        }
+
+        .confirm-box {
+            background: white;
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            max-width: 360px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .confirm-box h3 {
+            color: #c62828;
+            margin-bottom: 0.5rem;
+        }
+
+        .confirm-box p {
+            font-size: 0.9rem;
+            color: var(--text-medium);
+            margin-bottom: 1rem;
+        }
+
+        .confirm-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .confirm-actions button {
+            flex: 1;
+            padding: 0.6rem;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-confirm-no {
+            background: #f5f5f5;
+            color: var(--text-medium);
+        }
+
+        .btn-confirm-yes {
+            background: #ef5350;
+            color: white;
+        }
+
+        /* ============================================
+           RESPONSIVE TWEAKS
+           ============================================ */
+        @media (max-width: 400px) {
+            .grid {
+                gap: 0.5rem;
+                padding: 0.5rem;
+            }
+
+            .player-card {
+                padding: 0.5rem 0.3rem;
+            }
+
+            .egg-frame {
+                width: 48px;
+                height: 58px;
+            }
+
+            .score-display {
+                font-size: 1.8rem;
+            }
+
+            .btn-score {
+                width: 42px;
+                height: 42px;
+                font-size: 1.3rem;
+            }
+
+            .btn-powerup {
+                font-size: 0.6rem;
+                padding: 0.3rem;
+            }
+
+            .player-name {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (min-width: 600px) {
+            .egg-frame {
+                width: 72px;
+                height: 86px;
+            }
+
+            .score-display {
+                font-size: 2.8rem;
+            }
+
+            .player-name {
+                font-size: 1rem;
+            }
+
+            .btn-powerup {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <h1><span class="emoji">🥚</span> Operation: Easter Egg <span class="emoji">🥚</span></h1>
+        <div class="subtitle">The Skittelling! &mdash; Scoring Board</div>
+        <div class="header-actions">
+            <button class="btn-header btn-reset" onclick="confirmReset()">Reset All Scores</button>
+        </div>
+    </header>
+
+    <!-- ==================== PLAYER GRID ==================== -->
+    <div class="grid" id="playerGrid"></div>
+
+    <!-- ==================== CROWN THE WINNER ==================== -->
+    <div class="winner-section">
+        <button class="btn-crown" onclick="crownWinner()">Crown the Winner!</button>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <span class="rr">An R&amp;R Production</span>
+    </footer>
+
+    <!-- ==================== EGG SWAP MODAL ==================== -->
+    <div class="modal-overlay" id="swapModal">
+        <div class="modal">
+            <h2>Egg Swap</h2>
+            <p>Transfer Skittles from <strong id="swapFromName"></strong> to another player.</p>
+            <label for="swapTarget">Transfer to:</label>
+            <select id="swapTarget"></select>
+            <label for="swapAmount">Skittles to transfer:</label>
+            <input type="number" id="swapAmount" min="1" value="1">
+            <div class="modal-actions">
+                <button class="btn-modal-cancel" onclick="closeSwapModal()">Cancel</button>
+                <button class="btn-modal-confirm" onclick="executeSwap()">Swap!</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== RESET CONFIRM ==================== -->
+    <div class="confirm-overlay" id="confirmOverlay">
+        <div class="confirm-box">
+            <h3>Reset All Scores?</h3>
+            <p>This will clear all scores, power-ups, and saved data. This cannot be undone.</p>
+            <div class="confirm-actions">
+                <button class="btn-confirm-no" onclick="closeConfirm()">Cancel</button>
+                <button class="btn-confirm-yes" onclick="resetAll()">Yes, Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== WINNER CELEBRATION ==================== -->
+    <div class="celebration-overlay" id="celebrationOverlay">
+        <div class="confetti-container" id="confettiContainer"></div>
+        <div class="celebration-content" id="celebrationContent">
+            <!-- Populated dynamically -->
+        </div>
+    </div>
+
+<script>
+    /* ==============================================
+       DATA
+       ============================================== */
+    const PLAYERS = [
+        { id: 'reuben',   name: 'Reuben',   color: '#e53935',   colorName: 'Red' },
+        { id: 'raina',    name: 'Raina',     color: '#ec407a',   colorName: 'Hot Pink' },
+        { id: 'swathi',   name: 'Swathi',    color: '#f8bbd0',   colorName: 'Light Pink' },
+        { id: 'jason',    name: 'Jason',     color: '#1e88e5',   colorName: 'Blue' },
+        { id: 'nikith',   name: 'Nikith',    color: '#4fc3f7',   colorName: 'Sky Blue' },
+        { id: 'shawn',    name: 'Shawn',     color: '#76ff03',   colorName: 'Neon Green' },
+        { id: 'shua',     name: 'Shua',      color: '#2e7d32',   colorName: 'Dark Green' },
+        { id: 'rutuja',   name: 'Rutuja',    color: '#fdd835',   colorName: 'Yellow' },
+        { id: 'shantanu', name: 'Shantanu',  color: '#9c27b0',   colorName: 'Purple' }
+    ];
+
+    const STORAGE_KEY = 'easterEggScoring_v1';
+
+    let state = loadState();
+
+    /* ==============================================
+       STATE MANAGEMENT
+       ============================================== */
+    function defaultState() {
+        const s = {};
+        PLAYERS.forEach(p => {
+            s[p.id] = {
+                score: 0,
+                powerups: {
+                    doubleDown: false,
+                    bonusHaul: false,
+                    eggSwap: false
+                }
+            };
+        });
+        return s;
+    }
+
+    function loadState() {
+        try {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                // Validate structure
+                const def = defaultState();
+                PLAYERS.forEach(p => {
+                    if (!parsed[p.id]) parsed[p.id] = def[p.id];
+                    if (typeof parsed[p.id].score !== 'number') parsed[p.id].score = 0;
+                    if (!parsed[p.id].powerups) parsed[p.id].powerups = def[p.id].powerups;
+                });
+                return parsed;
+            }
+        } catch (e) { /* ignore */ }
+        return defaultState();
+    }
+
+    function saveState() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        } catch (e) { /* ignore */ }
+    }
+
+    /* ==============================================
+       RENDER PLAYER GRID
+       ============================================== */
+    function renderGrid() {
+        const grid = document.getElementById('playerGrid');
+        grid.innerHTML = '';
+
+        PLAYERS.forEach(player => {
+            const ps = state[player.id];
+            const card = document.createElement('div');
+            card.className = 'player-card';
+            card.style.setProperty('--accent', player.color);
+
+            const ddUsed = ps.powerups.doubleDown;
+            const bhUsed = ps.powerups.bonusHaul;
+            const esUsed = ps.powerups.eggSwap;
+
+            // Build used power-up tags
+            let usedTags = [];
+            if (ddUsed) usedTags.push('Double Down');
+            if (bhUsed) usedTags.push('Bonus Haul');
+            if (esUsed) usedTags.push('Egg Swap');
+            const usedHTML = usedTags.length > 0
+                ? `<div class="powerup-used-tag">Used: ${usedTags.join(', ')}</div>`
+                : '';
+
+            card.innerHTML = `
+                <div class="egg-frame">
+                    <img src="img/players/placeholder.svg" alt="${player.name}">
+                </div>
+                <div class="player-name">${player.name}</div>
+                <div class="score-label">Skittles</div>
+                <div class="score-display" id="score-${player.id}">${ps.score}</div>
+                <div class="score-controls">
+                    <button class="btn-score btn-minus" onclick="adjustScore('${player.id}', -1)" aria-label="Decrease score">−</button>
+                    <button class="btn-score btn-plus" onclick="adjustScore('${player.id}', 1)" aria-label="Increase score">+</button>
+                </div>
+                <div class="powerups">
+                    <button class="btn-powerup double-down" onclick="useDoubleDown('${player.id}')" ${ddUsed ? 'disabled' : ''}>Double Down (+5)</button>
+                    <button class="btn-powerup bonus-haul" onclick="useBonusHaul('${player.id}')" ${bhUsed ? 'disabled' : ''}>Bonus Haul (+5)</button>
+                    <button class="btn-powerup egg-swap" onclick="openSwapModal('${player.id}')" ${esUsed ? 'disabled' : ''}>Egg Swap</button>
+                </div>
+                ${usedHTML}
+            `;
+
+            grid.appendChild(card);
+        });
+    }
+
+    /* ==============================================
+       SCORE ACTIONS
+       ============================================== */
+    function adjustScore(playerId, delta) {
+        const ps = state[playerId];
+        ps.score = Math.max(0, ps.score + delta);
+        saveState();
+
+        // Animate
+        const el = document.getElementById(`score-${playerId}`);
+        if (el) {
+            el.textContent = ps.score;
+            el.classList.add('bumped');
+            setTimeout(() => el.classList.remove('bumped'), 150);
+        }
+    }
+
+    /* ==============================================
+       POWER-UPS
+       ============================================== */
+    function useDoubleDown(playerId) {
+        state[playerId].powerups.doubleDown = true;
+        state[playerId].score += 5;
+        saveState();
+        renderGrid();
+        flashCard(playerId);
+    }
+
+    function useBonusHaul(playerId) {
+        state[playerId].powerups.bonusHaul = true;
+        state[playerId].score += 5;
+        saveState();
+        renderGrid();
+        flashCard(playerId);
+    }
+
+    function flashCard(playerId) {
+        const el = document.getElementById(`score-${playerId}`);
+        if (el) {
+            el.classList.add('bumped');
+            setTimeout(() => el.classList.remove('bumped'), 200);
+        }
+    }
+
+    /* ==============================================
+       EGG SWAP MODAL
+       ============================================== */
+    let swapFromId = null;
+
+    function openSwapModal(playerId) {
+        swapFromId = playerId;
+        const player = PLAYERS.find(p => p.id === playerId);
+        document.getElementById('swapFromName').textContent = player.name;
+
+        const select = document.getElementById('swapTarget');
+        select.innerHTML = '';
+        PLAYERS.forEach(p => {
+            if (p.id !== playerId) {
+                const opt = document.createElement('option');
+                opt.value = p.id;
+                opt.textContent = p.name;
+                select.appendChild(opt);
+            }
+        });
+
+        document.getElementById('swapAmount').value = 1;
+        document.getElementById('swapModal').classList.add('active');
+    }
+
+    function closeSwapModal() {
+        document.getElementById('swapModal').classList.remove('active');
+        swapFromId = null;
+    }
+
+    function executeSwap() {
+        if (!swapFromId) return;
+
+        const targetId = document.getElementById('swapTarget').value;
+        const amount = parseInt(document.getElementById('swapAmount').value, 10);
+
+        if (!targetId || isNaN(amount) || amount < 1) return;
+
+        // Transfer: take from source, give to target
+        const actualAmount = Math.min(amount, state[swapFromId].score);
+        state[swapFromId].score -= actualAmount;
+        state[targetId].score += actualAmount;
+        state[swapFromId].powerups.eggSwap = true;
+
+        saveState();
+        closeSwapModal();
+        renderGrid();
+    }
+
+    /* ==============================================
+       RESET
+       ============================================== */
+    function confirmReset() {
+        document.getElementById('confirmOverlay').classList.add('active');
+    }
+
+    function closeConfirm() {
+        document.getElementById('confirmOverlay').classList.remove('active');
+    }
+
+    function resetAll() {
+        state = defaultState();
+        saveState();
+        closeConfirm();
+        renderGrid();
+    }
+
+    /* ==============================================
+       CROWN THE WINNER
+       ============================================== */
+    function crownWinner() {
+        // Find highest score
+        let maxScore = -1;
+        PLAYERS.forEach(p => {
+            if (state[p.id].score > maxScore) maxScore = state[p.id].score;
+        });
+
+        if (maxScore <= 0) {
+            alert('No scores yet! Start counting Skittles first.');
+            return;
+        }
+
+        // Find all players with that score (handles ties)
+        const winners = PLAYERS.filter(p => state[p.id].score === maxScore);
+
+        showCelebration(winners, maxScore);
+    }
+
+    function showCelebration(winners, score) {
+        const overlay = document.getElementById('celebrationOverlay');
+        const content = document.getElementById('celebrationContent');
+        const confettiContainer = document.getElementById('confettiContainer');
+
+        // Clear previous
+        confettiContainer.innerHTML = '';
+
+        const isTie = winners.length > 1;
+
+        if (isTie) {
+            let winnersHTML = '';
+            winners.forEach(w => {
+                winnersHTML += `
+                    <div class="tied-item">
+                        <div class="winner-egg-frame" style="border-color: ${w.color};">
+                            <img src="img/players/placeholder.svg" alt="${w.name}">
+                        </div>
+                        <div class="tied-name">${w.name}</div>
+                    </div>
+                `;
+            });
+
+            content.innerHTML = `
+                <div class="celebration-trophy">CHAMPION EGG HUNTERS!</div>
+                <div class="tied-winners">${winnersHTML}</div>
+                <div class="winner-score">${score} Skittles &mdash; It's a tie!</div>
+                <button class="btn-dismiss" onclick="closeCelebration()">Close</button>
+            `;
+        } else {
+            const w = winners[0];
+            content.innerHTML = `
+                <div class="celebration-trophy">CHAMPION EGG HUNTER!</div>
+                <div class="winner-egg-frame" style="border-color: ${w.color};">
+                    <img src="img/players/placeholder.svg" alt="${w.name}">
+                </div>
+                <div class="winner-name">${w.name}</div>
+                <div class="winner-score">${score} Skittles</div>
+                <button class="btn-dismiss" onclick="closeCelebration()">Close</button>
+            `;
+        }
+
+        overlay.classList.add('active');
+        launchConfetti();
+    }
+
+    function closeCelebration() {
+        const overlay = document.getElementById('celebrationOverlay');
+        overlay.classList.remove('active');
+        document.getElementById('confettiContainer').innerHTML = '';
+    }
+
+    /* ==============================================
+       CONFETTI EFFECT
+       ============================================== */
+    function launchConfetti() {
+        const container = document.getElementById('confettiContainer');
+        const colors = [
+            '#e53935', '#ec407a', '#f8bbd0', '#1e88e5', '#4fc3f7',
+            '#76ff03', '#2e7d32', '#fdd835', '#9c27b0', '#ffd54f',
+            '#ff7043', '#ab47bc', '#29b6f6', '#66bb6a', '#ffee58'
+        ];
+        const shapes = ['circle', 'square', 'rect'];
+        const totalPieces = 120;
+
+        for (let i = 0; i < totalPieces; i++) {
+            setTimeout(() => {
+                const piece = document.createElement('div');
+                const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                piece.className = `confetti-piece ${shape}`;
+                piece.style.left = Math.random() * 100 + 'vw';
+                piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+                piece.style.animationDelay = '0s';
+
+                const size = 6 + Math.random() * 10;
+                if (shape === 'rect') {
+                    piece.style.width = (size * 0.5) + 'px';
+                    piece.style.height = size + 'px';
+                } else {
+                    piece.style.width = size + 'px';
+                    piece.style.height = size + 'px';
+                }
+
+                container.appendChild(piece);
+
+                // Remove after animation
+                piece.addEventListener('animationend', () => piece.remove());
+            }, i * 30);
+        }
+
+        // Second wave
+        setTimeout(() => {
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const piece = document.createElement('div');
+                    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+                    piece.className = `confetti-piece ${shape}`;
+                    piece.style.left = Math.random() * 100 + 'vw';
+                    piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+
+                    const size = 6 + Math.random() * 10;
+                    if (shape === 'rect') {
+                        piece.style.width = (size * 0.5) + 'px';
+                        piece.style.height = size + 'px';
+                    } else {
+                        piece.style.width = size + 'px';
+                        piece.style.height = size + 'px';
+                    }
+
+                    container.appendChild(piece);
+                    piece.addEventListener('animationend', () => piece.remove());
+                }, i * 40);
+            }
+        }, 2000);
+    }
+
+    /* ==============================================
+       INIT
+       ============================================== */
+    renderGrid();
+</script>
+</body>
+</html>
