@@ -34,11 +34,13 @@ Given the tight time constraint, plain HTML/CSS/JS is the clear winner. We can:
 - A separate `tasks-print.html` for printable task slips (hidden from players)
 - Host on GitHub Pages (free, instant)
 
-## Hosting Plan
+## Hosting Plan (DONE)
 
-1. Create a `site/` folder in this repo with the static files
-2. Enable GitHub Pages from the `main` branch `/site` folder (or use `gh-pages` branch)
-3. Share the URL: `https://<username>.github.io/easter-egg-hunt/`
+- **Repo:** https://github.com/reubenjohn/easter-egg-hunt
+- **Pages URL:** https://reubenjohn.github.io/easter-egg-hunt/
+- **Deploy:** Auto on push to master via `.github/workflows/pages.yml`
+- **Source:** `site/` folder uploaded as Pages artifact
+- Dummy landing page is live with bouncing egg animation
 
 ## Playwright Testing
 
@@ -74,7 +76,7 @@ site/
 
 ## Open Questions
 
-1. Do you have a GitHub repo created yet, or should I initialize one?
+1. ~~Do you have a GitHub repo created yet, or should I initialize one?~~ DONE
 2. Do you have player photos to include, or skip that for now?
 3. Any color scheme/theme preference beyond Easter pastels?
 4. Should the scoring page be password-protected or just unlinked?

@@ -37,15 +37,19 @@ All docs use **hierarchical progressive disclosure** via README.md files:
 8. `08-Testing/` — Playwright validation, screenshots
 9. `09-InviteSend/` — Final review, share URL with players
 
-## Tech Stack (TBD — see [TechDecisions.md](docs/plans/02-Ideation/TechDecisions.md))
+## Tech Stack (see [TechDecisions.md](docs/plans/02-Ideation/TechDecisions.md))
 
-- Reference project with playwright/mkdocs/gh-pages/uv setup: `~/workspace/theact`
-- Considering: static HTML/CSS/JS, GitHub Pages hosting, Playwright for testing
+- **Website:** Static HTML/CSS/JS in `site/` folder
+- **Hosting:** GitHub Pages — https://reubenjohn.github.io/easter-egg-hunt/
+- **Repo:** https://github.com/reubenjohn/easter-egg-hunt
+- **Deployment:** Auto-deploy on push to master via `.github/workflows/pages.yml`
+- **Testing:** Playwright (reference setup in `~/workspace/theact`)
 
 ## Commands
 
 ```bash
-# TBD — will be populated as tech stack is decided
+git push                             # Deploy site (auto via GitHub Actions)
+# Playwright commands TBD
 ```
 
 ## Contributing to CLAUDE.md
