@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Egg Hunt 2026</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #e8f5e9 50%, #e3f2fd 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #5d4037;
+            margin-bottom: 1rem;
+        }
+        .egg {
+            font-size: 4rem;
+            display: inline-block;
+            animation: bounce 1s ease-in-out infinite alternate;
+        }
+        .egg:nth-child(2) { animation-delay: 0.2s; }
+        .egg:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-20px); }
+        }
+        p {
+            font-size: 1.2rem;
+            color: #6d4c41;
+            margin-top: 1.5rem;
+            line-height: 1.6;
+        }
+        .coming-soon {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: #fff9c4;
+            border-radius: 1rem;
+            display: inline-block;
+            font-weight: 600;
+            color: #f57f17;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <span class="egg">🥚</span>
+            <span class="egg">🐣</span>
+            <span class="egg">🥚</span>
+        </div>
+        <h1>Easter Egg Hunt 2026</h1>
+        <p>Something egg-citing is coming...</p>
+        <div class="coming-soon">Full details dropping soon!</div>
+    </div>
+</body>
+</html>
