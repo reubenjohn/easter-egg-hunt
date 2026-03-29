@@ -299,10 +299,16 @@
             return '<span class="skittle-dots">' + dots + '</span>';
         }
 
-        function eggWithBadge(topHex, bottomHex, count) {
+        function eggWithBadge(topHexOrArray, bottomHex, count) {
+            var topStyle;
+            if (Array.isArray(topHexOrArray) && topHexOrArray.length > 1) {
+                topStyle = 'background:linear-gradient(90deg, ' + topHexOrArray.join(', ') + ');';
+            } else {
+                topStyle = 'background:' + (Array.isArray(topHexOrArray) ? topHexOrArray[0] : topHexOrArray) + ';';
+            }
             return '<div class="two-tone-egg-wrap">' +
                 '<div class="two-tone-egg">' +
-                    '<div class="top" style="background:' + topHex + ';"></div>' +
+                    '<div class="top" style="' + topStyle + '"></div>' +
                     '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
                 '</div>' +
                 '<span class="egg-count-badge">&times;' + count + '</span>' +
@@ -358,11 +364,11 @@
         cfg.powerups.forEach(function (pu) {
             var count = pu.count || 1;
             var puTopColors = pu.topColors || (pu.topColor ? [pu.topColor] : []);
-            var topHex = puTopColors.length > 0 && kitColorMap[puTopColors[0]] ? kitColorMap[puTopColors[0]].hex : '#ec407a';
+            var topHexes = puTopColors.map(function (id) { return kitColorMap[id] ? kitColorMap[id].hex : '#ec407a'; });
             var bottomObj = pu.bottomColor ? kitColorMap[pu.bottomColor] : null;
             var bottomHex = bottomObj ? bottomObj.hex : '#999';
             var frontHtml =
-                eggWithBadge(topHex, bottomHex, count) +
+                eggWithBadge(topHexes, bottomHex, count) +
                 '<div class="special-egg-label">' + pu.icon + ' ' + pu.name + '</div>' +
                 '<div class="special-egg-count">&times;' + count + ' eggs</div>' +
                 '<div class="special-egg-reward">' + (pu.scoreBonus > 0 ? skittleDots(pu.scoreBonus) : '<span class="special-effect-badge">Special</span>') + '</div>';
