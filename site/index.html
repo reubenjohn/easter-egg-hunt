@@ -267,15 +267,8 @@
         document.getElementById('footerTagline').innerHTML = cfg.event.footerTagline;
         document.getElementById('footerYear').innerHTML = '&copy; ' + cfg.event.year;
 
-        // Re-run scroll reveal for dynamically added elements
-        var reveals = document.querySelectorAll('.reveal');
-        var windowHeight = window.innerHeight;
-        for (var j = 0; j < reveals.length; j++) {
-            var top = reveals[j].getBoundingClientRect().top;
-            if (top < windowHeight - 120) {
-                reveals[j].classList.add('visible');
-            }
-        }
+        // Trigger scroll reveal for dynamically added elements
+        window.dispatchEvent(new Event('scroll'));
     });
     </script>
 
