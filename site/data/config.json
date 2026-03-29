@@ -1,0 +1,109 @@
+{
+    "event": {
+        "title": "Operation: Easter Egg",
+        "subtitle": "The Skittelling!",
+        "tagline": "You've been summoned to the meadow!",
+        "date": "Spring 2026 &mdash; Date coming soon!",
+        "year": 2026,
+        "branding": "R&R",
+        "brandingFull": "Reuben & Raina",
+        "footerTagline": "An R&R Production &mdash; Hopping into Spring!",
+        "currency": "Skittles"
+    },
+    "venue": {
+        "name": "Garibaldi (Giuseppe) Park",
+        "address": "1520 W Polk St, Chicago, IL 60607",
+        "mapQuery": "1520+W+Polk+St+Chicago+IL+60607",
+        "mapEmbedUrl": "https://maps.google.com/maps?q=1520+W+Polk+St+Chicago+IL+60607&output=embed",
+        "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=1520+W+Polk+St+Chicago+IL+60607"
+    },
+    "players": [
+        { "id": "reuben", "name": "Reuben", "color": "#e53935", "colorName": "Red", "title": "Cherry Bunny", "photo": "img/players/placeholder.svg", "lightText": false },
+        { "id": "raina", "name": "Raina", "color": "#ec407a", "colorName": "Hot Pink", "title": "Flamingo Hop", "photo": "img/players/placeholder.svg", "lightText": false },
+        { "id": "swathy", "name": "Swathy", "color": "#f8bbd0", "colorName": "Light Pink", "title": "Cotton Candy Chick", "photo": "img/players/placeholder.svg", "lightText": false },
+        { "id": "jason", "name": "Jason", "color": "#1e88e5", "colorName": "Blue", "title": "Bluebird Nest", "photo": "img/players/placeholder.svg", "lightText": false },
+        { "id": "nikith", "name": "Nikith", "color": "#4fc3f7", "colorName": "Sky Blue", "title": "Robin's Egg", "photo": "resources/Nikith.jpeg", "lightText": false },
+        { "id": "shawn", "name": "Shawn", "color": "#76ff03", "colorName": "Neon Green", "title": "Spring Sprout", "photo": "img/players/placeholder.svg", "lightText": true },
+        { "id": "shua", "name": "Shua", "color": "#2e7d32", "colorName": "Dark Green", "title": "Clover Patch", "photo": "resources/Shua.jpeg", "lightText": false },
+        { "id": "rutuja", "name": "Rutuja", "color": "#fdd835", "colorName": "Yellow", "title": "Sunny Yolk", "photo": "resources/Rituja.jpeg", "lightText": true },
+        { "id": "shantanu", "name": "Shantanu", "color": "#9c27b0", "colorName": "Purple", "title": "Lavender Bloom", "photo": "resources/Shantanu.jpeg", "lightText": false }
+    ],
+    "steps": [
+        { "icon": "&#129370;", "text": "Hop to it &mdash; find YOUR eggs!", "detail": "Every bunny has their own color &mdash; sniff out only yours!" },
+        { "icon": "&#10024;", "text": "Spot a two-tone egg? Snatch it up!", "detail": "Two-tone eggs aren't assigned to anyone — any player can grab them!" },
+        { "icon": "&#128239;", "text": "Hop back when the hunting horn sounds!", "detail": "The Great Hunt lasts 15 hops of the clock &mdash; then scurry home!" },
+        { "icon": "&#129309;", "text": "The Bunny Bazaar &mdash; trade your task eggs!", "detail": "5 minutes to wheel and deal with fellow bunnies (no peeking!)" },
+        { "icon": "&#128171;", "text": "Spring surprises &mdash; power-ups unleashed!", "detail": "Score multipliers, bonus Skittles, and wild springtime twists!" },
+        { "icon": "&#128290;", "text": "Crack 'em open &mdash; count your rainbow loot!", "detail": "Smash those shells and tally up your Skittles treasure!" },
+        { "icon": "&#127917;", "text": "Task egg time &mdash; silly spring challenges!", "detail": "Complete tasks for bonus Skittles (prepare for some egg-streme embarrassment!)" },
+        { "icon": "&#128081;", "text": "The champion bunny is crowned!", "detail": "Most Skittles wins &mdash; eternal egg-hunting glory awaits!" }
+    ],
+    "specialEggs": [
+        { "topColor": "#f8bbd0", "bottomColor": "#f8bbd0", "label": "&#127793; Easy Peasy Task", "desc": "All pink, both halves &mdash; a gentle challenge even the smallest bunny can handle!" },
+        { "topColor": "#f8bbd0", "bottomColor": "#f5f5f5", "label": "&#127800; Medium Mischief Task", "desc": "Top half pink, bottom half white &mdash; a bit more hop in your step required!" },
+        { "topColor": "#f8bbd0", "bottomColor": "#9c27b0", "label": "&#128293; Hard-Boiled Challenge", "desc": "Top half pink, bottom half purple &mdash; only the bravest bunnies dare! Big Skittles rewards!" }
+    ],
+    "rules": [
+        { "icon": "&#9200;", "text": "The Great Hunt Lasts 15 Hops of the Clock!", "detail": "When the clock runs out, even the speediest bunny has to stop hopping!" },
+        { "icon": "&#127758;", "text": "Don't Wander Beyond the Bunny Trail!", "detail": "If you can't see the meadow, you've hopped too far, little bunny!" },
+        { "icon": "&#127912;", "text": "Your Eggs + Sparkly Specials Only!", "detail": "Hop after your own color eggs and any two-tone treasures you spot!" },
+        { "icon": "&#128683;", "text": "Every Bunny for Themselves!", "detail": "No snatching eggs from another hunter's trail, and no whispering where the eggs are hiding &mdash; that's fowl play! &#128020;" },
+        { "icon": "&#129399;", "text": "No Egg-scape Artists Allowed!", "detail": "Found an egg? Take it or leave it &mdash; no sneaky re-hiding or bunny business!" },
+        { "icon": "&#128227;", "text": "Hop Back to the Nest When the Horn Sounds!", "detail": "When the hunting horn blows, scurry back to base like a bunny who heard a fox!" },
+        { "icon": "&#129370;", "text": "Two-Tone Eggs = Mystery Tasks!", "detail": "Check the Special Eggs Guide above to decode which colors mean easy, medium, or hard &mdash; trade wisely at the Bunny Bazaar!" }
+    ],
+    "tasks": {
+        "easy": {
+            "reward": 1,
+            "rewardText": "+1 Bonus Skittle",
+            "stars": 1,
+            "items": [
+                "Do your best chicken impression for 10 seconds \ud83d\udc14",
+                "Hop like a bunny across the group circle \ud83d\udc07",
+                "Speak in a British accent for the next 2 minutes \ud83c\udfa9",
+                "Do 5 jumping jacks while singing \"Happy Birthday\" \ud83c\udfb6",
+                "Make up a 4-line poem about eggs on the spot \ud83d\udcdd"
+            ]
+        },
+        "medium": {
+            "reward": 2,
+            "rewardText": "+2 Bonus Skittles",
+            "stars": 2,
+            "items": [
+                "Serenade another player with \"Here Comes Peter Cottontail\" \ud83c\udfa4",
+                "Do 10 bunny hops while clucking like a chicken \ud83d\udc14\ud83d\udc07",
+                "Do your best impression of another player \u2014 group guesses who! \ud83c\udfad",
+                "Perform a dramatic reading of a text from your phone as Shakespeare \ud83c\udfad\ud83d\udcf1",
+                "Let the group pick a dance move you must do for 30 seconds \ud83d\udc83"
+            ]
+        },
+        "hard": {
+            "reward": 3,
+            "rewardText": "+3 Bonus Skittles",
+            "stars": 3,
+            "items": [
+                "Perform a 30-second interpretive dance of an egg hatching \ud83e\udd5a\ud83d\udc83",
+                "Let another player give you bunny face paint (washable marker) \ud83d\udc30\ud83c\udfa8",
+                "Do a full minute of stand-up comedy about Easter \ud83c\udfa4\ud83d\ude02",
+                "Act out a scene where you're a chicken defending your eggs from a fox \ud83d\udc14\ud83e\udd8a"
+            ]
+        },
+        "extreme": {
+            "reward": 5,
+            "rewardText": "+5 Bonus Skittles",
+            "stars": 5,
+            "items": [
+                "Post a bunny-ear selfie to your Instagram story \ud83d\udcf8\ud83d\udc30",
+                "Call a friend/family member and convince them you've become a chicken (1 min) \ud83d\udcde\ud83d\udc14",
+                "Let the group compose a haiku about you, then recite it dramatically \ud83d\udcdc\ud83c\udfad"
+            ]
+        }
+    },
+    "powerups": [
+        { "name": "Double Down", "icon": "\u26a1", "description": "Double the Skittles from your 3 highest-value eggs!", "scoreBonus": 5 },
+        { "name": "Egg Swap", "icon": "\ud83d\udd04", "description": "Force a trade: give 1 of your eggs, take 1 of theirs (blind pick)!", "scoreBonus": 0 },
+        { "name": "Bonus Haul", "icon": "\ud83c\udf81", "description": "Get 5 bonus Skittles, no strings attached!", "scoreBonus": 5 },
+        { "name": "Task Dodge", "icon": "\ud83d\udee1\ufe0f", "description": "Cancel one of your task eggs \u2014 you don't have to do it!", "scoreBonus": 0 },
+        { "name": "Task Reassign", "icon": "\ud83c\udfaf", "description": "Give one of your task eggs to another player!", "scoreBonus": 0 }
+    ]
+}

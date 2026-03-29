@@ -1,21 +1,20 @@
 /* ==============================================
-   DATA
+   DATA — loaded from config.json via config.js
    ============================================== */
-const PLAYERS = [
-    { id: 'reuben', name: 'Reuben', color: '#e53935', colorName: 'Red', photo: 'img/players/placeholder.svg' },
-    { id: 'raina', name: 'Raina', color: '#ec407a', colorName: 'Hot Pink', photo: 'img/players/placeholder.svg' },
-    { id: 'Swathy', name: 'Swathy', color: '#f8bbd0', colorName: 'Light Pink', photo: 'img/players/placeholder.svg' },
-    { id: 'jason', name: 'Jason', color: '#1e88e5', colorName: 'Blue', photo: 'img/players/placeholder.svg' },
-    { id: 'nikith', name: 'Nikith', color: '#4fc3f7', colorName: 'Sky Blue', photo: 'resources/Nikith.jpeg' },
-    { id: 'shawn', name: 'Shawn', color: '#76ff03', colorName: 'Neon Green', photo: 'img/players/placeholder.svg' },
-    { id: 'shua', name: 'Shua', color: '#2e7d32', colorName: 'Dark Green', photo: 'resources/Shua.jpeg' },
-    { id: 'rutuja', name: 'Rutuja', color: '#fdd835', colorName: 'Yellow', photo: 'resources/Rituja.jpeg' },
-    { id: 'shantanu', name: 'Shantanu', color: '#9c27b0', colorName: 'Purple', photo: 'resources/Shantanu.jpeg' }
-];
+let PLAYERS = [];
 
 const STORAGE_KEY = 'easterEggScoring_v1';
 
-let state = loadState();
+let state = {};
+
+/* ==============================================
+   INIT — wait for config, then bootstrap
+   ============================================== */
+CONFIG.ready(function (cfg) {
+    PLAYERS = cfg.players;
+    state = loadState();
+    renderGrid();
+});
 
 /* ==============================================
    STATE MANAGEMENT
@@ -293,15 +292,14 @@ function closeCelebration() {
 }
 
 /* ==============================================
-   CONFETTI EFFECT
+   CONFETTI EFFECT — uses player colors from config
    ============================================== */
 function launchConfetti() {
     const container = document.getElementById('confettiContainer');
-    const colors = [
-        '#e53935', '#ec407a', '#f8bbd0', '#1e88e5', '#4fc3f7',
-        '#76ff03', '#2e7d32', '#fdd835', '#9c27b0', '#ffd54f',
-        '#ff7043', '#ab47bc', '#29b6f6', '#66bb6a', '#ffee58'
-    ];
+    // Use player colors from config + some extras
+    const playerColors = PLAYERS.map(p => p.color);
+    const extraColors = ['#ffd54f', '#ff7043', '#ab47bc', '#29b6f6', '#66bb6a', '#ffee58'];
+    const colors = playerColors.concat(extraColors);
     const shapes = ['circle', 'square', 'rect'];
     const totalPieces = 120;
 
@@ -357,8 +355,3 @@ function launchConfetti() {
         }
     }, 2000);
 }
-
-/* ==============================================
-   INIT
-   ============================================== */
-renderGrid();

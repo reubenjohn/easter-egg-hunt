@@ -23,17 +23,7 @@
     --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.1);
     --radius: 1rem;
     --radius-sm: 0.6rem;
-
-    /* Player accent colors */
-    --color-reuben: #e53935;
-    --color-raina: #ec407a;
-    --color-Swathy: #f8bbd0;
-    --color-jason: #1e88e5;
-    --color-nikith: #4fc3f7;
-    --color-shawn: #76ff03;
-    --color-shua: #2e7d32;
-    --color-rutuja: #fdd835;
-    --color-shantanu: #9c27b0;
+    /* Player accent colors set inline via JS from config */
 }
 
 body {
