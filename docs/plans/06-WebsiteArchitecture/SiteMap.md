@@ -22,7 +22,7 @@ The public-facing page. This is the URL shared with all 9 players. It contains e
 | Prizes | `#prizes` | *(hardcoded)* | Mystery teaser -- deliberately vague to build anticipation |
 | Footer | `#siteFooter` | `cfg.event.*` | R&R branding with heartbeat animation, tagline, year |
 
-**Scripts loaded:** `js/config.js`, `js/main.js`, plus an inline `<script>` that calls `CONFIG.ready()` to render all dynamic sections.
+**Scripts loaded:** `js/nav.js`, `js/config.js`, `js/main.js`, plus an inline `<script>` that calls `CONFIG.ready()` to render all dynamic sections.
 
 **Calendar integration:** The hero section generates both a Google Calendar URL and a downloadable `.ics` file on the fly from `cfg.event.startISO`, `cfg.event.endISO`, `cfg.event.timezone`, and `cfg.venue.*`.
 
@@ -46,7 +46,27 @@ Used on event day by the hosts to tally Skittles in real time. Not visible to pl
 
 **Scripts loaded:** `js/config.js`, `js/scoring.js`.
 
-### 3. `tasks-print.html` -- Printable Task & Power-Up Cards
+### 3. `prep.html` -- Host Prep Checklist
+
+**URL:** https://reubenjohn.github.io/easter-egg-hunt/prep.html (host-only utility page)
+
+A config-driven preparation checklist page for the hosts. Shows egg assignments, special egg breakdown, Skittle distribution, kit inventory, and assembly instructions.
+
+| Component | Description |
+|-----------|-------------|
+| Header | Event title and "Egg Prep Checklist — Host Only" subtitle |
+| Validation banner | Auto-validates config data for consistency |
+| Stats bar | Summary stats (total eggs, players, Skittles, etc.) |
+| Player egg assignments | Table of player-to-color assignments with egg counts |
+| Special eggs breakdown | Task and power-up egg details with colors and rewards |
+| Skittle distribution | Visual cards showing per-player Skittle allocation |
+| Kit inventory | Full inventory of the 10-color egg kit with usage and spares |
+| Assembly instructions | Step-by-step prep guide |
+| Print cards link | Link to `tasks-print.html` |
+
+**Scripts loaded:** `js/nav.js`, `js/config.js`, `js/prep.js`.
+
+### 4. `tasks-print.html` -- Printable Task & Power-Up Cards
 
 **URL:** https://reubenjohn.github.io/easter-egg-hunt/tasks-print.html (intentionally unlinked)
 
@@ -76,12 +96,15 @@ The config file is the single source of truth. Every page fetches it at runtime 
 {
   "event": { ... },        // Event metadata, branding, dates
   "venue": { ... },        // Park name, address, map URLs
+  "eggsPerPlayer": 15,     // Eggs each player gets
+  "eggKit": { ... },       // Kit inventory (10 colors × 20)
+  "skittles": { ... },     // Distribution plan per player
   "players": [ ... ],      // Player roster (9 entries)
-  "steps": [ ... ],        // "How It Works" step list (8 entries)
-  "specialEggs": [ ... ],  // Two-tone egg guide (5 entries)
+  "steps": [ ... ],        // "How It Works" step list (9 entries)
+  "specialEggs": "dynamic",// Generated from tasks + powerups config
   "rules": [ ... ],        // Game rules (7 entries)
   "tasks": { ... },        // Task cards by difficulty
-  "powerups": [ ... ]      // Power-up card definitions (5 entries)
+  "powerups": [ ... ]      // Power-up card definitions (5 types × 2 each)
 }
 ```
 
@@ -92,10 +115,10 @@ The config file is the single source of truth. Every page fetches it at runtime 
 | `title` | string | index hero, tasks-print | `"Operation: Easter Egg"` |
 | `subtitle` | string | index hero | `"The Skittelling!"` |
 | `tagline` | string | index hero, calendar details | `"You've been summoned to the meadow!"` |
-| `date` | string | index hero | `"Sunday, April 5, 2026"` |
-| `timeRange` | string | index hero | `"10:00 AM &ndash; 1:00 PM CT"` |
-| `startISO` | string | calendar generation | `"2026-04-05T10:00:00"` |
-| `endISO` | string | calendar generation | `"2026-04-05T13:00:00"` |
+| `date` | string | index hero | `"Sunday, March 29, 2026"` |
+| `timeRange` | string | index hero | `"5:00 PM &ndash; 7:00 PM CT"` |
+| `startISO` | string | calendar generation | `"2026-03-29T17:00:00"` |
+| `endISO` | string | calendar generation | `"2026-03-29T19:00:00"` |
 | `timezone` | string | calendar generation | `"America/Chicago"` |
 | `year` | number | tasks-print footer, site footer | `2026` |
 | `branding` | string | nav, hero, task cards, footer | `"R&R"` |
@@ -149,11 +172,11 @@ Keyed by difficulty level (`easy`, `medium`, `hard`, `extreme`). Each difficulty
 | `stars` | number | Star rating shown on printed card |
 | `items` | string[] | Array of task descriptions |
 
-**Current counts:** 5 easy + 5 medium + 4 hard + 3 extreme = 17 task cards.
+**Current counts:** 4 easy + 4 medium + 4 hard + 3 extreme = 15 task cards.
 
 ### `powerups[]` Array
 
-5 entries. Each has `name`, `icon`, `description`, and `scoreBonus` (used by scoring.js for automatic point addition).
+5 entries, each with `count: 2` (10 total power-up eggs). Each has `name`, `icon`, `description`, `scoreBonus` (used by scoring.js), `count`, `topColor`, and `bottomColor`.
 
 ---
 
@@ -170,6 +193,10 @@ CONFIG.ready(callback)
     |       Renders: nav brand, hero, location, players grid,
     |       steps, special eggs, rules, footer
     |
+    +---> prep.js
+    |       Reads players[], eggKit, skittles, tasks, powerups
+    |       Renders prep tables, stats, assembly instructions
+    |
     +---> scoring.js
     |       Reads players[] to build scoring grid
     |       Uses player IDs as localStorage keys
@@ -179,5 +206,7 @@ CONFIG.ready(callback)
             Reads tasks{} and powerups[] to generate
             printable card grid
 ```
+
+**Shared nav:** `js/nav.js` is loaded on all pages and auto-injects a sticky navigation bar at the top of `<body>`. The nav links to all 4 pages and highlights the active one. Hidden via `@media print`.
 
 No page hardcodes game data. Adding a player, changing a rule, or tweaking a task description is a single edit to `config.json`.

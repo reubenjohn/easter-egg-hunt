@@ -1,10 +1,11 @@
 """Validate the live deployed Easter Egg Hunt site on GitHub Pages.
 
-Checks all 3 pages, verifies key content, and takes screenshots.
+Checks all 4 pages, verifies key content, and takes screenshots.
 
 Run with:  uv run python tests/test_deployed.py
 """
 
+import json
 import sys
 from pathlib import Path
 
@@ -12,11 +13,16 @@ from playwright.sync_api import sync_playwright
 
 BASE_URL = "https://reubenjohn.github.io/easter-egg-hunt"
 SCREENSHOTS_DIR = Path(__file__).parent.parent / "screenshots"
+CONFIG_PATH = Path(__file__).parent.parent / "site" / "data" / "config.json"
 
-PLAYER_NAMES = [
-    "Reuben", "Raina", "Swathy", "Jason", "Nikith",
-    "Shawn", "Shua", "Rutuja", "Shantanu",
-]
+
+def _load_player_names():
+    """Load player names from config.json (single source of truth)."""
+    cfg = json.loads(CONFIG_PATH.read_text())
+    return [p["name"] for p in cfg["players"]]
+
+
+PLAYER_NAMES = _load_player_names()
 
 passed = 0
 failed = 0
@@ -104,6 +110,32 @@ def test_scoring(page) -> None:
     print(f"  Screenshot saved to {path}")
 
 
+def test_prep(page) -> None:
+    print("\n--- Prep Page ---")
+    url = f"{BASE_URL}/prep.html"
+    print(f"  Loading {url}")
+    response = page.goto(url, wait_until="networkidle")
+
+    check("Page loads successfully (HTTP 200)", response is not None and response.ok)
+
+    # Verify the page has prep content
+    body_text = page.text_content("body") or ""
+    check("Page contains 'Prep Checklist'", "Prep Checklist" in body_text)
+
+    # Verify player names appear
+    names_found = 0
+    for name in PLAYER_NAMES:
+        if page.locator(f"text={name}").first.is_visible():
+            names_found += 1
+    check(f"Player names visible on prep page ({names_found}/9)", names_found > 0)
+
+    # Screenshot
+    SCREENSHOTS_DIR.mkdir(exist_ok=True)
+    path = SCREENSHOTS_DIR / "deployed-prep.png"
+    page.screenshot(path=str(path), full_page=True)
+    print(f"  Screenshot saved to {path}")
+
+
 def test_tasks_print(page) -> None:
     print("\n--- Tasks Print Page ---")
     url = f"{BASE_URL}/tasks-print.html"
@@ -135,6 +167,7 @@ def main() -> int:
         page = context.new_page()
 
         test_homepage(page)
+        test_prep(page)
         test_scoring(page)
         test_tasks_print(page)
 

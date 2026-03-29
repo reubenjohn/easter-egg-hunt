@@ -179,6 +179,35 @@ def test_scoring_player_count(page, web_server):
 
 
 # ──────────────────────────────────────────────
+# PREP PAGE TESTS
+# ──────────────────────────────────────────────
+
+def test_prep_page_loads(page, web_server):
+    """Prep page loads with player egg assignments from config."""
+    cfg = load_config()
+    page.goto(f"{web_server}/prep.html")
+    _wait_for_config(page)
+
+    for player in cfg["players"]:
+        expect(page.locator(f"text={player['name']}").first).to_be_visible()
+
+    SCREENSHOTS_DIR.mkdir(exist_ok=True)
+    page.screenshot(path=str(SCREENSHOTS_DIR / "prep.png"), full_page=True)
+
+
+def test_prep_player_count(page, web_server):
+    """Prep page shows at least one row per player in the assignment table."""
+    cfg = load_config()
+    page.goto(f"{web_server}/prep.html")
+    _wait_for_config(page)
+
+    rows = page.locator("#playerEggTable tr")
+    # Table has 9 player rows + 1 totals row = 10
+    row_count = rows.count()
+    assert row_count >= len(cfg["players"]), f"Expected at least {len(cfg['players'])} rows, got {row_count}"
+
+
+# ──────────────────────────────────────────────
 # TASKS PRINT PAGE TESTS
 # ──────────────────────────────────────────────
 

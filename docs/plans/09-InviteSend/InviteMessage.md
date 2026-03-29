@@ -8,7 +8,7 @@ Short text message options to send to players with the site link. Pick one, cust
 
 > You've been selected for **Operation: Easter Egg — The Skittelling!** 🐣🌈
 >
-> 📅 Sunday, April 5 | 10 AM - 1 PM
+> 📅 Sunday, March 29 | 5 PM – 7 PM
 > 📍 Garibaldi Park (1520 W Polk St)
 >
 > 200 eggs. 9 hunters. 1 chocolate bunny on the line.
@@ -19,10 +19,10 @@ Short text message options to send to players with the site link. Pick one, cust
 
 ## Option B — Punny & Playful
 
-> Hope you don't have any egg-sisting plans on April 5th... because you're egg-ficially invited to the hunt of a lifetime.
+> Hope you don't have any egg-sisting plans on March 29th... because you're egg-ficially invited to the hunt of a lifetime.
 >
 > 🐰 **Operation: Easter Egg — The Skittelling!**
-> 📅 Sun, April 5 | 10 AM - 1 PM
+> 📅 Sun, March 29 | 5 PM – 7 PM
 > 📍 Garibaldi Park
 >
 > Check out the site for rules, your color, and what you're up against: https://reubenjohn.github.io/easter-egg-hunt/
@@ -31,7 +31,7 @@ Short text message options to send to players with the site link. Pick one, cust
 
 ## Option C — Short & Punchy
 
-> Easter egg hunt. April 5th. You in?
+> Easter egg hunt. March 29th. You in?
 >
 > 🥚 https://reubenjohn.github.io/easter-egg-hunt/
 >
@@ -49,15 +49,16 @@ Run through this before sending the invite to anyone:
 
 - [ ] Open https://reubenjohn.github.io/easter-egg-hunt/ in a browser
 - [ ] Home page loads without errors (check browser console)
-- [ ] All 9 player names are listed: Reuben, Raina, Swathy, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+- [ ] All 9 player names are listed: Reuben, Raina, Swathy, Jason, Nikith, Shaun, Shua, Rutuja, Shantanu
 - [ ] Player photos/avatars all render (no broken images)
-- [ ] Event date shows **Sunday, April 5, 2026**
-- [ ] Event time shows **10:00 AM - 1:00 PM CT**
+- [ ] Event date shows **Sunday, March 29, 2026**
+- [ ] Event time shows **5:00 PM – 7:00 PM CT**
 - [ ] Venue shows **Garibaldi (Giuseppe) Park - 1520 W Polk St, Chicago IL 60607**
 
 ### All Pages Work
 
 - [ ] Home page (`index.html`) — event info, player cards, rules
+- [ ] Prep page (`prep.html`) — egg prep checklist, stats
 - [ ] Scoring page (`scoring.html`) — scoring UI loads
 - [ ] Task Cards (`tasks-print.html`) — printable layout renders
 
