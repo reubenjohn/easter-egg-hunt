@@ -16,29 +16,29 @@ Everything needed to physically prepare for the egg hunt: buying supplies, stuff
 
 | Item | Count |
 |------|-------|
-| Total eggs | 200 |
-| Player eggs (10 colors x 18 each) | 162 (9 players x 18) |
-| Task eggs (pink/purple two-tone) | 17 |
-| Power-up eggs (purple top / player-color bottom) | 5 |
-| Remaining special egg shells (spares) | 16 |
-| Total task cards to print | 17 |
-| Total power-up cards to print | 5 |
-| Skittles needed (estimated) | ~300 individual Skittles |
+| Egg kit | 200 (10 colors × 20) |
+| Player eggs | 135 (9 players × 15 each) |
+| Task eggs (green-top, various bottom colors) | 15 (4 easy + 4 medium + 4 hard + 3 extreme) |
+| Power-up eggs (pink-top, various bottom colors) | 10 (5 types × 2 each) |
+| Spare egg shells | 40 |
+| Total task cards to print | 15 |
+| Total power-up cards to print | 10 |
+| Skittles needed (estimated) | ~400 individual Skittles |
 
 ## Prep Timeline (Before Event Day)
 
 | When | Task | Details |
 |------|------|---------|
-| 1 week before (Mar 29) | Buy supplies | Eggs, Skittles, prizes, bags/baskets — see [SuppliesList.md](SuppliesList.md) |
-| 3-4 days before (Apr 1-2) | Print task cards | Print from `tasks-print.html`, cut into slips |
-| 2 days before (Apr 3) | Stuff all eggs | Follow [EggPrepChecklist.md](EggPrepChecklist.md) — takes ~1.5-2 hours |
-| 1 day before (Apr 4) | Final check | Verify counts, pack transport bags, charge phone for timer |
-| Day of (Apr 5) | Execute | Follow [DayOfTimeline.md](DayOfTimeline.md) |
+| Before event | Buy supplies | Eggs, Skittles, prizes, bags/baskets — see [SuppliesList.md](SuppliesList.md) |
+| 1-2 days before | Print task cards | Print from `tasks-print.html`, cut into slips |
+| 1-2 days before | Stuff all eggs | Follow [EggPrepChecklist.md](EggPrepChecklist.md) — takes ~1.5-2 hours |
+| Morning of | Final check | Verify counts, pack transport bags, charge phone for timer |
+| Event day (Mar 29) | Execute | Follow [DayOfTimeline.md](DayOfTimeline.md) |
 
 ## Key Reminders
 
 - **Hiding arrangement:** Reuben hides Raina's eggs. Raina hides Reuben's eggs. Both randomly hide remaining 7 players' eggs.
 - **Print URL:** Open `tasks-print.html` from the local site or at https://reubenjohn.github.io/easter-egg-hunt/tasks-print.html
-- **Skittle distribution target:** ~50% of eggs get 1, ~35% get 2, ~15% get 3 (see EggPrepChecklist for exact counts)
+- **Skittle distribution target:** ~53% of eggs get 1, ~27% get 2, ~20% get 3 (see EggPrepChecklist for exact counts)
 
 **Next phase →** [06-WebsiteArchitecture](../06-WebsiteArchitecture/README.md)

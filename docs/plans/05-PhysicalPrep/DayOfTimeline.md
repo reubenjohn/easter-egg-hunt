@@ -2,27 +2,27 @@
 
 [← Back to Phase 05](README.md)
 
-**Date:** Sunday, April 5, 2026
+**Date:** Sunday, March 29, 2026
 **Venue:** Garibaldi (Giuseppe) Park — 1520 W Polk St, Chicago, IL 60607
-**Event window:** 10:00 AM - 1:00 PM CT
-**Players:** Reuben, Raina, Swathy, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu (9 total)
+**Event window:** 5:00 PM – 7:00 PM CT
+**Players:** Reuben, Raina, Swathy, Jason, Nikith, Shaun, Shua, Rutuja, Shantanu (9 total)
 
 ---
 
-## Pre-Event: Morning at Home (7:30 AM - 9:00 AM)
+## Pre-Event: Afternoon at Home (2:30 PM - 4:00 PM)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 7:30 AM | Wake up & get ready | Reuben + Raina | Eat breakfast, get dressed, charge phones |
-| 8:00 AM | Final supply check | Reuben | Run through checklist below |
-| 8:15 AM | Load car | Both | Tote with egg bags, prizes, day-of supplies, blanket, speaker |
-| 8:45 AM | Depart for park | Both | Google Maps: ~15 min from home (adjust for your location) |
+| 2:30 PM | Get ready | Reuben + Raina | Eat lunch, get dressed, charge phones |
+| 3:00 PM | Final supply check | Reuben | Run through checklist below |
+| 3:15 PM | Load car | Both | Tote with egg bags, prizes, day-of supplies, blanket, speaker |
+| 3:45 PM | Depart for park | Both | Google Maps: ~15 min from home (adjust for your location) |
 
 ### Pre-Departure Checklist
 
-- [ ] 9 labeled Ziploc bags with player eggs (18 eggs each = 162 total)
-- [ ] 1 labeled Ziploc bag with special eggs (22 eggs: 17 task + 5 power-up)
-- [ ] 16 spare egg shells (in case of cracks)
+- [ ] 9 labeled Ziploc bags with player eggs (15 eggs each = 135 total)
+- [ ] 1 labeled Ziploc bag with special eggs (25 eggs: 15 task + 10 power-up)
+- [ ] 40 spare egg shells (in case of cracks)
 - [ ] 9 collecting baskets or bags (one per player)
 - [ ] Prize bag: 1 chocolate bunny + 9 consolation prizes
 - [ ] Blanket or tablecloth for base camp
@@ -38,37 +38,37 @@
 
 ---
 
-## Setup: At the Park (9:00 AM - 10:00 AM)
+## Setup: At the Park (4:00 PM - 5:00 PM)
 
 Reuben and Raina arrive **1 hour early** to hide eggs before anyone else shows up.
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 9:00 AM | Arrive at park | Both | Scout the area, pick base camp spot (picnic table or open area) |
-| 9:05 AM | Set up base camp | Raina | Lay blanket/tablecloth, set out prizes (hidden under cloth), speaker, scoring supplies |
-| 9:05 AM | Plan hiding zones | Reuben | Walk the park quickly, mentally divide into zones — spread colors evenly |
-| 9:10 AM | **Begin hiding eggs** | Both | See hiding plan below |
-| 9:50 AM | Final sweep | Both | Walk the park once more — make sure no eggs are too obvious or too impossible |
-| 9:55 AM | Return to base camp | Both | Catch your breath, get ready to greet players |
+| 4:00 PM | Arrive at park | Both | Scout the area, pick base camp spot (picnic table or open area) |
+| 4:05 PM | Set up base camp | Raina | Lay blanket/tablecloth, set out prizes (hidden under cloth), speaker, scoring supplies |
+| 4:05 PM | Plan hiding zones | Reuben | Walk the park quickly, mentally divide into zones — spread colors evenly |
+| 4:10 PM | **Begin hiding eggs** | Both | See hiding plan below |
+| 4:50 PM | Final sweep | Both | Walk the park once more — make sure no eggs are too obvious or too impossible |
+| 4:55 PM | Return to base camp | Both | Catch your breath, get ready to greet players |
 
 ### Hiding Plan
 
 **Reuben hides:**
-- Raina's 18 Hot Pink eggs
-- ~63 eggs from other players (roughly half of the 7 remaining players' eggs = ~3-4 bags)
-- ~11 special eggs (roughly half)
+- Raina's 15 Lime Green eggs
+- ~53 eggs from other players (roughly half of the 7 remaining players' eggs = ~3-4 bags)
+- ~13 special eggs (roughly half)
 
 **Raina hides:**
-- Reuben's 18 Red eggs
-- ~63 eggs from other players (the other half of remaining bags)
-- ~11 special eggs (roughly half)
+- Reuben's 15 Blue eggs
+- ~53 eggs from other players (the other half of remaining bags)
+- ~12 special eggs (roughly half)
 
 **Hiding rules of thumb:**
 - Spread each color across the whole park — don't cluster one player's eggs in one zone
-- Easy task eggs (all pink): hide in moderately visible spots
-- Medium task eggs (pink/white): hide at normal difficulty
-- Hard task eggs (pink/purple): tuck into trickier spots
-- Extreme task eggs (all purple): hide in the most creative/challenging spots
+- Easy task eggs (green/lime): hide in moderately visible spots
+- Medium task eggs (green/yellow): hide at normal difficulty
+- Hard task eggs (green/orange): tuck into trickier spots
+- Extreme task eggs (green/red): hide in the most creative/challenging spots
 - Power-up eggs: hide at normal-to-hard difficulty — they're valuable!
 - Keep some eggs at kid-friendly height (in case players bring partners/kids as spectators)
 - Do NOT hide eggs in mud, near water, or anywhere they could get destroyed
@@ -76,53 +76,54 @@ Reuben and Raina arrive **1 hour early** to hide eggs before anyone else shows u
 
 ---
 
-## Player Arrival & Briefing (9:55 AM - 10:15 AM)
+## Player Arrival & Briefing (4:55 PM - 5:15 PM)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 9:55 AM | Players start arriving | All | Hand out baskets/bags, bunny ears if you have them |
-| 10:00 AM | Group welcome | Reuben | "Welcome to Operation: Easter Egg — The Skittelling!" |
-| 10:02 AM | Rules briefing | Reuben | Cover the key rules (keep it under 5 min): |
+| 4:55 PM | Players start arriving | All | Hand out baskets/bags, bunny ears if you have them |
+| 5:00 PM | Group welcome | Reuben | "Welcome to Operation: Easter Egg — The Skittelling!" |
+| 5:02 PM | Rules briefing | Reuben | Cover the key rules (keep it under 5 min): |
 
 ### Rules Briefing Script (Keep It Short!)
 
 1. **Your mission:** Find YOUR color eggs only — plus any two-tone special eggs you spot
 2. **Colors:** Remind everyone of their color (point to the website on your phone if needed)
-3. **Two-tone eggs:** Explain the special egg system — pink/purple combos are tasks, purple-top-with-player-color are power-ups. Anyone can grab these.
-4. **Time limit:** You have **15 minutes** to hunt. When you hear the horn, STOP and come back to base.
+3. **Two-tone eggs:** Explain the special egg system — green-top eggs are tasks, pink-top eggs are power-ups. Anyone can grab these.
+4. **Time limit:** You have **30 minutes** to hunt. When you hear the horn, STOP and scurry to the meeting point.
 5. **Fair play:** No stealing, no re-hiding, no telling others where eggs are
 6. **Boundaries:** Stay within the park — if you can't see base camp, you've gone too far
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 10:10 AM | Answer questions | Reuben | Field any confused looks |
-| 10:12 AM | Countdown | Reuben | "3... 2... 1... HOP TO IT!" |
-| 10:12 AM | Start timer | Raina | Set a 15-minute timer on phone |
+| 5:10 PM | Answer questions | Reuben | Field any confused looks |
+| 5:12 PM | Countdown | Reuben | "3... 2... 1... HOP TO IT!" |
+| 5:12 PM | Start timer | Raina | Set a 30-minute timer on phone |
 
 ---
 
-## The Great Hunt (10:12 AM - 10:27 AM)
+## The Great Hunt (5:12 PM - 5:42 PM)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 10:12 AM | Hunt begins! | All players | Reuben + Raina hunt too (for their own eggs) |
-| 10:22 AM | 5-minute warning | Reuben | Shout or use speaker: "5 MINUTES LEFT!" |
-| 10:25 AM | 2-minute warning | Reuben | "2 MINUTES — START HEADING BACK!" |
-| 10:27 AM | **HORN BLAST** | Raina | Sound air horn / whistle / phone alarm — HUNT IS OVER |
-| 10:27 AM | Everyone returns to base | All | Bring your basket/bag of eggs back |
+| 5:12 PM | Hunt begins! | All players | Reuben + Raina hunt too (for their own eggs) |
+| 5:32 PM | 10-minute warning | Reuben | Shout or use speaker: "10 MINUTES LEFT!" |
+| 5:37 PM | 5-minute warning | Reuben | "5 MINUTES LEFT!" |
+| 5:40 PM | 2-minute warning | Reuben | "2 MINUTES — START HEADING BACK!" |
+| 5:42 PM | **HORN BLAST** | Raina | Sound air horn / whistle / phone alarm — HUNT IS OVER |
+| 5:42 PM | Everyone returns to meeting point | All | Bring your basket/bag of eggs back |
 
 ---
 
-## The Bunny Bazaar — Trading Phase (10:30 AM - 10:35 AM)
+## The Bunny Bazaar — Trading Phase (5:45 PM - 5:50 PM)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 10:30 AM | Explain trading rules | Reuben | "You can trade TASK eggs only (two-tone eggs). You have 5 minutes. No peeking at card contents before trading." |
-| 10:30 AM | Trading begins | All | Players negotiate and swap task eggs |
-| 10:35 AM | Trading ends | Reuben | "Bazaar is CLOSED!" |
+| 5:45 PM | Explain trading rules | Reuben | "You can trade TASK eggs only (green-top eggs). You have 5 minutes. No peeking at card contents before trading." |
+| 5:45 PM | Trading begins | All | Players negotiate and swap task eggs |
+| 5:50 PM | Trading ends | Reuben | "Bazaar is CLOSED!" |
 
 **Trading rules:**
-- Only **task eggs** (pink/purple two-tone) can be traded
+- Only **task eggs** (green-top two-tone) can be traded
 - Power-up eggs CANNOT be traded
 - Player's own color eggs CANNOT be traded
 - No peeking at the card inside before trading — it's a blind swap
@@ -130,13 +131,13 @@ Reuben and Raina arrive **1 hour early** to hide eggs before anyone else shows u
 
 ---
 
-## Power-Up Reveal (10:35 AM - 10:40 AM)
+## Power-Up Reveal (5:50 PM - 5:55 PM)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 10:35 AM | Power-up reveal | Reuben | "If you found a power-up egg (purple top, player-color bottom), open it NOW!" |
-| 10:36 AM | Players read power-ups | All | Each player with a power-up reads it aloud |
-| 10:37 AM | Apply power-ups | Reuben | Help resolve any power-up effects: |
+| 5:50 PM | Power-up reveal | Reuben | "If you found a power-up egg (pink top, colored bottom), open it NOW!" |
+| 5:51 PM | Players read power-ups | All | Each player with a power-up reads it aloud |
+| 5:52 PM | Apply power-ups | Reuben | Help resolve any power-up effects: |
 
 **Power-up resolution order:**
 1. **Task Dodge** — Player discards one of their task eggs (put it back in the spare pile)
@@ -146,41 +147,41 @@ Reuben and Raina arrive **1 hour early** to hide eggs before anyone else shows u
 
 ---
 
-## Egg Cracking & Counting (10:40 AM - 10:55 AM)
+## Egg Cracking & Counting (5:55 PM - 6:10 PM)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 10:40 AM | Crack open player eggs | All | Everyone opens their own-color eggs and counts Skittles |
-| 10:45 AM | Record base scores | Reuben | Write down each player's Skittle count on the notepad |
-| 10:47 AM | Apply scoring power-ups | Reuben | **Double Down:** Identify the player's 3 highest-value eggs, double those Skittles. **Bonus Haul:** Add 5 bonus Skittles. |
-| 10:50 AM | Finalize base scores | Reuben | Announce base scores (before task bonuses) |
+| 5:55 PM | Crack open player eggs | All | Everyone opens their own-color eggs and counts Skittles |
+| 6:00 PM | Record base scores | Reuben | Write down each player's Skittle count on the notepad |
+| 6:02 PM | Apply scoring power-ups | Reuben | **Double Down:** Double Skittles from 3 eggs you choose. **Bonus Haul:** Add 5 bonus Skittles. |
+| 6:05 PM | Finalize base scores | Reuben | Announce base scores (before task bonuses) |
 
 **Scoring on notepad:**
 
 ```
 Player          | Eggs Found | Base Skittles | Power-Up Bonus | Pre-Task Total
 ----------------|------------|---------------|----------------|---------------
-Reuben          |     /18    |               |                |
-Raina           |     /18    |               |                |
-Swathy          |     /18    |               |                |
-Jason           |     /18    |               |                |
-Nikith          |     /18    |               |                |
-Shawn           |     /18    |               |                |
-Shua            |     /18    |               |                |
-Rutuja          |     /18    |               |                |
-Shantanu        |     /18    |               |                |
+Reuben          |     /15    |               |                |
+Raina           |     /15    |               |                |
+Swathy          |     /15    |               |                |
+Jason           |     /15    |               |                |
+Nikith          |     /15    |               |                |
+Shaun           |     /15    |               |                |
+Shua            |     /15    |               |                |
+Rutuja          |     /15    |               |                |
+Shantanu        |     /15    |               |                |
 ```
 
 ---
 
-## Task Egg Time (10:55 AM - 11:30 AM)
+## Task Egg Time (6:10 PM - 6:40 PM)
 
 The fun part! Players who have task eggs open them and perform the challenges.
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 10:55 AM | Explain task rules | Reuben | "Open your task eggs one at a time. Read the card aloud. Complete the challenge and the group votes pass/fail. Pass = bonus Skittles!" |
-| 10:57 AM | Tasks begin | All | Go around the circle, one task at a time |
+| 6:10 PM | Explain task rules | Reuben | "Open your task eggs one at a time. Read the card aloud. Complete the challenge and the group votes pass/fail. Pass = bonus Skittles!" |
+| 6:12 PM | Tasks begin | All | Go around the circle, one task at a time |
 
 **Task execution flow:**
 1. Player opens a task egg
@@ -191,38 +192,38 @@ The fun part! Players who have task eggs open them and perform the challenges.
 6. Record bonus on scorecard
 7. Next player / next task
 
-**Estimated time per task:** ~2 minutes (17 tasks x 2 min = ~34 min, but some will be faster)
+**Estimated time per task:** ~2 minutes (15 tasks x 2 min = ~30 min, but some will be faster)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| ~11:25 AM | All tasks complete | Reuben | Tally final scores |
-| 11:30 AM | **Announce final scores** | Reuben | Dramatic countdown from lowest to highest! |
+| ~6:35 PM | All tasks complete | Reuben | Tally final scores |
+| 6:40 PM | **Announce final scores** | Reuben | Dramatic countdown from lowest to highest! |
 
 ---
 
-## Awards Ceremony (11:30 AM - 11:40 AM)
+## Awards Ceremony (6:40 PM - 6:50 PM)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 11:30 AM | Announce winner | Reuben | "The champion bunny of 2026 is..." (pause for drama) |
-| 11:32 AM | Award chocolate bunny | Reuben | Present the trophy chocolate bunny to the winner |
-| 11:35 AM | Consolation prizes | Raina | Hand out Reese's / M&M carrot-shaped prizes to EVERYONE (including winner) |
-| 11:37 AM | Group photo | Anyone | Get a group shot with prizes, bunny ears, and egg carnage |
-| 11:40 AM | Let players eat their Skittles! | All | The real prize |
+| 6:40 PM | Announce winner | Reuben | "The champion bunny of 2026 is..." (pause for drama) |
+| 6:42 PM | Award chocolate bunny | Reuben | Present the trophy chocolate bunny to the winner |
+| 6:45 PM | Consolation prizes | Raina | Hand out Reese's / M&M carrot-shaped prizes to EVERYONE (including winner) |
+| 6:47 PM | Group photo | Anyone | Get a group shot with prizes, bunny ears, and egg carnage |
+| 6:50 PM | Let players eat their Skittles! | All | The real prize |
 
 **Tiebreaker:** If two players have the same final Skittle count, the player who found MORE total eggs wins. If still tied, sudden-death rock-paper-scissors.
 
 ---
 
-## Hangout & Cleanup (11:40 AM - 1:00 PM)
+## Hangout & Cleanup (6:50 PM - 7:00 PM+)
 
 | Time | Task | Owner | Details |
 |------|------|-------|---------|
-| 11:40 AM | Free time | All | Hang out, eat snacks, take photos, relive the highlights |
-| 12:30 PM | Start cleanup | Reuben + Raina | Collect all empty egg shells, trash, stray eggs |
-| 12:40 PM | Sweep the park | Both | Walk the hiding zones to pick up any unfound eggs (collect and crack open — add to "unclaimed" pile) |
-| 12:50 PM | Final trash pickup | Both | Leave the park cleaner than you found it |
-| 1:00 PM | Depart | All | "Same time next year?" |
+| 6:50 PM | Free time | All | Hang out, eat snacks, take photos, relive the highlights |
+| 6:55 PM | Start cleanup | Reuben + Raina | Collect all empty egg shells, trash, stray eggs |
+| 7:00 PM | Sweep the park | Both | Walk the hiding zones to pick up any unfound eggs (collect and crack open — add to "unclaimed" pile) |
+| 7:05 PM | Final trash pickup | Both | Leave the park cleaner than you found it |
+| 7:10 PM | Depart | All | "Same time next year?" |
 
 ### Cleanup Checklist
 
@@ -239,11 +240,11 @@ The fun part! Players who have task eggs open them and perform the challenges.
 
 | Scenario | Plan |
 |----------|------|
-| **Rain** | Check forecast morning-of. Light rain = proceed with jackets. Heavy rain = postpone to April 12 (same time). Text group by 8:30 AM. |
+| **Rain** | Check forecast day-of. Light rain = proceed with jackets. Heavy rain = postpone (text group early). |
 | **Someone can't make it** | Their eggs stay hidden. At cleanup, collect unfound eggs. No score adjustment needed. |
 | **Not enough eggs found** | If a player finds very few eggs, Reuben can give hints for the last few minutes. The hunt should be fun, not frustrating. |
 | **Egg shells crack during transport** | Use spare shells (16 extras). Transfer Skittles/cards to new shells. |
-| **Skittle shortage** | Unlikely (buying 300+ for 270 needed), but if it happens, reduce 3-Skittle eggs to 2-Skittle eggs. |
+| **Skittle shortage** | Unlikely (buying 400 for 225 needed), but if it happens, reduce 3-Skittle eggs to 2-Skittle eggs. |
 | **Player dispute** | Reuben is final arbiter. Rule of fun: if it makes the game more fun, allow it. |
 | **Allergies** | Skittles are generally allergen-friendly (no nuts, no dairy), but check with players in advance if anyone has specific candy sensitivities. |
 
@@ -255,18 +256,18 @@ Print or screenshot this for your pocket on game day:
 
 ```
 OPERATION: EASTER EGG — THE SKITTELLING!
-April 5, 2026 | Garibaldi Park | 10 AM
+March 29, 2026 | Garibaldi Park | 5 PM
 
- 9:00  Arrive, set up, hide eggs
-10:00  Players arrive, rules briefing
-10:12  HUNT BEGINS (15 min)
-10:27  HORN — hunt over!
-10:30  Bunny Bazaar (5 min trading)
-10:35  Power-up reveal
-10:40  Crack eggs, count Skittles
-10:55  Task challenges
-11:30  Winner announced, prizes
-11:40  Hang out
-12:30  Cleanup
- 1:00  Done!
+ 4:00  Arrive, set up, hide eggs
+ 5:00  Players arrive, rules briefing
+ 5:12  HUNT BEGINS (30 min)
+ 5:42  HORN — hunt over!
+ 5:45  Bunny Bazaar (5 min trading)
+ 5:50  Power-up reveal
+ 5:55  Crack eggs, count Skittles
+ 6:10  Task challenges
+ 6:40  Winner announced, prizes
+ 6:50  Hang out
+ 7:00  Cleanup
+ 7:10  Done!
 ```

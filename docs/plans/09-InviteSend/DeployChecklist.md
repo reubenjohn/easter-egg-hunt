@@ -33,17 +33,19 @@ If the workflow failed:
 2. Fix the issue locally, commit, push again
 3. Re-check until green
 
-## 3. Verify Live Site — All 3 Pages
+## 3. Verify Live Site — All 4 Pages
 
 Open each page and confirm it loads fully:
 
 | Page | URL | What to Check |
 |------|-----|---------------|
 | Home | https://reubenjohn.github.io/easter-egg-hunt/ | Hero section, player cards, rules, event details |
+| Prep | https://reubenjohn.github.io/easter-egg-hunt/prep.html | Egg prep checklist, stats, assembly instructions |
 | Scoring | https://reubenjohn.github.io/easter-egg-hunt/scoring.html | Scoring UI renders, interactive elements work |
 | Task Cards | https://reubenjohn.github.io/easter-egg-hunt/tasks-print.html | Printable layout, all task cards visible |
 
 - [ ] Home page loads completely
+- [ ] Prep page loads completely
 - [ ] Scoring page loads completely
 - [ ] Task Cards page loads completely
 - [ ] No 404 errors on any page
@@ -55,8 +57,8 @@ Open each page and confirm it loads fully:
 On the home page, verify:
 
 - [ ] Event name: "Operation: Easter Egg — The Skittelling!"
-- [ ] Date: Sunday, April 5, 2026
-- [ ] Time: 10:00 AM - 1:00 PM CT
+- [ ] Date: Sunday, March 29, 2026
+- [ ] Time: 5:00 PM – 7:00 PM CT
 - [ ] Venue: Garibaldi (Giuseppe) Park - 1520 W Polk St, Chicago IL 60607
 - [ ] All 9 players listed with correct names
 - [ ] Player photos/avatars load without broken images
@@ -92,7 +94,7 @@ uv run pytest tests/ -v
 | Check | Status |
 |-------|--------|
 | Code pushed & Actions green | |
-| All 3 pages load on desktop | |
+| All 4 pages load on desktop | |
 | Content is accurate | |
 | Mobile looks good | |
 | Automated tests pass | |

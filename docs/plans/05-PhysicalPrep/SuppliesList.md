@@ -10,21 +10,21 @@ Complete shopping list for Operation: Easter Egg — The Skittelling! Buy everyt
 
 | Item | Quantity | Notes | Est. Cost |
 |------|----------|-------|-----------|
-| Plastic eggs — Red | 18 | Reuben's color | — |
-| Plastic eggs — Hot Pink | 18 | Raina's color | — |
-| Plastic eggs — Light Pink | 18 | Swathy's color | — |
-| Plastic eggs — Blue | 18 | Jason's color | — |
-| Plastic eggs — Sky Blue / Light Blue | 18 | Nikith's color | — |
-| Plastic eggs — Neon Green / Lime | 18 | Shawn's color | — |
-| Plastic eggs — Dark Green | 18 | Shua's color | — |
-| Plastic eggs — Yellow | 18 | Rutuja's color | — |
-| Plastic eggs — Purple | 18 | Shantanu's color | — |
-| Plastic eggs — Pink/Purple two-tone | 38 | Special eggs (task + power-up). Need pink top/pink bottom, pink top/white bottom, pink top/purple bottom, all purple, and purple top/player-color bottom combos. May need to mix-and-match halves from different packs. | — |
-| **Total eggs** | **200** | Buy 220+ to account for cracks and mismatched halves | **$15-25** |
+| Plastic eggs — Blue | 15 | Reuben's color | — |
+| Plastic eggs — Lime Green | 15 | Raina's color | — |
+| Plastic eggs — Purple | 15 | Swathy's color | — |
+| Plastic eggs — Yellow | 15 | Jason's color | — |
+| Plastic eggs — Sky Blue | 15 | Nikith's color | — |
+| Plastic eggs — Red | 15 | Shaun's color | — |
+| Plastic eggs — Hot Pink | 15 | Shua's color | — |
+| Plastic eggs — Light Pink | 15 | Rutuja's color | — |
+| Plastic eggs — Orange | 15 | Shantanu's color | — |
+| Plastic eggs — Green (for task tops) + extras | 25 | Special egg shells. Green tops for tasks, pink tops for power-ups. Mix-and-match halves for two-tone combos. | — |
+| **Total eggs** | **160** | Egg kit has 200 (10 colors × 20), leaving 40 spares | **$15-25** |
 
 **Shopping tips for eggs:**
 - Bulk packs of 48-count single-color eggs are cheapest (Dollar Tree, Walmart, Amazon)
-- For two-tone special eggs: buy extra pink and purple eggs and swap halves to create the combos
+- For two-tone special eggs: swap halves from different colors to create green-top (task) and pink-top (power-up) combos
 - If exact colors aren't available, pick the closest match and note any color substitutions
 - Buy early — egg supplies sell out fast near Easter
 
@@ -34,7 +34,7 @@ Complete shopping list for Operation: Easter Egg — The Skittelling! Buy everyt
 
 | Item | Quantity | Notes | Est. Cost |
 |------|----------|-------|-----------|
-| Skittles Original | 1 x 14oz bag (or larger) | Need ~270 individual Skittles. A 14oz bag has ~400+. Buy a bigger bag if you want leftover Skittles for the event. | $4-6 |
+| Skittles Original | 1 x 14oz bag (or larger) | Need ~225 individual Skittles for eggs. A 14oz bag has ~400+. Buy a bigger bag if you want leftover Skittles for the event. | $4-6 |
 | Skittles (backup bag) | 1 x small bag | Insurance for spills, miscounts, or if you want extra for a candy bowl at the event | $2-3 |
 | **Total candy** | | | **$6-9** |
 
@@ -67,7 +67,7 @@ Complete shopping list for Operation: Easter Egg — The Skittelling! Buy everyt
 
 | Item | Quantity | Notes | Est. Cost |
 |------|----------|-------|-----------|
-| Printed task/power-up cards | 2 pages | Print from `tasks-print.html` — 22 cards total (17 task + 5 power-up), fits on 2 pages at 12 cards/page | $0-1 |
+| Printed task/power-up cards | 3 pages | Print from `tasks-print.html` — 25 cards total (15 task + 10 power-up), fits on 3 pages at 12 cards/page | $0-1 |
 | Scissors | 1 pair | For cutting card slips | $0 (already own) |
 | **Total printing** | | | **$0-1** |
 
@@ -79,7 +79,7 @@ Complete shopping list for Operation: Easter Egg — The Skittelling! Buy everyt
 
 | Item | Quantity | Notes | Est. Cost |
 |------|----------|-------|-----------|
-| Phone (fully charged) | 1 | Timer for the 15-minute hunt, photos, scorekeeper | $0 |
+| Phone (fully charged) | 1 | Timer for the 30-minute hunt, photos, scorekeeper | $0 |
 | Portable speaker (optional) | 1 | Play music, sound a horn for start/stop | $0 (already own) |
 | Air horn or whistle | 1 | Signal start and end of hunt — or use phone | $1-3 |
 | Pen + notepad | 1 each | For scoring / tallying Skittles | $0 (already own) |
