@@ -346,6 +346,63 @@ section {
     animation: fadeInUp 1s ease 0.8s both;
 }
 
+.hero-date-text {
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.hero-date-time {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--brown-soft);
+    margin-bottom: 0.8rem;
+}
+
+.hero-calendar-buttons {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-calendar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.45rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+}
+
+.btn-calendar:hover {
+    transform: translateY(-2px);
+}
+
+.btn-google-cal {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+    box-shadow: 0 3px 10px rgba(66, 133, 244, 0.35);
+}
+
+.btn-google-cal:hover {
+    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.5);
+}
+
+.btn-ics-cal {
+    background: linear-gradient(135deg, #a259ff, #e040fb);
+    color: white;
+    box-shadow: 0 3px 10px rgba(162, 89, 255, 0.35);
+}
+
+.btn-ics-cal:hover {
+    box-shadow: 0 5px 15px rgba(162, 89, 255, 0.5);
+}
+
 .hero-scroll-hint {
     margin-top: 3rem;
     animation: fadeInUp 1s ease 1.2s both;

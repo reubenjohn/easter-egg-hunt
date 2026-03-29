@@ -186,7 +186,59 @@
         document.getElementById('heroTitle').innerHTML =
             cfg.event.title + ' <span class="accent">' + cfg.event.subtitle + '</span>';
         document.getElementById('heroInvited').textContent = cfg.event.tagline;
-        document.getElementById('heroDate').innerHTML = cfg.event.date;
+        // ── Hero Date + Calendar Buttons ──
+        var heroDate = document.getElementById('heroDate');
+        var calStart = cfg.event.startISO.replace(/[-:]/g, '');
+        var calEnd = cfg.event.endISO.replace(/[-:]/g, '');
+        var calTitle = encodeURIComponent(cfg.event.title + ' — ' + cfg.event.subtitle);
+        var calLocation = encodeURIComponent(cfg.venue.name + ', ' + cfg.venue.address);
+        var websiteUrl = 'https://reubenjohn.github.io/easter-egg-hunt/';
+        var calDetails = encodeURIComponent(cfg.event.tagline + '\n\n' + websiteUrl + '\n\nDirections: ' + cfg.venue.directionsUrl);
+        var googleUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+            + '&text=' + calTitle
+            + '&dates=' + calStart + '/' + calEnd
+            + '&ctz=' + cfg.event.timezone
+            + '&location=' + calLocation
+            + '&details=' + calDetails;
+
+        heroDate.innerHTML =
+            '<div class="hero-date-text">' + cfg.event.date + '</div>' +
+            '<div class="hero-date-time">' + cfg.event.timeRange + '</div>' +
+            '<div class="hero-calendar-buttons">' +
+                '<a href="' + googleUrl + '" target="_blank" rel="noopener noreferrer" class="btn btn-calendar btn-google-cal">' +
+                    '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.5 3h-1V1.5a.5.5 0 00-1 0V3h-11V1.5a.5.5 0 00-1 0V3h-1A2.5 2.5 0 002 5.5v14A2.5 2.5 0 004.5 22h15a2.5 2.5 0 002.5-2.5v-14A2.5 2.5 0 0019.5 3zM20 19.5a.5.5 0 01-.5.5h-15a.5.5 0 01-.5-.5V9h16v10.5zM20 7H4V5.5a.5.5 0 01.5-.5h15a.5.5 0 01.5.5V7z"/></svg>' +
+                    ' Google Calendar' +
+                '</a>' +
+                '<a href="#" id="icsDownload" class="btn btn-calendar btn-ics-cal">' +
+                    '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.5 3h-1V1.5a.5.5 0 00-1 0V3h-11V1.5a.5.5 0 00-1 0V3h-1A2.5 2.5 0 002 5.5v14A2.5 2.5 0 004.5 22h15a2.5 2.5 0 002.5-2.5v-14A2.5 2.5 0 0019.5 3zM20 19.5a.5.5 0 01-.5.5h-15a.5.5 0 01-.5-.5V9h16v10.5zM20 7H4V5.5a.5.5 0 01.5-.5h15a.5.5 0 01.5.5V7z"/><path d="M12 11l-4 4h2.5v4h3v-4H16z"/></svg>' +
+                    ' Apple / Outlook' +
+                '</a>' +
+            '</div>';
+
+        // ICS file download
+        document.getElementById('icsDownload').addEventListener('click', function(e) {
+            e.preventDefault();
+            var ics = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//R&R//Easter Egg Hunt//EN',
+                'BEGIN:VEVENT',
+                'DTSTART;TZID=' + cfg.event.timezone + ':' + calStart,
+                'DTEND;TZID=' + cfg.event.timezone + ':' + calEnd,
+                'SUMMARY:' + cfg.event.title + ' — ' + cfg.event.subtitle,
+                'LOCATION:' + cfg.venue.name + '\\, ' + cfg.venue.address,
+                'DESCRIPTION:' + cfg.event.tagline + '\\n\\n' + websiteUrl + '\\n\\nDirections: ' + cfg.venue.directionsUrl,
+                'URL:' + websiteUrl,
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+            var blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+            var link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'easter-egg-hunt.ics';
+            link.click();
+            URL.revokeObjectURL(link.href);
+        });
 
         // ── Location ──
         var locationCard = document.getElementById('locationCard');
@@ -232,13 +284,16 @@
 
         // ── Special Eggs ──
         var specialContainer = document.getElementById('specialEggsContainer');
+        var playerColors = cfg.players.map(function (p) { return p.color; });
+        var rainbowGradient = 'linear-gradient(90deg, ' + playerColors.join(', ') + ')';
         cfg.specialEggs.forEach(function (egg) {
+            var bottomBg = egg.bottomColor === 'rainbow' ? rainbowGradient : egg.bottomColor;
             var card = document.createElement('div');
             card.className = 'special-egg-card reveal';
             card.innerHTML =
                 '<div class="two-tone-egg">' +
                     '<div class="top" style="background: ' + egg.topColor + ';"></div>' +
-                    '<div class="bottom" style="background: ' + egg.bottomColor + ';"></div>' +
+                    '<div class="bottom" style="background: ' + bottomBg + ';"></div>' +
                 '</div>' +
                 '<div>' +
                     '<div class="special-egg-label">' + egg.label + '</div>' +
