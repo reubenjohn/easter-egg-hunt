@@ -115,14 +115,16 @@
         <div class="section-inner">
             <div class="section-divider reveal">&#129370; &#10024; &#129370;</div>
             <h2 class="section-title reveal">The Special Eggs Guide</h2>
-            <p class="section-subtitle reveal">Two-tone eggs hold secret tasks &mdash; and every bunny can grab them!
-            </p>
+            <p class="section-subtitle reveal">Two-tone eggs hold secret tasks &amp; power-ups &mdash; every bunny can grab them!</p>
 
-            <div class="special-eggs-container" id="specialEggsContainer"></div>
+            <h3 class="special-group-title reveal">&#127793; Task Eggs <span class="special-group-hint">(Green top + colored bottom)</span></h3>
+            <div class="special-eggs-grid grid-4" id="taskEggsGrid"></div>
+
+            <h3 class="special-group-title reveal" style="margin-top:2.5rem;">&#9889; Power-Up Eggs <span class="special-group-hint">(Pink top + colored bottom)</span></h3>
+            <div class="special-eggs-grid grid-5" id="powerupEggsGrid"></div>
 
             <div class="special-eggs-note reveal">
-                &#128048; Remember: Two-tone eggs are free for ALL hunters &mdash; no assigned color needed! Grab every
-                one you see!
+                &#128048; Two-tone eggs are free for ALL hunters &mdash; no assigned color needed! Grab every one you see!
             </div>
         </div>
     </section>
@@ -264,7 +266,7 @@
                 '<div class="player-egg-frame"><img src="' + p.photo + '" alt="' + p.name + '"></div>' +
                 '<div class="player-name">' + p.name + '</div>' +
                 '<span class="player-color-badge' + (p.lightText ? ' light-text' : '') + '">' + p.title + '</span>' +
-                '<span class="player-color-subtitle">' + p.colorName + '</span>';
+                '<span class="player-color-subtitle">' + p.colorName + ' &mdash; ' + cfg.eggsPerPlayer + ' eggs</span>';
             grid.appendChild(card);
         });
 
@@ -282,24 +284,60 @@
             stepsContainer.appendChild(card);
         });
 
-        // ── Special Eggs ──
-        var specialContainer = document.getElementById('specialEggsContainer');
-        var playerColors = cfg.players.map(function (p) { return p.color; });
-        var rainbowGradient = 'linear-gradient(90deg, ' + playerColors.join(', ') + ')';
-        cfg.specialEggs.forEach(function (egg) {
-            var bottomBg = egg.bottomColor === 'rainbow' ? rainbowGradient : egg.bottomColor;
+        // ── Special Eggs Guide (grid) ──
+        var kitColorMap = {};
+        cfg.eggKit.colors.forEach(function (c) { kitColorMap[c.id] = c; });
+        var specialTopHex = kitColorMap[cfg.eggKit.specialColor] ? kitColorMap[cfg.eggKit.specialColor].hex : '#2e7d32';
+        var difficulties = ['easy', 'medium', 'hard', 'extreme'];
+        var diffLabels = { easy: 'Easy', medium: 'Medium', hard: 'Hard', extreme: 'Extreme' };
+        var diffIcons = { easy: '\ud83c\udf31', medium: '\ud83c\udf38', hard: '\ud83d\udd25', extreme: '\ud83d\udc80' };
+
+        function skittleDots(n) {
+            var dots = '';
+            for (var i = 0; i < n; i++) dots += '\ud83d\udfe2';
+            return '<span class="skittle-dots">' + dots + '</span>';
+        }
+
+        // Task eggs grid
+        var taskGrid = document.getElementById('taskEggsGrid');
+        difficulties.forEach(function (d) {
+            if (!cfg.tasks[d]) return;
+            var t = cfg.tasks[d];
+            var count = t.count || t.items.length;
+            var bottomObj = t.bottomColor ? kitColorMap[t.bottomColor] : null;
+            var bottomHex = bottomObj ? bottomObj.hex : specialTopHex;
             var card = document.createElement('div');
-            card.className = 'special-egg-card reveal';
+            card.className = 'special-egg-grid-card reveal';
             card.innerHTML =
                 '<div class="two-tone-egg">' +
-                    '<div class="top" style="background: ' + egg.topColor + ';"></div>' +
-                    '<div class="bottom" style="background: ' + bottomBg + ';"></div>' +
+                    '<div class="top" style="background:' + specialTopHex + ';"></div>' +
+                    '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
                 '</div>' +
-                '<div>' +
-                    '<div class="special-egg-label">' + egg.label + '</div>' +
-                    '<div class="special-egg-desc">' + egg.desc + '</div>' +
-                '</div>';
-            specialContainer.appendChild(card);
+                '<div class="special-egg-label">' + diffIcons[d] + ' ' + diffLabels[d] + '</div>' +
+                '<div class="special-egg-count">&times;' + count + '</div>' +
+                '<div class="special-egg-reward">' + skittleDots(t.reward) + '</div>';
+            taskGrid.appendChild(card);
+        });
+
+        // Power-up eggs grid
+        var puGrid = document.getElementById('powerupEggsGrid');
+        var puTopColors = cfg.powerupEggs ? cfg.powerupEggs.topColors : [];
+        var puTopHex = puTopColors.length > 0 && kitColorMap[puTopColors[0]] ? kitColorMap[puTopColors[0]].hex : '#ec407a';
+        cfg.powerups.forEach(function (pu) {
+            var count = pu.count || 1;
+            var bottomObj = pu.bottomColor ? kitColorMap[pu.bottomColor] : null;
+            var bottomHex = bottomObj ? bottomObj.hex : '#999';
+            var card = document.createElement('div');
+            card.className = 'special-egg-grid-card reveal';
+            card.innerHTML =
+                '<div class="two-tone-egg">' +
+                    '<div class="top" style="background:' + puTopHex + ';"></div>' +
+                    '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
+                '</div>' +
+                '<div class="special-egg-label">' + pu.icon + ' ' + pu.name + '</div>' +
+                '<div class="special-egg-count">&times;' + count + '</div>' +
+                '<div class="special-egg-reward">' + (pu.scoreBonus > 0 ? skittleDots(pu.scoreBonus) : '<span class="special-effect-badge">Special</span>') + '</div>';
+            puGrid.appendChild(card);
         });
 
         // ── Rules ──

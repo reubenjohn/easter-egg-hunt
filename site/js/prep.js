@@ -49,9 +49,17 @@ CONFIG.ready(function (cfg) {
         bottomsUsed[p.eggColor] = (bottomsUsed[p.eggColor] || 0) + eggsPerPlayer;
     });
 
-    // Task eggs (fully green) consume one top + one bottom each
-    topsUsed[kit.specialColor] = (topsUsed[kit.specialColor] || 0) + totalTaskEggs;
-    bottomsUsed[kit.specialColor] = (bottomsUsed[kit.specialColor] || 0) + totalTaskEggs;
+    // Task eggs: green top + colored bottom per difficulty
+    difficulties.forEach(function (d) {
+        if (!tasks[d]) return;
+        var count = tasks[d].count || tasks[d].items.length;
+        topsUsed[kit.specialColor] = (topsUsed[kit.specialColor] || 0) + count;
+        if (tasks[d].bottomColor) {
+            bottomsUsed[tasks[d].bottomColor] = (bottomsUsed[tasks[d].bottomColor] || 0) + count;
+        } else {
+            bottomsUsed[kit.specialColor] = (bottomsUsed[kit.specialColor] || 0) + count;
+        }
+    });
 
     // Power-up eggs: tops from topColors, bottoms from each powerup's bottomColor
     var topColorIds = powerupEggs ? powerupEggs.topColors : [];
@@ -198,15 +206,18 @@ CONFIG.ready(function (cfg) {
     var diffLabels = { easy: 'Easy Task', medium: 'Medium Task', hard: 'Hard Task', extreme: 'Extreme Task' };
     var diffIcons = { easy: '&#127793;', medium: '&#127800;', hard: '&#128293;', extreme: '&#128128;' };
 
-    // Task eggs (all green)
-    specialTbody += '<tr><td colspan="4" style="font-weight:700;background:#e8f5e9;color:#2e7d32;padding:0.5rem 1rem;">Task Eggs (fully ' + specialColorObj.name + ')</td></tr>';
+    // Task eggs (green top + colored bottom)
+    specialTbody += '<tr><td colspan="4" style="font-weight:700;background:#e8f5e9;color:#2e7d32;padding:0.5rem 1rem;">Task Eggs (' + specialColorObj.name + ' top + colored bottom)</td></tr>';
     difficulties.forEach(function (d) {
         if (!tasks[d]) return;
         var count = tasks[d].count || tasks[d].items.length;
+        var bottomObj = tasks[d].bottomColor ? kitColorMap[tasks[d].bottomColor] : specialColorObj;
+        var bottomHex = bottomObj ? bottomObj.hex : specialColorObj.hex;
+        var bottomName = bottomObj ? bottomObj.name : specialColorObj.name;
         specialTbody +=
             '<tr>' +
-                '<td><div class="special-type-row"><div class="mini-egg" style="background:' + specialColorObj.hex + '"></div>' + diffIcons[d] + ' ' + diffLabels[d] + '</div></td>' +
-                '<td>' + specialColorObj.name + '</td>' +
+                '<td><div class="special-type-row"><div class="mini-egg two-tone-mini" style="background:linear-gradient(180deg, ' + specialColorObj.hex + ' 50%, ' + bottomHex + ' 50%);"></div>' + diffIcons[d] + ' ' + diffLabels[d] + '</div></td>' +
+                '<td>' + specialColorObj.name + ' / ' + bottomName + '</td>' +
                 '<td>' + count + '</td>' +
                 '<td>' + tasks[d].rewardText + '</td>' +
             '</tr>';
@@ -318,6 +329,15 @@ CONFIG.ready(function (cfg) {
         });
         if (puBottoms > 0) usages.push(puBottoms + ' bottoms for power-ups');
 
+        // Check if bottoms used for task eggs
+        var taskBottoms = 0;
+        difficulties.forEach(function (d) {
+            if (tasks[d] && tasks[d].bottomColor === c.id) {
+                taskBottoms += (tasks[d].count || tasks[d].items.length);
+            }
+        });
+        if (taskBottoms > 0) usages.push(taskBottoms + ' bottoms for tasks');
+
         if (usages.length === 0) usages.push('Unassigned');
 
         var spare = c.count - maxHalves;
@@ -384,17 +404,19 @@ CONFIG.ready(function (cfg) {
                 '<p><strong>Pro tip:</strong> Assembly-line style \u2014 one person stuffs while the other bags.</p>'
         },
         {
-            title: 'Stuff Task Eggs',
-            time: '~10 min',
-            body: '<p>Take ' + totalTaskEggs + ' <strong>' + specialColorObj.name + '</strong> eggs. Place the matching task card inside each:</p>' +
+            title: 'Assemble Task Eggs',
+            time: '~15 min',
+            body: '<p>Assemble ' + totalTaskEggs + ' two-tone task eggs (' + specialColorObj.name + ' top + colored bottom):</p>' +
                 '<ul>' +
                 difficulties.map(function (d) {
                     if (!tasks[d]) return '';
                     var count = tasks[d].count || tasks[d].items.length;
-                    return '<li>' + count + ' ' + diffLabels[d] + ' cards</li>';
+                    var bottomObj = tasks[d].bottomColor ? kitColorMap[tasks[d].bottomColor] : specialColorObj;
+                    var bottomName = bottomObj ? bottomObj.name : specialColorObj.name;
+                    return '<li><strong>' + diffLabels[d] + '</strong> (' + count + '): ' + specialColorObj.name + ' top + ' + bottomName + ' bottom</li>';
                 }).join('') +
                 '</ul>' +
-                '<p><strong>Do NOT add Skittles</strong> \u2014 task rewards are given after completion.</p>'
+                '<p>Place the matching task card inside each. <strong>Do NOT add Skittles</strong> \u2014 task rewards are given after completion.</p>'
         },
         {
             title: 'Assemble Power-Up Eggs',

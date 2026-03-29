@@ -971,28 +971,96 @@ section {
     background: linear-gradient(180deg, var(--sky) 0%, var(--pink) 50%, var(--lavender) 100%);
 }
 
+.special-eggs-grid {
+    display: grid;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.special-eggs-grid.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.special-eggs-grid.grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (max-width: 640px) {
+    .special-eggs-grid.grid-4,
+    .special-eggs-grid.grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.special-egg-grid-card {
+    background: white;
+    border-radius: 1.2rem;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 16px var(--shadow);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.special-egg-grid-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px var(--shadow-md);
+}
+
+.special-group-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.3rem;
+    color: var(--brown);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.special-group-hint {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--brown-soft);
+}
+
+.special-egg-count {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--brown);
+    line-height: 1;
+}
+
+.special-egg-reward {
+    min-height: 1.2rem;
+}
+
+.skittle-dots {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.special-effect-badge {
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: var(--lavender);
+    color: #6a1b9a;
+}
+
+/* Legacy list layout (unused, kept for reference) */
 .special-eggs-container {
     max-width: 650px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-}
-
-.special-egg-card {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    background: white;
-    border-radius: 1.2rem;
-    padding: 1.2rem 1.5rem;
-    box-shadow: 0 4px 16px var(--shadow);
-    transition: all 0.3s ease;
-}
-
-.special-egg-card:hover {
-    transform: translateX(6px);
-    box-shadow: 0 6px 24px var(--shadow-md);
 }
 
 .two-tone-egg {

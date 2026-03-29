@@ -15,6 +15,7 @@
 !*.py
 !*.svg
 !*.toml
+!*.sh
 !*.yml
 
 # Top-level config files

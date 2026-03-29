@@ -95,7 +95,7 @@ def test_homepage_steps_section(page, web_server):
 
 
 def test_homepage_special_eggs_section(page, web_server):
-    """Special Eggs Guide renders all egg types from config."""
+    """Special Eggs Guide renders task and power-up egg cards from config."""
     cfg = load_config()
     page.goto(web_server)
     _wait_for_config(page)
@@ -103,8 +103,12 @@ def test_homepage_special_eggs_section(page, web_server):
     page.locator("#special-eggs").scroll_into_view_if_needed()
     page.wait_for_timeout(300)
 
-    egg_cards = page.locator(".special-egg-card")
-    expect(egg_cards).to_have_count(len(cfg["specialEggs"]))
+    # Grid cards: one per task difficulty + one per power-up
+    difficulties = ["easy", "medium", "hard", "extreme"]
+    task_count = sum(1 for d in difficulties if d in cfg["tasks"])
+    powerup_count = len(cfg["powerups"])
+    egg_cards = page.locator(".special-egg-grid-card")
+    expect(egg_cards).to_have_count(task_count + powerup_count)
 
 
 def test_homepage_rules_section(page, web_server):

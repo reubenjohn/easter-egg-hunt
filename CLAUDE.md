@@ -58,6 +58,9 @@ All docs use **hierarchical progressive disclosure** via README.md files:
 git push                             # Deploy site (auto via GitHub Actions)
 uv run pytest tests/ -v              # Run Playwright tests (serves site/ locally, takes screenshots)
 uv run pytest tests/ -v --headed     # Run tests with visible browser
+./scripts/dev-server.sh start        # Start local dev server on port 8826
+./scripts/dev-server.sh stop         # Stop local dev server
+./scripts/dev-server.sh status       # Check if dev server is running
 ```
 
 ## Contributing to CLAUDE.md
