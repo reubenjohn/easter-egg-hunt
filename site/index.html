@@ -355,14 +355,14 @@
 
         // Power-up eggs grid
         var puGrid = document.getElementById('powerupEggsGrid');
-        var puTopColors = cfg.powerupEggs ? cfg.powerupEggs.topColors : [];
-        var puTopHex = puTopColors.length > 0 && kitColorMap[puTopColors[0]] ? kitColorMap[puTopColors[0]].hex : '#ec407a';
         cfg.powerups.forEach(function (pu) {
             var count = pu.count || 1;
+            var puTopColors = pu.topColors || (pu.topColor ? [pu.topColor] : []);
+            var topHex = puTopColors.length > 0 && kitColorMap[puTopColors[0]] ? kitColorMap[puTopColors[0]].hex : '#ec407a';
             var bottomObj = pu.bottomColor ? kitColorMap[pu.bottomColor] : null;
             var bottomHex = bottomObj ? bottomObj.hex : '#999';
             var frontHtml =
-                eggWithBadge(puTopHex, bottomHex, count) +
+                eggWithBadge(topHex, bottomHex, count) +
                 '<div class="special-egg-label">' + pu.icon + ' ' + pu.name + '</div>' +
                 '<div class="special-egg-count">&times;' + count + ' eggs</div>' +
                 '<div class="special-egg-reward">' + (pu.scoreBonus > 0 ? skittleDots(pu.scoreBonus) : '<span class="special-effect-badge">Special</span>') + '</div>';

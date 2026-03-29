@@ -9,7 +9,6 @@ CONFIG.ready(function (cfg) {
     var skittlesCfg = cfg.skittles;
     var tasks = cfg.tasks;
     var powerups = cfg.powerups;
-    var powerupEggs = cfg.powerupEggs;
     var difficulties = ['easy', 'medium', 'hard', 'extreme'];
 
     // ── Kit color lookup ──
@@ -61,14 +60,14 @@ CONFIG.ready(function (cfg) {
         }
     });
 
-    // Power-up eggs: tops from topColors, bottoms from each powerup's bottomColor
-    var topColorIds = powerupEggs ? powerupEggs.topColors : [];
+    // Power-up eggs: tops from each powerup's topColor/topColors, bottoms from bottomColor
     powerups.forEach(function (pu) {
         var count = pu.count || 1;
-        // Distribute tops evenly across topColors
+        // Get top color(s) for this powerup
+        var puTopColors = pu.topColors || (pu.topColor ? [pu.topColor] : []);
         for (var i = 0; i < count; i++) {
-            var topId = topColorIds[i % topColorIds.length];
-            topsUsed[topId] = (topsUsed[topId] || 0) + 1;
+            var topId = puTopColors[i % puTopColors.length];
+            if (topId) topsUsed[topId] = (topsUsed[topId] || 0) + 1;
         }
         // All bottoms come from the powerup's bottomColor
         if (pu.bottomColor) {
@@ -223,24 +222,28 @@ CONFIG.ready(function (cfg) {
             '</tr>';
     });
 
-    // Power-up eggs (two-tone)
-    var topColorNames = topColorIds.map(function (id) { return kitColorMap[id] ? kitColorMap[id].name : id; }).join(' / ');
-    specialTbody += '<tr><td colspan="4" style="font-weight:700;background:#fff3e0;color:#e65100;padding:0.5rem 1rem;">Power-Up Eggs (' + topColorNames + ' top + colored bottom)</td></tr>';
+    // Power-up eggs (two-tone, per-powerup top colors)
+    specialTbody += '<tr><td colspan="4" style="font-weight:700;background:#fff3e0;color:#e65100;padding:0.5rem 1rem;">Power-Up Eggs (pink top + colored bottom)</td></tr>';
     powerups.forEach(function (pu) {
         var count = pu.count || 1;
         var bottomObj = kitColorMap[pu.bottomColor];
         var bottomHex = bottomObj ? bottomObj.hex : '#999';
         var bottomName = bottomObj ? bottomObj.name : pu.bottomColor;
-        var topHexes = topColorIds.map(function (id) { return kitColorMap[id] ? kitColorMap[id].hex : '#999'; });
-        // Show two mini eggs (one per top color)
-        var eggsHtml = topHexes.map(function (topHex) {
-            return '<div class="mini-egg two-tone-mini" style="background:linear-gradient(180deg, ' + topHex + ' 50%, ' + bottomHex + ' 50%);"></div>';
-        }).join('');
+        var puTopColors = pu.topColors || (pu.topColor ? [pu.topColor] : []);
+        // Show one mini egg per distinct top color
+        var eggsHtml = '';
+        for (var i = 0; i < count; i++) {
+            var topId = puTopColors[i % puTopColors.length];
+            var topHex = kitColorMap[topId] ? kitColorMap[topId].hex : '#999';
+            eggsHtml += '<div class="mini-egg two-tone-mini" style="background:linear-gradient(180deg, ' + topHex + ' 50%, ' + bottomHex + ' 50%);"></div>';
+        }
+        var topNames = puTopColors.map(function (id) { return kitColorMap[id] ? kitColorMap[id].name : id; });
+        var topLabel = topNames.length > 1 ? topNames.join(' / ') : topNames[0] || '';
 
         specialTbody +=
             '<tr>' +
                 '<td><div class="special-type-row">' + eggsHtml + ' ' + pu.icon + ' ' + pu.name + '</div></td>' +
-                '<td>' + bottomName + ' bottom</td>' +
+                '<td>' + topLabel + ' top / ' + bottomName + ' bottom</td>' +
                 '<td>' + count + '</td>' +
                 '<td>' + (pu.scoreBonus > 0 ? '+' + pu.scoreBonus + ' Skittles' : 'Special effect') + '</td>' +
             '</tr>';
@@ -320,10 +323,14 @@ CONFIG.ready(function (cfg) {
 
         // Check if tops or bottoms used for power-ups
         var puTops = 0, puBottoms = 0;
-        if (topColorIds.indexOf(c.id) !== -1) {
-            puTops = tUsed - (playerUser ? eggsPerPlayer : 0) - (c.id === kit.specialColor ? totalTaskEggs : 0);
-            if (puTops > 0) usages.push(puTops + ' tops for power-ups');
-        }
+        powerups.forEach(function (pu) {
+            var puTopColors = pu.topColors || (pu.topColor ? [pu.topColor] : []);
+            var puCount = pu.count || 1;
+            for (var j = 0; j < puCount; j++) {
+                if (puTopColors[j % puTopColors.length] === c.id) puTops++;
+            }
+        });
+        if (puTops > 0) usages.push(puTops + ' tops for power-ups');
         powerups.forEach(function (pu) {
             if (pu.bottomColor === c.id) puBottoms += (pu.count || 1);
         });
@@ -374,7 +381,8 @@ CONFIG.ready(function (cfg) {
         var count = pu.count || 1;
         var bottomObj = kitColorMap[pu.bottomColor];
         var bottomName = bottomObj ? bottomObj.name : pu.bottomColor;
-        var topNames = topColorIds.map(function (id) { return kitColorMap[id] ? kitColorMap[id].name : id; });
+        var puTopColors = pu.topColors || (pu.topColor ? [pu.topColor] : []);
+        var topNames = puTopColors.map(function (id) { return kitColorMap[id] ? kitColorMap[id].name : id; });
         puAssemblyHtml += '<li><strong>' + pu.icon + ' ' + pu.name + '</strong> (' + count + '): ' +
             topNames.join(' or ') + ' top + ' + bottomName + ' bottom</li>';
     });
