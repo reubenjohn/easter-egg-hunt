@@ -13,36 +13,6 @@ h1, h2, h3, h4 {
     line-height: 1.2;
 }
 
-/* ===== NAV ===== */
-.prep-nav {
-    display: flex;
-    justify-content: center;
-    gap: 0.25rem;
-    background: #5d4037;
-    padding: 0.6rem 1rem;
-    flex-wrap: wrap;
-}
-
-.prep-nav a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.85rem;
-    padding: 0.35rem 1rem;
-    border-radius: 2rem;
-    transition: all 0.2s ease;
-}
-
-.prep-nav a:hover {
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-}
-
-.prep-nav a.active {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-}
-
 /* ===== HEADER ===== */
 .prep-header {
     background: linear-gradient(135deg, #fce4ec 0%, #e8d5f5 50%, #e8f5e9 100%);
