@@ -48,6 +48,10 @@ All docs use **hierarchical progressive disclosure** via README.md files:
 - **Deployment:** Auto-deploy on push to master via `.github/workflows/pages.yml`
 - **Testing:** pytest-playwright via uv (pattern from `~/workspace/theact`)
 
+## MCP Servers
+
+- **Playwright MCP** (`.mcp.json`): Browser automation via `@playwright/mcp`. Provides tools like `browser_navigate`, `browser_snapshot`, `browser_take_screenshot`, etc. Runs headless Chromium. Use for interactive site debugging. For automated test suites, use `uv run pytest` instead.
+
 ## Commands
 
 ```bash

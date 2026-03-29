@@ -292,83 +292,6 @@ section {
     75% { transform: translateY(-10px) rotate(5deg); }
 }
 
-/* Cracked Eggs with Player Photos */
-.cracked-eggs-row {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin: 1.5rem auto 1rem;
-    max-width: 700px;
-}
-
-.cracked-egg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 64px;
-    animation: crackPop 0.6s ease-out both;
-    animation-delay: var(--delay, 0s);
-}
-
-@keyframes crackPop {
-    0% { transform: scale(0) rotate(-10deg); opacity: 0; }
-    60% { transform: scale(1.15) rotate(3deg); opacity: 1; }
-    100% { transform: scale(1) rotate(0deg); opacity: 1; }
-}
-
-.cracked-shell-top {
-    width: 52px;
-    height: 18px;
-    background: var(--egg-color);
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-    position: relative;
-    z-index: 1;
-    /* Jagged bottom edge */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 85% 100%, 70% 55%, 55% 95%, 40% 50%, 25% 90%, 10% 55%, 0% 80%);
-    box-shadow: inset 0 -2px 4px rgba(0,0,0,0.1);
-}
-
-.cracked-photo {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 2.5px solid var(--egg-color);
-    margin: -4px 0 -4px;
-    position: relative;
-    z-index: 2;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-
-.cracked-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.cracked-shell-bottom {
-    width: 52px;
-    height: 20px;
-    background: var(--egg-color);
-    border-radius: 0 0 50% 50% / 0 0 100% 100%;
-    position: relative;
-    z-index: 1;
-    /* Jagged top edge */
-    clip-path: polygon(0% 40%, 12% 0%, 25% 50%, 40% 5%, 55% 45%, 70% 0%, 85% 40%, 100% 10%, 100% 100%, 0% 100%);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.cracked-name {
-    font-family: 'Baloo 2', cursive;
-    font-size: 0.65rem;
-    font-weight: 600;
-    color: #fff;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
-    margin-top: 2px;
-    white-space: nowrap;
-}
 
 .hero-rr {
     display: inline-block;
@@ -572,8 +495,8 @@ section {
 }
 
 .player-egg-frame {
-    width: 80px;
-    height: 100px;
+    width: 90px;
+    height: 120px;
     margin: 0 auto 0.8rem;
     position: relative;
     display: flex;
@@ -583,13 +506,64 @@ section {
 
 .player-egg-frame img {
     width: 80px;
-    height: 100px;
+    height: 80px;
     object-fit: cover;
-    clip-path: ellipse(48% 50% at 50% 50%);
+    object-position: center top;
+    border-radius: 50%;
     border: 3px solid var(--player-color);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
     background: var(--player-color);
     filter: saturate(0.8);
+    position: relative;
+    z-index: 2;
+    margin-top: -10px;
+}
+
+/* Bottom egg shell — hatching effect */
+.player-egg-frame::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 58px;
+    background: linear-gradient(180deg, #fffef8 0%, #f5f0e6 100%);
+    border-radius: 0 0 48% 48% / 0 0 85% 85%;
+    z-index: 3;
+    /* Irregular cracked egg edge — fewer, bigger pieces */
+    clip-path: polygon(
+        0% 38%,
+        8% 12%, 20% 35%,
+        32% 0%, 46% 30%,
+        55% 8%, 68% 32%,
+        80% 2%, 92% 28%,
+        100% 12%, 100% 100%, 0% 100%
+    );
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05), 0 3px 10px rgba(0,0,0,0.08);
+    border: 1.5px solid rgba(180,170,150,0.25);
+    border-top: none;
+}
+
+/* Small tilted shell piece on top of head */
+.player-egg-frame::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 52%;
+    transform: rotate(22deg);
+    width: 34px;
+    height: 26px;
+    background: linear-gradient(180deg, #fffef8 0%, #f5f0e6 100%);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    z-index: 4;
+    /* Cracked bottom edge of shell cap */
+    clip-path: polygon(
+        0% 0%, 100% 0%,
+        100% 45%, 80% 100%, 60% 50%, 40% 90%, 20% 45%, 0% 70%
+    );
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border: 1.5px solid rgba(180,170,150,0.2);
+    border-bottom: none;
 }
 
 .player-name {
@@ -622,13 +596,25 @@ section {
     }
 
     .player-egg-frame {
-        width: 60px;
-        height: 75px;
+        width: 70px;
+        height: 95px;
     }
 
     .player-egg-frame img {
         width: 60px;
-        height: 75px;
+        height: 60px;
+        margin-top: -8px;
+    }
+
+    .player-egg-frame::after {
+        width: 68px;
+        height: 42px;
+    }
+
+    .player-egg-frame::before {
+        width: 24px;
+        height: 18px;
+        top: -2px;
     }
 
     .player-name {
@@ -1063,33 +1049,6 @@ section {
 
     .hero-egg {
         font-size: 2.5rem;
-    }
-
-    .cracked-eggs-row {
-        gap: 0.35rem;
-    }
-
-    .cracked-egg {
-        width: 56px;
-    }
-
-    .cracked-shell-top {
-        width: 44px;
-        height: 15px;
-    }
-
-    .cracked-photo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .cracked-shell-bottom {
-        width: 44px;
-        height: 16px;
-    }
-
-    .cracked-name {
-        font-size: 0.55rem;
     }
 
     .location-map {

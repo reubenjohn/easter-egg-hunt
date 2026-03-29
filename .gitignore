@@ -1,13 +1,28 @@
-.env
-node_modules/
-.DS_Store
-*.swp
-screenshots/
-test-results/
-__pycache__/
-.pytest_cache/
-.venv/
+# Ignore everything by default
+*
 
-*:Zone.Identifier
+# Allow traversal into directories
+!*/
+
+# Whitelisted file extensions
+!*.css
+!*.html
+!*.jpeg
+!*.js
+!*.json
+!*.lock
+!*.md
+!*.py
+!*.svg
+!*.toml
+!*.yml
+
+# Top-level config files
+!.gitignore
+!.mcp.json
+
+# Claude Code - only settings.json
+.claude/*
+!.claude/settings.json
 
 # Player photos go in site/img/players/ (placeholder.svg is committed; add real photos here)
