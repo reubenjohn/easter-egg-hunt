@@ -1,0 +1,416 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #fef8f5;
+    color: #4a3728;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Baloo 2', 'Nunito', cursive;
+    line-height: 1.2;
+}
+
+/* ===== HEADER ===== */
+.prep-header {
+    background: linear-gradient(135deg, #fce4ec 0%, #e8d5f5 50%, #e8f5e9 100%);
+    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 3px solid #f8bbd0;
+}
+
+.prep-header h1 {
+    font-size: 2rem;
+    color: #5d4037;
+    margin-bottom: 0.3rem;
+}
+
+.prep-header .subtitle {
+    color: #6d4c41;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.prep-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* ===== VALIDATION BANNER ===== */
+.validation-banner {
+    border-radius: 1rem;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.validation-banner .icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.validation-pass {
+    background: #e8f5e9;
+    border: 2px solid #66bb6a;
+    color: #2e7d32;
+}
+
+.validation-fail {
+    background: #fbe9e7;
+    border: 2px solid #ef5350;
+    color: #c62828;
+}
+
+.validation-errors {
+    margin-top: 0.5rem;
+    font-weight: 400;
+    font-size: 0.88rem;
+}
+
+.validation-errors li {
+    margin-left: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+/* ===== SECTION CARDS ===== */
+.prep-section {
+    background: white;
+    border-radius: 1.2rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 20px rgba(93, 64, 55, 0.08);
+    border: 1px solid rgba(93, 64, 55, 0.06);
+}
+
+.prep-section h2 {
+    font-size: 1.5rem;
+    color: #5d4037;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.prep-section .section-desc {
+    color: #8d6e63;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* ===== TABLES ===== */
+.prep-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.prep-table th {
+    background: #fef8f5;
+    font-weight: 700;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    color: #5d4037;
+    border-bottom: 2px solid #d7ccc8;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prep-table td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #f0ebe7;
+    vertical-align: middle;
+}
+
+.prep-table tr:last-child td {
+    border-bottom: none;
+}
+
+.prep-table .total-row td {
+    font-weight: 700;
+    border-top: 2px solid #d7ccc8;
+    border-bottom: none;
+    background: #fef8f5;
+    color: #5d4037;
+}
+
+/* ===== COLOR SWATCH ===== */
+.color-swatch {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.color-cell {
+    display: flex;
+    align-items: center;
+}
+
+/* ===== STATUS BADGES ===== */
+.badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-ok {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.badge-warn {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.badge-error {
+    background: #fbe9e7;
+    color: #c62828;
+}
+
+/* ===== SKITTLE DISTRIBUTION VISUAL ===== */
+.skittle-visual {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+}
+
+.skittle-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.skittle-1 { background: #81c784; }
+.skittle-2 { background: #ffd54f; }
+.skittle-3 { background: #ef5350; }
+
+/* ===== DISTRIBUTION CARDS ===== */
+.dist-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.dist-card {
+    background: #fef8f5;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #f0ebe7;
+}
+
+.dist-card .dist-count {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2rem;
+    color: #5d4037;
+    line-height: 1;
+}
+
+.dist-card .dist-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #8d6e63;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.3rem;
+}
+
+.dist-card .dist-detail {
+    font-size: 0.85rem;
+    color: #6d4c41;
+    margin-top: 0.3rem;
+}
+
+/* ===== SPECIAL EGG TYPE VISUAL ===== */
+.special-type-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.mini-egg {
+    width: 22px;
+    height: 28px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    flex-shrink: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ASSEMBLY STEPS ===== */
+.assembly-step {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0ebe7;
+}
+
+.assembly-step:last-child {
+    border-bottom: none;
+}
+
+.step-badge {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f48fb1, #ce93d8);
+    color: white;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-content h4 {
+    font-size: 0.95rem;
+    color: #5d4037;
+    margin-bottom: 0.2rem;
+}
+
+.step-content p {
+    font-size: 0.85rem;
+    color: #6d4c41;
+}
+
+.step-content ul {
+    margin-top: 0.3rem;
+    padding-left: 1.2rem;
+    font-size: 0.85rem;
+    color: #6d4c41;
+}
+
+.step-content ul li {
+    margin-top: 0.15rem;
+}
+
+/* ===== LINK BUTTONS ===== */
+.prep-link-btn {
+    display: inline-block;
+    padding: 0.65rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+}
+
+.prep-link-btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-print {
+    background: linear-gradient(135deg, #7b1fa2, #ab47bc);
+    color: white;
+    box-shadow: 0 3px 10px rgba(123, 31, 162, 0.3);
+}
+
+.btn-print:hover {
+    box-shadow: 0 5px 15px rgba(123, 31, 162, 0.45);
+}
+
+/* ===== SUMMARY STATS BAR ===== */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(93, 64, 55, 0.08);
+    border: 1px solid rgba(93, 64, 55, 0.06);
+}
+
+.stat-card .stat-value {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2.2rem;
+    color: #5d4037;
+    line-height: 1;
+}
+
+.stat-card .stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #8d6e63;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.25rem;
+}
+
+/* ===== PLAYER EGG ASSIGNMENT ===== */
+.player-assign-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.player-assign-row .color-swatch {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===== FOOTER ===== */
+.prep-footer {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    color: #8d6e63;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+    .prep-container {
+        padding: 1rem;
+    }
+
+    .prep-section {
+        padding: 1.2rem;
+    }
+
+    .prep-table {
+        font-size: 0.82rem;
+    }
+
+    .prep-table th,
+    .prep-table td {
+        padding: 0.5rem 0.6rem;
+    }
+
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dist-cards {
+        grid-template-columns: 1fr;
+    }
+}

@@ -21,20 +21,44 @@
         "mapEmbedUrl": "https://maps.google.com/maps?q=1520+W+Polk+St+Chicago+IL+60607&output=embed",
         "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=1520+W+Polk+St+Chicago+IL+60607"
     },
+    "eggsPerPlayer": 15,
+    "eggKit": {
+        "colors": [
+            { "id": "blue", "name": "Blue", "hex": "#1565c0", "count": 20 },
+            { "id": "red", "name": "Red", "hex": "#e53935", "count": 20 },
+            { "id": "orange", "name": "Orange", "hex": "#ef6c00", "count": 20 },
+            { "id": "limegreen", "name": "Lime Green", "hex": "#76ff03", "count": 20 },
+            { "id": "green", "name": "Green", "hex": "#2e7d32", "count": 20 },
+            { "id": "yellow", "name": "Yellow", "hex": "#fdd835", "count": 20 },
+            { "id": "hotpink", "name": "Hot Pink", "hex": "#ec407a", "count": 20 },
+            { "id": "lightpink", "name": "Light Pink", "hex": "#f8bbd0", "count": 20 },
+            { "id": "skyblue", "name": "Sky Blue", "hex": "#4fc3f7", "count": 20 },
+            { "id": "purple", "name": "Purple", "hex": "#9c27b0", "count": 20 }
+        ],
+        "specialColor": "green"
+    },
+    "skittles": {
+        "total": 300,
+        "distribution": [
+            { "perEgg": 1, "count": 8 },
+            { "perEgg": 2, "count": 4 },
+            { "perEgg": 3, "count": 3 }
+        ]
+    },
     "players": [
-        { "id": "reuben", "name": "Reuben", "color": "#e53935", "colorName": "Red", "title": "Cherry Bunny", "photo": "img/players/placeholder.svg", "lightText": false },
-        { "id": "raina", "name": "Raina", "color": "#ec407a", "colorName": "Hot Pink", "title": "Flamingo Hop", "photo": "img/players/placeholder.svg", "lightText": false },
-        { "id": "swathy", "name": "Swathy", "color": "#f8bbd0", "colorName": "Light Pink", "title": "Cotton Candy Chick", "photo": "img/players/placeholder.svg", "lightText": false },
-        { "id": "jason", "name": "Jason", "color": "#1e88e5", "colorName": "Blue", "title": "Bluebird Nest", "photo": "img/players/placeholder.svg", "lightText": false },
-        { "id": "nikith", "name": "Nikith", "color": "#4fc3f7", "colorName": "Sky Blue", "title": "Robin's Egg", "photo": "resources/Nikith.jpeg", "lightText": false },
-        { "id": "shawn", "name": "Shawn", "color": "#76ff03", "colorName": "Neon Green", "title": "Spring Sprout", "photo": "img/players/placeholder.svg", "lightText": true },
-        { "id": "shua", "name": "Shua", "color": "#2e7d32", "colorName": "Dark Green", "title": "Clover Patch", "photo": "resources/Shua.jpeg", "lightText": false },
-        { "id": "rutuja", "name": "Rutuja", "color": "#fdd835", "colorName": "Yellow", "title": "Sunny Yolk", "photo": "resources/Rituja.jpeg", "lightText": true },
-        { "id": "shantanu", "name": "Shantanu", "color": "#9c27b0", "colorName": "Purple", "title": "Lavender Bloom", "photo": "resources/Shantanu.jpeg", "lightText": false }
+        { "id": "reuben", "name": "Reuben", "color": "#1565c0", "eggColor": "blue", "colorName": "Blue", "title": "Blueberry Bunny", "photo": "img/players/placeholder.svg", "lightText": false },
+        { "id": "raina", "name": "Raina", "color": "#76ff03", "eggColor": "limegreen", "colorName": "Lime Green", "title": "Spring Sprout", "photo": "img/players/placeholder.svg", "lightText": true },
+        { "id": "swathy", "name": "Swathy", "color": "#9c27b0", "eggColor": "purple", "colorName": "Purple", "title": "Lavender Bloom", "photo": "img/players/placeholder.svg", "lightText": false },
+        { "id": "jason", "name": "Jason", "color": "#fdd835", "eggColor": "yellow", "colorName": "Yellow", "title": "Sunny Yolk", "photo": "img/players/placeholder.svg", "lightText": true },
+        { "id": "nikith", "name": "Nikith", "color": "#4fc3f7", "eggColor": "skyblue", "colorName": "Sky Blue", "title": "Robin's Egg", "photo": "resources/Nikith.jpeg", "lightText": false },
+        { "id": "shawn", "name": "Shawn", "color": "#e53935", "eggColor": "red", "colorName": "Red", "title": "Cherry Bunny", "photo": "img/players/placeholder.svg", "lightText": false },
+        { "id": "shua", "name": "Shua", "color": "#ec407a", "eggColor": "hotpink", "colorName": "Hot Pink", "title": "Flamingo Hop", "photo": "resources/Shua.jpeg", "lightText": false },
+        { "id": "rutuja", "name": "Rutuja", "color": "#f8bbd0", "eggColor": "lightpink", "colorName": "Light Pink", "title": "Cotton Candy Chick", "photo": "resources/Rituja.jpeg", "lightText": true },
+        { "id": "shantanu", "name": "Shantanu", "color": "#ef6c00", "eggColor": "orange", "colorName": "Orange", "title": "Citrus Hop", "photo": "resources/Shantanu.jpeg", "lightText": false }
     ],
     "steps": [
         { "icon": "&#129370;", "text": "Hop to it &mdash; find YOUR eggs!", "detail": "Every bunny has their own color &mdash; sniff out only yours!" },
-        { "icon": "&#10024;", "text": "Spot a two-tone egg? Snatch it up!", "detail": "Two-tone eggs aren't assigned to anyone — any player can grab them!" },
+        { "icon": "&#10024;", "text": "Spot a green or pink-top egg? Snatch it up!", "detail": "Green eggs are tasks, pink-top eggs are power-ups &mdash; any player can grab them!" },
         { "icon": "&#128239;", "text": "Hop back when the hunting horn sounds!", "detail": "The Great Hunt lasts 15 hops of the clock &mdash; then scurry home!" },
         { "icon": "&#129309;", "text": "The Bunny Bazaar &mdash; trade your task eggs!", "detail": "5 minutes to wheel and deal with fellow bunnies (no peeking!)" },
         { "icon": "&#128171;", "text": "Spring surprises &mdash; power-ups unleashed!", "detail": "Score multipliers, bonus Skittles, and wild springtime twists!" },
@@ -43,23 +67,21 @@
         { "icon": "&#128081;", "text": "The champion bunny is crowned!", "detail": "Most Skittles wins &mdash; eternal egg-hunting glory awaits!" }
     ],
     "specialEggs": [
-        { "topColor": "#f8bbd0", "bottomColor": "#f8bbd0", "label": "&#127793; Easy Peasy Task", "desc": "All pink, both halves &mdash; a gentle challenge even the smallest bunny can handle!" },
-        { "topColor": "#f8bbd0", "bottomColor": "#f5f5f5", "label": "&#127800; Medium Mischief Task", "desc": "Top half pink, bottom half white &mdash; a bit more hop in your step required!" },
-        { "topColor": "#f8bbd0", "bottomColor": "#9c27b0", "label": "&#128293; Hard-Boiled Challenge", "desc": "Top half pink, bottom half purple &mdash; only the bravest bunnies dare! Big Skittles rewards!" },
-        { "topColor": "#9c27b0", "bottomColor": "#9c27b0", "label": "&#128128; Egg-streme Dare!", "desc": "All purple, both halves &mdash; absolute madness! Only legends attempt these for maximum Skittles glory!" },
-        { "topColor": "#9c27b0", "bottomColor": "rainbow", "label": "&#9889; Power-Up Egg", "desc": "Purple top, any player color bottom &mdash; crack it open to reveal a mystery power-up!" }
+        { "topColor": "#2e7d32", "bottomColor": "#2e7d32", "label": "&#127793; Green Egg = Mystery Task!", "desc": "All green eggs are task challenges &mdash; crack it open to discover your dare!" },
+        { "topColor": "#ec407a", "bottomColor": "rainbow", "label": "&#9889; Pink-Top Egg = Power-Up!", "desc": "Pink top (hot or light) with a colored bottom &mdash; each color combo is a different power-up!" }
     ],
     "rules": [
         { "icon": "&#9200;", "text": "The Great Hunt Lasts 15 Hops of the Clock!", "detail": "When the clock runs out, even the speediest bunny has to stop hopping!" },
         { "icon": "&#127758;", "text": "Don't Wander Beyond the Bunny Trail!", "detail": "If you can't see the meadow, you've hopped too far, little bunny!" },
-        { "icon": "&#127912;", "text": "Your Eggs + Sparkly Specials Only!", "detail": "Hop after your own color eggs and any two-tone treasures you spot!" },
+        { "icon": "&#127912;", "text": "Your Eggs + Special Eggs Only!", "detail": "Hop after your own color eggs plus any green or pink-top treasures you spot!" },
         { "icon": "&#128683;", "text": "Every Bunny for Themselves!", "detail": "No snatching eggs from another hunter's trail, and no whispering where the eggs are hiding &mdash; that's fowl play! &#128020;" },
         { "icon": "&#129399;", "text": "No Egg-scape Artists Allowed!", "detail": "Found an egg? Take it or leave it &mdash; no sneaky re-hiding or bunny business!" },
         { "icon": "&#128227;", "text": "Hop Back to the Nest When the Horn Sounds!", "detail": "When the hunting horn blows, scurry back to base like a bunny who heard a fox!" },
-        { "icon": "&#129370;", "text": "Two-Tone Eggs = Mystery Tasks!", "detail": "Check the Special Eggs Guide above to decode which colors mean easy, medium, or hard &mdash; trade wisely at the Bunny Bazaar!" }
+        { "icon": "&#129370;", "text": "Special Eggs = Green or Pink-Top!", "detail": "Green eggs are tasks, pink-top eggs are power-ups &mdash; trade wisely at the Bunny Bazaar!" }
     ],
     "tasks": {
         "easy": {
+            "count": 4,
             "reward": 1,
             "rewardText": "+1 Bonus Skittle",
             "stars": 1,
@@ -72,6 +94,7 @@
             ]
         },
         "medium": {
+            "count": 4,
             "reward": 2,
             "rewardText": "+2 Bonus Skittles",
             "stars": 2,
@@ -84,6 +107,7 @@
             ]
         },
         "hard": {
+            "count": 4,
             "reward": 3,
             "rewardText": "+3 Bonus Skittles",
             "stars": 3,
@@ -95,6 +119,7 @@
             ]
         },
         "extreme": {
+            "count": 3,
             "reward": 5,
             "rewardText": "+5 Bonus Skittles",
             "stars": 5,
@@ -105,11 +130,14 @@
             ]
         }
     },
+    "powerupEggs": {
+        "topColors": ["hotpink", "lightpink"]
+    },
     "powerups": [
-        { "name": "Double Down", "icon": "\u26a1", "description": "Double the Skittles from your 3 highest-value eggs!", "scoreBonus": 5 },
-        { "name": "Egg Swap", "icon": "\ud83d\udd04", "description": "Force a trade: give 1 of your eggs, take 1 of theirs (blind pick)!", "scoreBonus": 0 },
-        { "name": "Bonus Haul", "icon": "\ud83c\udf81", "description": "Get 5 bonus Skittles, no strings attached!", "scoreBonus": 5 },
-        { "name": "Task Dodge", "icon": "\ud83d\udee1\ufe0f", "description": "Cancel one of your task eggs \u2014 you don't have to do it!", "scoreBonus": 0 },
-        { "name": "Task Reassign", "icon": "\ud83c\udfaf", "description": "Give one of your task eggs to another player!", "scoreBonus": 0 }
+        { "name": "Double Down", "icon": "\u26a1", "description": "Double the Skittles from your 3 highest-value eggs!", "scoreBonus": 5, "count": 2, "bottomColor": "yellow" },
+        { "name": "Egg Swap", "icon": "\ud83d\udd04", "description": "Force a trade: give 1 of your eggs, take 1 of theirs (blind pick)!", "scoreBonus": 0, "count": 2, "bottomColor": "skyblue" },
+        { "name": "Bonus Haul", "icon": "\ud83c\udf81", "description": "Get 5 bonus Skittles, no strings attached!", "scoreBonus": 5, "count": 2, "bottomColor": "orange" },
+        { "name": "Task Dodge", "icon": "\ud83d\udee1\ufe0f", "description": "Cancel one of your task eggs \u2014 you don't have to do it!", "scoreBonus": 0, "count": 2, "bottomColor": "blue" },
+        { "name": "Task Reassign", "icon": "\ud83c\udfaf", "description": "Give one of your task eggs to another player!", "scoreBonus": 0, "count": 2, "bottomColor": "purple" }
     ]
 }

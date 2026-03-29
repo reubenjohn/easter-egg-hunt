@@ -57,15 +57,16 @@ a {
     --shadow-md: rgba(93, 64, 55, 0.15);
 
     /* Player egg colors */
+    --egg-blue: #1565c0;
     --egg-red: #e53935;
-    --egg-hotpink: #ec407a;
-    --egg-lightpink: #f48fb1;
-    --egg-blue: #1e88e5;
-    --egg-skyblue: #42a5f5;
-    --egg-neongreen: #76ff03;
-    --egg-darkgreen: #2e7d32;
+    --egg-orange: #ef6c00;
+    --egg-limegreen: #76ff03;
+    --egg-green: #2e7d32;
     --egg-yellow: #fdd835;
-    --egg-purple: #7b1fa2;
+    --egg-hotpink: #ec407a;
+    --egg-lightpink: #f8bbd0;
+    --egg-skyblue: #4fc3f7;
+    --egg-purple: #9c27b0;
 }
 
 /* ============================================

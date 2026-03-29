@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter Egg Hunt 2026 — Prep Checklist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/prep.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<div class="prep-header">
+    <h1 id="prepTitle">Easter Egg Hunt 2026</h1>
+    <div class="subtitle">Egg Prep Checklist — Host Only</div>
+</div>
+
+<div class="prep-container">
+
+    <!-- ===== VALIDATION ===== -->
+    <div id="validationBanner" class="validation-banner validation-pass"></div>
+
+    <!-- ===== STATS BAR ===== -->
+    <div class="stats-bar" id="statsBar"></div>
+
+    <!-- ===== PLAYER EGG ASSIGNMENTS ===== -->
+    <div class="prep-section">
+        <h2>&#127912; Player Egg Assignments</h2>
+        <div class="section-desc">Each player gets their assigned color eggs to find during the hunt.</div>
+        <table class="prep-table">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Egg Color</th>
+                    <th>Needed</th>
+                    <th>In Kit</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="playerEggTable"></tbody>
+        </table>
+    </div>
+
+    <!-- ===== SPECIAL EGG BREAKDOWN ===== -->
+    <div class="prep-section">
+        <h2>&#127793; Special Eggs Breakdown</h2>
+        <div class="section-desc">All special eggs are fully green — the card inside determines the type. <span id="specialEggStatus"></span></div>
+        <table class="prep-table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Colors</th>
+                    <th>Count</th>
+                    <th>Reward</th>
+                </tr>
+            </thead>
+            <tbody id="specialEggTable"></tbody>
+        </table>
+    </div>
+
+    <!-- ===== SKITTLE DISTRIBUTION ===== -->
+    <div class="prep-section">
+        <h2>&#127852; Skittle Distribution</h2>
+        <div class="section-desc">How to distribute Skittles in each player's eggs. Each dot below represents one egg.</div>
+
+        <div class="dist-cards" id="skittleDistCards"></div>
+
+        <h3 style="margin-top:1.5rem;font-size:1.1rem;color:#5d4037;">Skittle Budget</h3>
+        <table class="prep-table" style="margin-top:0.75rem;">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Skittles</th>
+                </tr>
+            </thead>
+            <tbody id="skittleSummary"></tbody>
+        </table>
+    </div>
+
+    <!-- ===== KIT INVENTORY ===== -->
+    <div class="prep-section">
+        <h2>&#128230; Egg Kit Inventory</h2>
+        <div class="section-desc">Full inventory of the egg kit — 10 colors, 20 eggs each.</div>
+        <table class="prep-table">
+            <thead>
+                <tr>
+                    <th>Color</th>
+                    <th>In Kit</th>
+                    <th>Assigned To</th>
+                    <th>Used</th>
+                    <th>Spare</th>
+                </tr>
+            </thead>
+            <tbody id="kitInventoryTable"></tbody>
+        </table>
+    </div>
+
+    <!-- ===== ASSEMBLY INSTRUCTIONS ===== -->
+    <div class="prep-section">
+        <h2>&#128295; Assembly Instructions</h2>
+        <div class="section-desc">Step-by-step guide. Plan ~1.5–2 hours with a helper. Best done 1–2 days before the event.</div>
+        <div id="assemblySteps"></div>
+    </div>
+
+    <!-- ===== PRINT CARDS LINK ===== -->
+    <div class="prep-section" style="text-align:center;">
+        <h2>&#128424; Print Task & Power-Up Cards</h2>
+        <div class="section-desc">Print the cards to slip inside special eggs.</div>
+        <a id="printPageLink" href="tasks-print.html" class="prep-link-btn btn-print">Open Print Cards Page &rarr;</a>
+    </div>
+
+</div>
+
+<div class="prep-footer">
+    R&R Easter Egg Hunt — Host Prep Checklist
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/prep.js"></script>
+
+</body>
+</html>
