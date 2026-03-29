@@ -35,10 +35,10 @@
 })();
 
 // ── Scroll Reveal ───────────────────────────
+// Re-queries .reveal elements each time so dynamically added content works
 (function setupReveal() {
-    var reveals = document.querySelectorAll('.reveal');
-
     function checkReveal() {
+        var reveals = document.querySelectorAll('.reveal:not(.visible)');
         var windowHeight = window.innerHeight;
         for (var i = 0; i < reveals.length; i++) {
             var top = reveals[i].getBoundingClientRect().top;
@@ -50,8 +50,11 @@
     }
 
     window.addEventListener('scroll', checkReveal, { passive: true });
-    // Initial check
+    // Initial check + periodic recheck for dynamically loaded content
     checkReveal();
+    // Re-check after config may have loaded
+    setTimeout(checkReveal, 100);
+    setTimeout(checkReveal, 500);
 })();
 
 // ── Navbar hide/show on scroll ──────────────
