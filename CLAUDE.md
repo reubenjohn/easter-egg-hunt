@@ -9,7 +9,7 @@ See [docs/plans/README.md](docs/plans/README.md) for timeline and deadlines.
 ## Key Facts
 
 - **Event name:** "Operation: Easter Egg - The Skittelling!"
-- **Players:** 9 total — Reuben, Raina, Swathy, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+- **Players:** 9 total — Reuben, Raina, Swathy, Jason, Nikith, Shaun, Shua, Rutuja, Shantanu
 - **Eggs:** 200 total, 10 colors. 18 eggs per player + specials.
 - **Hiding:** Reuben hides wife's eggs, wife hides Reuben's eggs. Both randomly hide remaining players' eggs.
 - **Scoring:** Each egg contains 1-3 Skittles. Find your color's eggs → count Skittles → most wins.

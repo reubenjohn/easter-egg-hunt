@@ -298,6 +298,29 @@
             return '<span class="skittle-dots">' + dots + '</span>';
         }
 
+        // Helper: wrap card content in a flip container
+        function makeFlipCard(frontHtml, backHtml) {
+            var wrapper = document.createElement('div');
+            wrapper.className = 'special-egg-flip reveal';
+            wrapper.innerHTML =
+                '<div class="special-egg-flip-inner">' +
+                    '<div class="special-egg-grid-card">' + frontHtml + '</div>' +
+                    '<div class="special-egg-grid-back">' + backHtml + '</div>' +
+                '</div>';
+            wrapper.addEventListener('click', function () {
+                wrapper.classList.toggle('flipped');
+            });
+            return wrapper;
+        }
+
+        // Task egg descriptions per difficulty
+        var taskDescs = {
+            easy: 'Fun, quick challenges anyone can do. Low embarrassment, easy Skittles!',
+            medium: 'A bit more daring! Show off your acting and dancing chops.',
+            hard: 'Only the brave! Full-on performances for maximum bonus Skittles.',
+            extreme: 'Legendary status. Do you dare? Huge rewards await the bold!'
+        };
+
         // Task eggs grid
         var taskGrid = document.getElementById('taskEggsGrid');
         difficulties.forEach(function (d) {
@@ -306,9 +329,7 @@
             var count = t.count || t.items.length;
             var bottomObj = t.bottomColor ? kitColorMap[t.bottomColor] : null;
             var bottomHex = bottomObj ? bottomObj.hex : specialTopHex;
-            var card = document.createElement('div');
-            card.className = 'special-egg-grid-card reveal';
-            card.innerHTML =
+            var frontHtml =
                 '<div class="two-tone-egg">' +
                     '<div class="top" style="background:' + specialTopHex + ';"></div>' +
                     '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
@@ -316,7 +337,12 @@
                 '<div class="special-egg-label">' + diffIcons[d] + ' ' + diffLabels[d] + '</div>' +
                 '<div class="special-egg-count">&times;' + count + '</div>' +
                 '<div class="special-egg-reward">' + skittleDots(t.reward) + '</div>';
-            taskGrid.appendChild(card);
+            var backHtml =
+                '<div class="special-egg-back-icon">' + diffIcons[d] + '</div>' +
+                '<div class="special-egg-back-title">' + diffLabels[d] + ' Task</div>' +
+                '<div class="special-egg-back-desc">' + taskDescs[d] + '</div>' +
+                '<div class="special-egg-back-desc" style="margin-top:0.3rem;font-weight:600;">' + t.rewardText + '</div>';
+            taskGrid.appendChild(makeFlipCard(frontHtml, backHtml));
         });
 
         // Power-up eggs grid
@@ -327,9 +353,7 @@
             var count = pu.count || 1;
             var bottomObj = pu.bottomColor ? kitColorMap[pu.bottomColor] : null;
             var bottomHex = bottomObj ? bottomObj.hex : '#999';
-            var card = document.createElement('div');
-            card.className = 'special-egg-grid-card reveal';
-            card.innerHTML =
+            var frontHtml =
                 '<div class="two-tone-egg">' +
                     '<div class="top" style="background:' + puTopHex + ';"></div>' +
                     '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
@@ -337,8 +361,24 @@
                 '<div class="special-egg-label">' + pu.icon + ' ' + pu.name + '</div>' +
                 '<div class="special-egg-count">&times;' + count + '</div>' +
                 '<div class="special-egg-reward">' + (pu.scoreBonus > 0 ? skittleDots(pu.scoreBonus) : '<span class="special-effect-badge">Special</span>') + '</div>';
-            puGrid.appendChild(card);
+            var backHtml =
+                '<div class="special-egg-back-icon">' + pu.icon + '</div>' +
+                '<div class="special-egg-back-title">' + pu.name + '</div>' +
+                '<div class="special-egg-back-desc">' + pu.description + '</div>';
+            puGrid.appendChild(makeFlipCard(frontHtml, backHtml));
         });
+
+        // Random flip hints so visitors know cards are interactive
+        var allFlipCards = document.querySelectorAll('.special-egg-flip');
+        function randomFlipHint() {
+            var unflipped = [];
+            allFlipCards.forEach(function (c) { if (!c.classList.contains('flipped')) unflipped.push(c); });
+            if (unflipped.length === 0) return;
+            var pick = unflipped[Math.floor(Math.random() * unflipped.length)];
+            pick.classList.add('hint');
+            pick.addEventListener('animationend', function () { pick.classList.remove('hint'); }, { once: true });
+        }
+        setInterval(randomFlipHint, 3000);
 
         // ── Rules ──
         var rulesGrid = document.getElementById('rulesGrid');

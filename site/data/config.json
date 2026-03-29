@@ -3,10 +3,10 @@
         "title": "Operation: Easter Egg",
         "subtitle": "The Skittelling!",
         "tagline": "You've been summoned to the meadow!",
-        "date": "Sunday, April 5, 2026",
-        "timeRange": "10:00 AM &ndash; 1:00 PM CT",
-        "startISO": "2026-04-05T10:00:00",
-        "endISO": "2026-04-05T13:00:00",
+        "date": "Sunday, March 29, 2026",
+        "timeRange": "5:00 PM &ndash; 8:00 PM CT",
+        "startISO": "2026-03-29T17:00:00",
+        "endISO": "2026-03-29T20:00:00",
         "timezone": "America/Chicago",
         "year": 2026,
         "branding": "R&R",
@@ -24,57 +24,257 @@
     "eggsPerPlayer": 15,
     "eggKit": {
         "colors": [
-            { "id": "blue", "name": "Blue", "hex": "#1565c0", "count": 20 },
-            { "id": "red", "name": "Red", "hex": "#e53935", "count": 20 },
-            { "id": "orange", "name": "Orange", "hex": "#ef6c00", "count": 20 },
-            { "id": "limegreen", "name": "Lime Green", "hex": "#76ff03", "count": 20 },
-            { "id": "green", "name": "Green", "hex": "#2e7d32", "count": 20 },
-            { "id": "yellow", "name": "Yellow", "hex": "#fdd835", "count": 20 },
-            { "id": "hotpink", "name": "Hot Pink", "hex": "#ec407a", "count": 20 },
-            { "id": "lightpink", "name": "Light Pink", "hex": "#f8bbd0", "count": 20 },
-            { "id": "skyblue", "name": "Sky Blue", "hex": "#4fc3f7", "count": 20 },
-            { "id": "purple", "name": "Purple", "hex": "#9c27b0", "count": 20 }
+            {
+                "id": "blue",
+                "name": "Blue",
+                "hex": "#1565c0",
+                "count": 20
+            },
+            {
+                "id": "red",
+                "name": "Red",
+                "hex": "#e53935",
+                "count": 20
+            },
+            {
+                "id": "orange",
+                "name": "Orange",
+                "hex": "#ef6c00",
+                "count": 20
+            },
+            {
+                "id": "limegreen",
+                "name": "Lime Green",
+                "hex": "#76ff03",
+                "count": 20
+            },
+            {
+                "id": "green",
+                "name": "Green",
+                "hex": "#2e7d32",
+                "count": 20
+            },
+            {
+                "id": "yellow",
+                "name": "Yellow",
+                "hex": "#fdd835",
+                "count": 20
+            },
+            {
+                "id": "hotpink",
+                "name": "Hot Pink",
+                "hex": "#ec407a",
+                "count": 20
+            },
+            {
+                "id": "lightpink",
+                "name": "Light Pink",
+                "hex": "#f8bbd0",
+                "count": 20
+            },
+            {
+                "id": "skyblue",
+                "name": "Sky Blue",
+                "hex": "#4fc3f7",
+                "count": 20
+            },
+            {
+                "id": "purple",
+                "name": "Purple",
+                "hex": "#9c27b0",
+                "count": 20
+            }
         ],
         "specialColor": "green"
     },
     "skittles": {
         "total": 300,
         "distribution": [
-            { "perEgg": 1, "count": 8 },
-            { "perEgg": 2, "count": 4 },
-            { "perEgg": 3, "count": 3 }
+            {
+                "perEgg": 1,
+                "count": 8
+            },
+            {
+                "perEgg": 2,
+                "count": 4
+            },
+            {
+                "perEgg": 3,
+                "count": 3
+            }
         ]
     },
     "players": [
-        { "id": "reuben", "name": "Reuben", "color": "#1565c0", "eggColor": "blue", "colorName": "Blue", "title": "Blueberry Bunny", "photo": "img/players/placeholder.svg", "lightText": false },
-        { "id": "raina", "name": "Raina", "color": "#76ff03", "eggColor": "limegreen", "colorName": "Lime Green", "title": "Spring Sprout", "photo": "img/players/placeholder.svg", "lightText": true },
-        { "id": "swathy", "name": "Swathy", "color": "#9c27b0", "eggColor": "purple", "colorName": "Purple", "title": "Lavender Bloom", "photo": "img/players/placeholder.svg", "lightText": false },
-        { "id": "jason", "name": "Jason", "color": "#fdd835", "eggColor": "yellow", "colorName": "Yellow", "title": "Sunny Yolk", "photo": "img/players/placeholder.svg", "lightText": true },
-        { "id": "nikith", "name": "Nikith", "color": "#4fc3f7", "eggColor": "skyblue", "colorName": "Sky Blue", "title": "Robin's Egg", "photo": "resources/Nikith.jpeg", "lightText": false },
-        { "id": "shawn", "name": "Shawn", "color": "#e53935", "eggColor": "red", "colorName": "Red", "title": "Cherry Bunny", "photo": "img/players/placeholder.svg", "lightText": false },
-        { "id": "shua", "name": "Shua", "color": "#ec407a", "eggColor": "hotpink", "colorName": "Hot Pink", "title": "Flamingo Hop", "photo": "resources/Shua.jpeg", "lightText": false },
-        { "id": "rutuja", "name": "Rutuja", "color": "#f8bbd0", "eggColor": "lightpink", "colorName": "Light Pink", "title": "Cotton Candy Chick", "photo": "resources/Rituja.jpeg", "lightText": true },
-        { "id": "shantanu", "name": "Shantanu", "color": "#ef6c00", "eggColor": "orange", "colorName": "Orange", "title": "Citrus Hop", "photo": "resources/Shantanu.jpeg", "lightText": false }
+        {
+            "id": "reuben",
+            "name": "Reuben",
+            "color": "#1565c0",
+            "eggColor": "blue",
+            "colorName": "Blue",
+            "title": "Blueberry Bunny",
+            "photo": "img/players/placeholder.svg",
+            "lightText": false
+        },
+        {
+            "id": "raina",
+            "name": "Raina",
+            "color": "#76ff03",
+            "eggColor": "limegreen",
+            "colorName": "Lime Green",
+            "title": "Spring Sprout",
+            "photo": "img/players/placeholder.svg",
+            "lightText": true
+        },
+        {
+            "id": "swathy",
+            "name": "Swathy",
+            "color": "#9c27b0",
+            "eggColor": "purple",
+            "colorName": "Purple",
+            "title": "Lavender Bloom",
+            "photo": "img/players/placeholder.svg",
+            "lightText": false
+        },
+        {
+            "id": "jason",
+            "name": "Jason",
+            "color": "#fdd835",
+            "eggColor": "yellow",
+            "colorName": "Yellow",
+            "title": "Sunny Yolk",
+            "photo": "img/players/placeholder.svg",
+            "lightText": true
+        },
+        {
+            "id": "nikith",
+            "name": "Nikith",
+            "color": "#4fc3f7",
+            "eggColor": "skyblue",
+            "colorName": "Sky Blue",
+            "title": "Robin's Egg",
+            "photo": "resources/Nikith.jpeg",
+            "lightText": false
+        },
+        {
+            "id": "shawn",
+            "name": "Shaun",
+            "color": "#e53935",
+            "eggColor": "red",
+            "colorName": "Red",
+            "title": "Cherry Bunny",
+            "photo": "img/players/placeholder.svg",
+            "lightText": false
+        },
+        {
+            "id": "shua",
+            "name": "Shua",
+            "color": "#ec407a",
+            "eggColor": "hotpink",
+            "colorName": "Hot Pink",
+            "title": "Flamingo Hop",
+            "photo": "resources/Shua.jpeg",
+            "lightText": false
+        },
+        {
+            "id": "rutuja",
+            "name": "Rutuja",
+            "color": "#f8bbd0",
+            "eggColor": "lightpink",
+            "colorName": "Light Pink",
+            "title": "Cotton Candy Chick",
+            "photo": "resources/Rituja.jpeg",
+            "lightText": true
+        },
+        {
+            "id": "shantanu",
+            "name": "Shantanu",
+            "color": "#ef6c00",
+            "eggColor": "orange",
+            "colorName": "Orange",
+            "title": "Citrus Hop",
+            "photo": "resources/Shantanu.jpeg",
+            "lightText": false
+        }
     ],
     "steps": [
-        { "icon": "&#129370;", "text": "Hop to it &mdash; find YOUR eggs!", "detail": "Every bunny has their own color &mdash; sniff out only yours!" },
-        { "icon": "&#10024;", "text": "Spot a two-tone egg? Snatch it up!", "detail": "Green-top eggs are tasks, pink-top eggs are power-ups &mdash; any player can grab them!" },
-        { "icon": "&#128239;", "text": "Hop back when the hunting horn sounds!", "detail": "The Great Hunt lasts 15 hops of the clock &mdash; then scurry home!" },
-        { "icon": "&#129309;", "text": "The Bunny Bazaar &mdash; trade your task eggs!", "detail": "5 minutes to wheel and deal with fellow bunnies (no peeking!)" },
-        { "icon": "&#128171;", "text": "Spring surprises &mdash; power-ups unleashed!", "detail": "Score multipliers, bonus Skittles, and wild springtime twists!" },
-        { "icon": "&#128290;", "text": "Crack 'em open &mdash; count your rainbow loot!", "detail": "Smash those shells and tally up your Skittles treasure!" },
-        { "icon": "&#127917;", "text": "Task egg time &mdash; silly spring challenges!", "detail": "Complete tasks for bonus Skittles (prepare for some egg-streme embarrassment!)" },
-        { "icon": "&#128081;", "text": "The champion bunny is crowned!", "detail": "Most Skittles wins &mdash; eternal egg-hunting glory awaits!" }
+        {
+            "icon": "&#129370;",
+            "text": "Hop to it &mdash; find YOUR eggs!",
+            "detail": "Every bunny has their own color &mdash; sniff out only yours!"
+        },
+        {
+            "icon": "&#10024;",
+            "text": "Spot a two-tone egg? Snatch it up!",
+            "detail": "Green-top eggs are tasks, pink-top eggs are power-ups &mdash; any player can grab them!"
+        },
+        {
+            "icon": "&#128239;",
+            "text": "Hop back when the hunting horn sounds!",
+            "detail": "The Great Hunt lasts 15 hops of the clock &mdash; then scurry home!"
+        },
+        {
+            "icon": "&#129309;",
+            "text": "The Bunny Bazaar &mdash; trade your task eggs!",
+            "detail": "5 minutes to wheel and deal with fellow bunnies (no peeking!)"
+        },
+        {
+            "icon": "&#128171;",
+            "text": "Spring surprises &mdash; power-ups unleashed!",
+            "detail": "Score multipliers, bonus Skittles, and wild springtime twists!"
+        },
+        {
+            "icon": "&#128290;",
+            "text": "Crack 'em open &mdash; count your rainbow loot!",
+            "detail": "Smash those shells and tally up your Skittles treasure!"
+        },
+        {
+            "icon": "&#127917;",
+            "text": "Task egg time &mdash; silly spring challenges!",
+            "detail": "Complete tasks for bonus Skittles (prepare for some egg-streme embarrassment!)"
+        },
+        {
+            "icon": "&#128081;",
+            "text": "The champion bunny is crowned!",
+            "detail": "Most Skittles wins &mdash; eternal egg-hunting glory awaits!"
+        }
     ],
     "specialEggs": "dynamic",
     "rules": [
-        { "icon": "&#9200;", "text": "The Great Hunt Lasts 15 Hops of the Clock!", "detail": "When the clock runs out, even the speediest bunny has to stop hopping!" },
-        { "icon": "&#127758;", "text": "Don't Wander Beyond the Bunny Trail!", "detail": "If you can't see the meadow, you've hopped too far, little bunny!" },
-        { "icon": "&#127912;", "text": "Your Eggs + Two-Tone Specials Only!", "detail": "Hop after your own color eggs plus any two-tone treasures you spot!" },
-        { "icon": "&#128683;", "text": "Every Bunny for Themselves!", "detail": "No snatching eggs from another hunter's trail, and no whispering where the eggs are hiding &mdash; that's fowl play! &#128020;" },
-        { "icon": "&#129399;", "text": "No Egg-scape Artists Allowed!", "detail": "Found an egg? Take it or leave it &mdash; no sneaky re-hiding or bunny business!" },
-        { "icon": "&#128227;", "text": "Hop Back to the Nest When the Horn Sounds!", "detail": "When the hunting horn blows, scurry back to base like a bunny who heard a fox!" },
-        { "icon": "&#129370;", "text": "Two-Tone = Special Eggs!", "detail": "Green-top eggs are tasks, pink-top eggs are power-ups &mdash; trade wisely at the Bunny Bazaar!" }
+        {
+            "icon": "&#9200;",
+            "text": "The Great Hunt Lasts 15 Hops of the Clock!",
+            "detail": "When the clock runs out, even the speediest bunny has to stop hopping!"
+        },
+        {
+            "icon": "&#127758;",
+            "text": "Don't Wander Beyond the Bunny Trail!",
+            "detail": "If you can't see the meadow, you've hopped too far, little bunny!"
+        },
+        {
+            "icon": "&#127912;",
+            "text": "Your Eggs + Two-Tone Specials Only!",
+            "detail": "Hop after your own color eggs plus any two-tone treasures you spot!"
+        },
+        {
+            "icon": "&#128683;",
+            "text": "Every Bunny for Themselves!",
+            "detail": "No snatching eggs from another hunter's trail, and no whispering where the eggs are hiding &mdash; that's fowl play! &#128020;"
+        },
+        {
+            "icon": "&#129399;",
+            "text": "No Egg-scape Artists Allowed!",
+            "detail": "Found an egg? Take it or leave it &mdash; no sneaky re-hiding or bunny business!"
+        },
+        {
+            "icon": "&#128227;",
+            "text": "Hop Back to the Nest When the Horn Sounds!",
+            "detail": "When the hunting horn blows, scurry back to base like a bunny who heard a fox!"
+        },
+        {
+            "icon": "&#129370;",
+            "text": "Two-Tone = Special Eggs!",
+            "detail": "Green-top eggs are tasks, pink-top eggs are power-ups &mdash; trade wisely at the Bunny Bazaar!"
+        }
     ],
     "tasks": {
         "easy": {
@@ -86,9 +286,8 @@
             "items": [
                 "Do your best chicken impression for 10 seconds \ud83d\udc14",
                 "Hop like a bunny across the group circle \ud83d\udc07",
-                "Speak in a British accent for the next 2 minutes \ud83c\udfa9",
-                "Do 5 jumping jacks while singing \"Happy Birthday\" \ud83c\udfb6",
-                "Make up a 4-line poem about eggs on the spot \ud83d\udcdd"
+                "Do an egg hunt celebration dance \ud83c\udfa9",
+                "Do 5 jumping jacks while singing \"Happy Birthday\" \ud83c\udfb6"
             ]
         },
         "medium": {
@@ -98,10 +297,9 @@
             "stars": 2,
             "bottomColor": "yellow",
             "items": [
-                "Serenade another player with \"Here Comes Peter Cottontail\" \ud83c\udfa4",
+                "Pretend to sell your eggs like a farmers market vendor \ud83d\uded2\ud83e\udd5a",
                 "Do 10 bunny hops while clucking like a chicken \ud83d\udc14\ud83d\udc07",
-                "Do your best impression of another player \u2014 group guesses who! \ud83c\udfad",
-                "Perform a dramatic reading of a text from your phone as Shakespeare \ud83c\udfad\ud83d\udcf1",
+                "Teach everyone a made-up easter ritual \ud83c\udfad",
                 "Let the group pick a dance move you must do for 30 seconds \ud83d\udc83"
             ]
         },
@@ -113,8 +311,8 @@
             "bottomColor": "orange",
             "items": [
                 "Perform a 30-second interpretive dance of an egg hatching \ud83e\udd5a\ud83d\udc83",
-                "Let another player give you bunny face paint (washable marker) \ud83d\udc30\ud83c\udfa8",
-                "Do a full minute of stand-up comedy about Easter \ud83c\udfa4\ud83d\ude02",
+                "Host a fake easter awards ceremony and give out titles \ud83c\udfc6\ud83d\udc51",
+                "Act like you found the rare golden egg of spring \u2728\ud83e\udd5a",
                 "Act out a scene where you're a chicken defending your eggs from a fox \ud83d\udc14\ud83e\udd8a"
             ]
         },
@@ -127,18 +325,56 @@
             "items": [
                 "Post a bunny-ear selfie to your Instagram story \ud83d\udcf8\ud83d\udc30",
                 "Call a friend/family member and convince them you've become a chicken (1 min) \ud83d\udcde\ud83d\udc14",
-                "Let the group compose a haiku about you, then recite it dramatically \ud83d\udcdc\ud83c\udfad"
+                "Deliver a heartfelt apology to a random object in the park \ud83d\udcdc\ud83c\udfad"
             ]
         }
     },
     "powerupEggs": {
-        "topColors": ["hotpink", "lightpink"]
+        "topColors": [
+            "hotpink",
+            "lightpink"
+        ]
     },
     "powerups": [
-        { "name": "Double Down", "icon": "\u26a1", "description": "Double the Skittles from your 3 highest-value eggs!", "scoreBonus": 5, "count": 2, "bottomColor": "skyblue" },
-        { "name": "Egg Swap", "icon": "\ud83d\udd04", "description": "Force a trade: give 1 of your eggs, take 1 of theirs (blind pick)!", "scoreBonus": 0, "count": 2, "bottomColor": "blue" },
-        { "name": "Bonus Haul", "icon": "\ud83c\udf81", "description": "Get 5 bonus Skittles, no strings attached!", "scoreBonus": 5, "count": 2, "bottomColor": "purple" },
-        { "name": "Task Dodge", "icon": "\ud83d\udee1\ufe0f", "description": "Cancel one of your task eggs \u2014 you don't have to do it!", "scoreBonus": 0, "count": 2, "bottomColor": "red" },
-        { "name": "Task Reassign", "icon": "\ud83c\udfaf", "description": "Give one of your task eggs to another player!", "scoreBonus": 0, "count": 2, "bottomColor": "green" }
+        {
+            "name": "Double Down",
+            "icon": "\u26a1",
+            "description": "Double the Skittles from your 3 highest-value eggs!",
+            "scoreBonus": 5,
+            "count": 2,
+            "bottomColor": "skyblue"
+        },
+        {
+            "name": "Egg Swap",
+            "icon": "\ud83d\udd04",
+            "description": "Force a trade: give 1 of your eggs, take 1 of theirs (blind pick)!",
+            "scoreBonus": 0,
+            "count": 2,
+            "bottomColor": "blue"
+        },
+        {
+            "name": "Bonus Haul",
+            "icon": "\ud83c\udf81",
+            "description": "Get 5 bonus Skittles, no strings attached!",
+            "scoreBonus": 5,
+            "count": 2,
+            "bottomColor": "purple"
+        },
+        {
+            "name": "Task Dodge",
+            "icon": "\ud83d\udee1\ufe0f",
+            "description": "Cancel one of your task eggs \u2014 you don't have to do it!",
+            "scoreBonus": 0,
+            "count": 2,
+            "bottomColor": "red"
+        },
+        {
+            "name": "Task Reassign",
+            "icon": "\ud83c\udfaf",
+            "description": "Give one of your task eggs to another player!",
+            "scoreBonus": 0,
+            "count": 2,
+            "bottomColor": "green"
+        }
     ]
 }
