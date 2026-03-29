@@ -218,14 +218,19 @@
             "detail": "5 minutes to wheel and deal with fellow bunnies (no peeking!)"
         },
         {
-            "icon": "&#128171;",
-            "text": "Spring surprises &mdash; power-ups unleashed!",
-            "detail": "Score multipliers, bonus Skittles, and wild springtime twists!"
+            "icon": "&#9889;",
+            "text": "Double Down &amp; Egg Swap &mdash; use 'em or lose 'em!",
+            "detail": "These power-ups must be played BEFORE cracking &mdash; choose wisely, bunny!"
         },
         {
             "icon": "&#128290;",
             "text": "Crack 'em open &mdash; count your rainbow loot!",
             "detail": "Smash those shells and tally up your Skittles treasure!"
+        },
+        {
+            "icon": "&#128171;",
+            "text": "Spring surprises &mdash; remaining power-ups!",
+            "detail": "Bonus Haul, Task Dodge &amp; Task Reassign unleashed after the big crack!"
         },
         {
             "icon": "&#127917;",
@@ -339,7 +344,7 @@
         {
             "name": "Double Down",
             "icon": "\u26a1",
-            "description": "Double the Skittles from your 3 highest-value eggs!",
+            "description": "Use BEFORE cracking! Double the Skittles from your 3 highest-value eggs!",
             "scoreBonus": 5,
             "count": 2,
             "bottomColor": "skyblue"
@@ -347,7 +352,7 @@
         {
             "name": "Egg Swap",
             "icon": "\ud83d\udd04",
-            "description": "Force a trade: give 1 of your eggs, take 1 of theirs (blind pick)!",
+            "description": "Use BEFORE cracking! Force a trade: give 1 of your eggs, take 1 of theirs (blind pick)!",
             "scoreBonus": 0,
             "count": 2,
             "bottomColor": "blue"
@@ -355,7 +360,7 @@
         {
             "name": "Bonus Haul",
             "icon": "\ud83c\udf81",
-            "description": "Get 5 bonus Skittles, no strings attached!",
+            "description": "Use after cracking! Get 5 bonus Skittles, no strings attached!",
             "scoreBonus": 5,
             "count": 2,
             "bottomColor": "purple"
@@ -363,7 +368,7 @@
         {
             "name": "Task Dodge",
             "icon": "\ud83d\udee1\ufe0f",
-            "description": "Cancel one of your task eggs \u2014 you don't have to do it!",
+            "description": "Use after cracking! Cancel one of your task eggs \u2014 you don't have to do it!",
             "scoreBonus": 0,
             "count": 2,
             "bottomColor": "red"
@@ -371,7 +376,7 @@
         {
             "name": "Task Reassign",
             "icon": "\ud83c\udfaf",
-            "description": "Give one of your task eggs to another player!",
+            "description": "Use after cracking! Give one of your task eggs to another player!",
             "scoreBonus": 0,
             "count": 2,
             "bottomColor": "green"
