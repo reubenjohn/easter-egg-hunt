@@ -116,6 +116,7 @@
             <div class="section-divider reveal">&#129370; &#10024; &#129370;</div>
             <h2 class="section-title reveal">The Special Eggs Guide</h2>
             <p class="section-subtitle reveal">Two-tone eggs hold secret tasks &amp; power-ups &mdash; every bunny can grab them!</p>
+            <p class="skittles-legend reveal">&#128994; = 1 Bonus Skittle</p>
 
             <h3 class="special-group-title reveal">&#127793; Task Eggs <span class="special-group-hint">(Green top + colored bottom)</span></h3>
             <div class="special-eggs-grid grid-4" id="taskEggsGrid"></div>
@@ -298,6 +299,16 @@
             return '<span class="skittle-dots">' + dots + '</span>';
         }
 
+        function eggWithBadge(topHex, bottomHex, count) {
+            return '<div class="two-tone-egg-wrap">' +
+                '<div class="two-tone-egg">' +
+                    '<div class="top" style="background:' + topHex + ';"></div>' +
+                    '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
+                '</div>' +
+                '<span class="egg-count-badge">&times;' + count + '</span>' +
+            '</div>';
+        }
+
         // Helper: wrap card content in a flip container
         function makeFlipCard(frontHtml, backHtml) {
             var wrapper = document.createElement('div');
@@ -330,12 +341,9 @@
             var bottomObj = t.bottomColor ? kitColorMap[t.bottomColor] : null;
             var bottomHex = bottomObj ? bottomObj.hex : specialTopHex;
             var frontHtml =
-                '<div class="two-tone-egg">' +
-                    '<div class="top" style="background:' + specialTopHex + ';"></div>' +
-                    '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
-                '</div>' +
+                eggWithBadge(specialTopHex, bottomHex, count) +
                 '<div class="special-egg-label">' + diffIcons[d] + ' ' + diffLabels[d] + '</div>' +
-                '<div class="special-egg-count">&times;' + count + '</div>' +
+                '<div class="special-egg-count">&times;' + count + ' eggs</div>' +
                 '<div class="special-egg-reward">' + skittleDots(t.reward) + '</div>';
             var backHtml =
                 '<div class="special-egg-back-icon">' + diffIcons[d] + '</div>' +
@@ -354,12 +362,9 @@
             var bottomObj = pu.bottomColor ? kitColorMap[pu.bottomColor] : null;
             var bottomHex = bottomObj ? bottomObj.hex : '#999';
             var frontHtml =
-                '<div class="two-tone-egg">' +
-                    '<div class="top" style="background:' + puTopHex + ';"></div>' +
-                    '<div class="bottom" style="background:' + bottomHex + ';"></div>' +
-                '</div>' +
+                eggWithBadge(puTopHex, bottomHex, count) +
                 '<div class="special-egg-label">' + pu.icon + ' ' + pu.name + '</div>' +
-                '<div class="special-egg-count">&times;' + count + '</div>' +
+                '<div class="special-egg-count">&times;' + count + ' eggs</div>' +
                 '<div class="special-egg-reward">' + (pu.scoreBonus > 0 ? skittleDots(pu.scoreBonus) : '<span class="special-effect-badge">Special</span>') + '</div>';
             var backHtml =
                 '<div class="special-egg-back-icon">' + pu.icon + '</div>' +
@@ -368,17 +373,23 @@
             puGrid.appendChild(makeFlipCard(frontHtml, backHtml));
         });
 
-        // Random flip hints so visitors know cards are interactive
+        // Random flip hints — fully flip a card over, then flip it back
         var allFlipCards = document.querySelectorAll('.special-egg-flip');
+        var hintBusy = false;
         function randomFlipHint() {
+            if (hintBusy) return;
             var unflipped = [];
             allFlipCards.forEach(function (c) { if (!c.classList.contains('flipped')) unflipped.push(c); });
             if (unflipped.length === 0) return;
+            hintBusy = true;
             var pick = unflipped[Math.floor(Math.random() * unflipped.length)];
-            pick.classList.add('hint');
-            pick.addEventListener('animationend', function () { pick.classList.remove('hint'); }, { once: true });
+            pick.classList.add('flipped');
+            setTimeout(function () {
+                pick.classList.remove('flipped');
+                hintBusy = false;
+            }, 2000);
         }
-        setInterval(randomFlipHint, 3000);
+        setInterval(randomFlipHint, 4000);
 
         // ── Rules ──
         var rulesGrid = document.getElementById('rulesGrid');

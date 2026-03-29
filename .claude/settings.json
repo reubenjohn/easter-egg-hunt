@@ -14,7 +14,10 @@
       "mcp__playwright__browser_fill_form",
       "mcp__playwright__browser_press_key",
       "mcp__playwright__browser_close",
-      "Bash(./scripts/dev-server.sh start:*)"
+      "Bash(./scripts/dev-server.sh start:*)",
+      "Bash(./scripts/dev-server.sh stop:*)",
+      "Bash(./scripts/dev-server.sh status:*)",
+      "mcp__playwright__browser_run_code"
     ]
   }
 }
