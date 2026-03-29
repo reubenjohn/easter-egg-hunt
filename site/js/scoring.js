@@ -25,7 +25,6 @@ function defaultState() {
         s[p.id] = {
             score: 0,
             powerups: {
-                doubleDown: false,
                 bonusHaul: false,
                 eggSwap: false
             }
@@ -71,13 +70,11 @@ function renderGrid() {
         card.className = 'player-card';
         card.style.setProperty('--accent', player.color);
 
-        const ddUsed = ps.powerups.doubleDown;
         const bhUsed = ps.powerups.bonusHaul;
         const esUsed = ps.powerups.eggSwap;
 
         // Build used power-up tags
         let usedTags = [];
-        if (ddUsed) usedTags.push('Double Down');
         if (bhUsed) usedTags.push('Bonus Haul');
         if (esUsed) usedTags.push('Egg Swap');
         const usedHTML = usedTags.length > 0
@@ -96,9 +93,8 @@ function renderGrid() {
                 <button class="btn-score btn-plus" onclick="adjustScore('${player.id}', 1)" aria-label="Increase score">+</button>
             </div>
             <div class="powerups">
-                <button class="btn-powerup double-down" onclick="useDoubleDown('${player.id}')" ${ddUsed ? 'disabled' : ''}>Double Down (+5)</button>
-                <button class="btn-powerup bonus-haul" onclick="useBonusHaul('${player.id}')" ${bhUsed ? 'disabled' : ''}>Bonus Haul (+5)</button>
-                <button class="btn-powerup egg-swap" onclick="openSwapModal('${player.id}')" ${esUsed ? 'disabled' : ''}>Egg Swap</button>
+                <button class="btn-powerup bonus-haul" onclick="useBonusHaul('${player.id}')" ${bhUsed ? 'disabled' : ''}>🧺 Bonus Haul (+5)</button>
+                <button class="btn-powerup egg-swap" onclick="openSwapModal('${player.id}')" ${esUsed ? 'disabled' : ''}>🔄 Egg Swap</button>
             </div>
             ${usedHTML}
         `;
@@ -127,14 +123,6 @@ function adjustScore(playerId, delta) {
 /* ==============================================
    POWER-UPS
    ============================================== */
-function useDoubleDown(playerId) {
-    state[playerId].powerups.doubleDown = true;
-    state[playerId].score += 5;
-    saveState();
-    renderGrid();
-    flashCard(playerId);
-}
-
 function useBonusHaul(playerId) {
     state[playerId].powerups.bonusHaul = true;
     state[playerId].score += 5;

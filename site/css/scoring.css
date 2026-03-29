@@ -253,7 +253,9 @@ body {
 /* Power-up section */
 .powerups {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.3rem;
     margin-top: 0.4rem;
 }
@@ -279,15 +281,6 @@ body {
     opacity: 0.45;
     cursor: not-allowed;
     text-decoration: line-through;
-}
-
-.btn-powerup.double-down {
-    border-color: #ffb74d;
-    color: #e65100;
-}
-
-.btn-powerup.double-down:hover:not(:disabled) {
-    background: #fff3e0;
 }
 
 .btn-powerup.bonus-haul {
