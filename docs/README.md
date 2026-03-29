@@ -12,7 +12,7 @@ All planning documents live in [plans/](plans/README.md). Each phase folder cont
 | `plans/03-WifeReview/` | *(Created after wife review session)* |
 | `plans/04-GameRules/` | Final rules, scoring, task list |
 | `plans/05-PhysicalPrep/` | Egg prep, supplies, day-of timeline |
-| `plans/06-WebsiteArchitecture/` | Site structure, design system |
+| [plans/06-WebsiteArchitecture/](plans/06-WebsiteArchitecture/README.md) | Site structure, design system |
 | `plans/07-WebsiteImplementation/` | Build plan (code in `site/`) |
 | `plans/08-Testing/` | Playwright validation |
 | `plans/09-InviteSend/` | Deploy + share |

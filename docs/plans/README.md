@@ -65,11 +65,11 @@ The bottleneck is **Phase 03 (Wife Review)** — everything after depends on dec
 | [02-Ideation/](02-Ideation/README.md) | Ideas, tech decisions | [GameMechanics.md](02-Ideation/GameMechanics.md), [TechDecisions.md](02-Ideation/TechDecisions.md), [WebsiteContent.md](02-Ideation/WebsiteContent.md), [ExecutionOverview.md](02-Ideation/ExecutionOverview.md) |
 | `03-WifeReview/` | *(Created after wife review session)* | |
 | `04-GameRules/` | Final rules, scoring, task list | |
-| `05-PhysicalPrep/` | Egg prep, supplies, day-of timeline | |
-| `06-WebsiteArchitecture/` | Site map, design system, components | |
+| [05-PhysicalPrep/](05-PhysicalPrep/README.md) | Egg prep, supplies, day-of timeline | [EggPrepChecklist.md](05-PhysicalPrep/EggPrepChecklist.md), [SuppliesList.md](05-PhysicalPrep/SuppliesList.md), [DayOfTimeline.md](05-PhysicalPrep/DayOfTimeline.md) |
+| [06-WebsiteArchitecture/](06-WebsiteArchitecture/README.md) | Site map, design system, components | [SiteMap.md](06-WebsiteArchitecture/SiteMap.md), [DesignSystem.md](06-WebsiteArchitecture/DesignSystem.md) |
 | `07-WebsiteImplementation/` | Build plan (code goes in `site/`) | |
 | `08-Testing/` | Test plan, Playwright scripts | |
-| `09-InviteSend/` | Deploy checklist, invite message template | |
+| [09-InviteSend/](09-InviteSend/README.md) | Deploy checklist, invite message | [InviteMessage.md](09-InviteSend/InviteMessage.md), [DeployChecklist.md](09-InviteSend/DeployChecklist.md) |
 
 ## Parallel Work Opportunities
 
