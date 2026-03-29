@@ -4,9 +4,9 @@
         "subtitle": "The Skittelling!",
         "tagline": "You've been summoned to the meadow!",
         "date": "Sunday, March 29, 2026",
-        "timeRange": "5:00 PM &ndash; 8:00 PM CT",
+        "timeRange": "5:00 PM &ndash; 7:00 PM CT",
         "startISO": "2026-03-29T17:00:00",
-        "endISO": "2026-03-29T20:00:00",
+        "endISO": "2026-03-29T19:00:00",
         "timezone": "America/Chicago",
         "year": 2026,
         "branding": "R&R",
@@ -112,7 +112,7 @@
             "eggColor": "blue",
             "colorName": "Blue",
             "title": "Blueberry Bunny",
-            "photo": "img/players/placeholder.svg",
+            "photo": "resources/Reuben.jpeg",
             "lightText": false
         },
         {
@@ -122,7 +122,7 @@
             "eggColor": "limegreen",
             "colorName": "Lime Green",
             "title": "Spring Sprout",
-            "photo": "img/players/placeholder.svg",
+            "photo": "resources/Raina.jpeg",
             "lightText": true
         },
         {
@@ -132,7 +132,7 @@
             "eggColor": "purple",
             "colorName": "Purple",
             "title": "Lavender Bloom",
-            "photo": "img/players/placeholder.svg",
+            "photo": "resources/Swathi.jpeg",
             "lightText": false
         },
         {
@@ -142,7 +142,7 @@
             "eggColor": "yellow",
             "colorName": "Yellow",
             "title": "Sunny Yolk",
-            "photo": "img/players/placeholder.svg",
+            "photo": "resources/Jason.jpeg",
             "lightText": true
         },
         {
@@ -162,7 +162,7 @@
             "eggColor": "red",
             "colorName": "Red",
             "title": "Cherry Bunny",
-            "photo": "img/players/placeholder.svg",
+            "photo": "resources/Shaun.jpeg",
             "lightText": false
         },
         {
