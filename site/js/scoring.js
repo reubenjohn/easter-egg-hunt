@@ -2,15 +2,15 @@
    DATA
    ============================================== */
 const PLAYERS = [
-    { id: 'reuben',   name: 'Reuben',   color: '#e53935',   colorName: 'Red',        photo: 'img/players/placeholder.svg' },
-    { id: 'raina',    name: 'Raina',     color: '#ec407a',   colorName: 'Hot Pink',   photo: 'img/players/placeholder.svg' },
-    { id: 'swathi',   name: 'Swathi',    color: '#f8bbd0',   colorName: 'Light Pink', photo: 'img/players/placeholder.svg' },
-    { id: 'jason',    name: 'Jason',     color: '#1e88e5',   colorName: 'Blue',       photo: 'img/players/placeholder.svg' },
-    { id: 'nikith',   name: 'Nikith',    color: '#4fc3f7',   colorName: 'Sky Blue',   photo: 'resources/Nikith.jpeg' },
-    { id: 'shawn',    name: 'Shawn',     color: '#76ff03',   colorName: 'Neon Green', photo: 'img/players/placeholder.svg' },
-    { id: 'shua',     name: 'Shua',      color: '#2e7d32',   colorName: 'Dark Green', photo: 'resources/Shua.jpeg' },
-    { id: 'rutuja',   name: 'Rutuja',    color: '#fdd835',   colorName: 'Yellow',     photo: 'resources/Rituja.jpeg' },
-    { id: 'shantanu', name: 'Shantanu',  color: '#9c27b0',   colorName: 'Purple',     photo: 'resources/Shantanu.jpeg' }
+    { id: 'reuben', name: 'Reuben', color: '#e53935', colorName: 'Red', photo: 'img/players/placeholder.svg' },
+    { id: 'raina', name: 'Raina', color: '#ec407a', colorName: 'Hot Pink', photo: 'img/players/placeholder.svg' },
+    { id: 'Swathy', name: 'Swathy', color: '#f8bbd0', colorName: 'Light Pink', photo: 'img/players/placeholder.svg' },
+    { id: 'jason', name: 'Jason', color: '#1e88e5', colorName: 'Blue', photo: 'img/players/placeholder.svg' },
+    { id: 'nikith', name: 'Nikith', color: '#4fc3f7', colorName: 'Sky Blue', photo: 'resources/Nikith.jpeg' },
+    { id: 'shawn', name: 'Shawn', color: '#76ff03', colorName: 'Neon Green', photo: 'img/players/placeholder.svg' },
+    { id: 'shua', name: 'Shua', color: '#2e7d32', colorName: 'Dark Green', photo: 'resources/Shua.jpeg' },
+    { id: 'rutuja', name: 'Rutuja', color: '#fdd835', colorName: 'Yellow', photo: 'resources/Rituja.jpeg' },
+    { id: 'shantanu', name: 'Shantanu', color: '#9c27b0', colorName: 'Purple', photo: 'resources/Shantanu.jpeg' }
 ];
 
 const STORAGE_KEY = 'easterEggScoring_v1';

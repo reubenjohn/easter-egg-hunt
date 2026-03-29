@@ -30,9 +30,9 @@
 
 ### 3. The Players
 - Grid of 9 player cards
-- **Players (CONFIRMED):** Reuben, Raina, Swathi, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+- **Players (CONFIRMED):** Reuben, Raina, Swathy, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
 - Each card: name, assigned egg color (colored border/background)
-- **Player photos (CONFIRMED):** Will be provided as `Reuben.jpg`, `Swathi.png`, etc. in `site/img/players/`
+- **Player photos (CONFIRMED):** Will be provided as `Reuben.jpg`, `Swathy.png`, etc. in `site/img/players/`
   - Use **placeholder SVGs** for now until real photos arrive
   - **Photos displayed inside egg shapes** on the player cards!
   - Explore showing player photos in other places too (scoreboard, winner screen, etc.)
@@ -121,7 +121,7 @@
 |------|--------|
 | Event name | CONFIRMED — "Operation: Easter Egg — The Skittelling!" |
 | Player count | CONFIRMED — 9 players |
-| Player list | CONFIRMED — Reuben, Raina, Swathi, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu |
+| Player list | CONFIRMED — Reuben, Raina, Swathy, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu |
 | Park | CONFIRMED — Garibaldi (Giuseppe) Park (may change to Arrigo Park) |
 | Google Maps embed | CONFIRMED |
 | Player photos | CONFIRMED — egg-shaped frames, placeholders for now |

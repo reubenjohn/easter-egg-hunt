@@ -1,7 +1,13 @@
 /* ============================================
    CSS RESET & BASE
    ============================================ */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 :root {
     --pastel-pink: #fce4ec;
@@ -12,16 +18,16 @@
     --text-dark: #3e2723;
     --text-medium: #5d4037;
     --text-light: #8d6e63;
-    --card-bg: rgba(255,255,255,0.85);
-    --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
-    --shadow-card: 0 2px 12px rgba(0,0,0,0.1);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.1);
     --radius: 1rem;
     --radius-sm: 0.6rem;
 
     /* Player accent colors */
     --color-reuben: #e53935;
     --color-raina: #ec407a;
-    --color-swathi: #f8bbd0;
+    --color-Swathy: #f8bbd0;
     --color-jason: #1e88e5;
     --color-nikith: #4fc3f7;
     --color-shawn: #76ff03;
@@ -45,10 +51,10 @@ body {
 .header {
     text-align: center;
     padding: 1.5rem 1rem 1rem;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-bottom: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -60,7 +66,9 @@ body {
     letter-spacing: 0.02em;
 }
 
-.header h1 .emoji { font-style: normal; }
+.header h1 .emoji {
+    font-style: normal;
+}
 
 .header .subtitle {
     font-size: 0.85rem;
@@ -90,8 +98,14 @@ body {
     background: #ffcdd2;
     color: #c62828;
 }
-.btn-reset:hover { background: #ef9a9a; }
-.btn-reset:active { transform: scale(0.96); }
+
+.btn-reset:hover {
+    background: #ef9a9a;
+}
+
+.btn-reset:active {
+    transform: scale(0.96);
+}
 
 /* ============================================
    PLAYER GRID
@@ -137,7 +151,7 @@ body {
 
 .player-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* Egg-shaped photo frame */
@@ -222,15 +236,29 @@ body {
     background: #c8e6c9;
     color: #2e7d32;
 }
-.btn-plus:hover { background: #a5d6a7; }
-.btn-plus:active { transform: scale(0.92); background: #81c784; }
+
+.btn-plus:hover {
+    background: #a5d6a7;
+}
+
+.btn-plus:active {
+    transform: scale(0.92);
+    background: #81c784;
+}
 
 .btn-minus {
     background: #ffcdd2;
     color: #c62828;
 }
-.btn-minus:hover { background: #ef9a9a; }
-.btn-minus:active { transform: scale(0.92); background: #e57373; }
+
+.btn-minus:hover {
+    background: #ef9a9a;
+}
+
+.btn-minus:active {
+    transform: scale(0.92);
+    background: #e57373;
+}
 
 /* Power-up section */
 .powerups {
@@ -267,19 +295,28 @@ body {
     border-color: #ffb74d;
     color: #e65100;
 }
-.btn-powerup.double-down:hover:not(:disabled) { background: #fff3e0; }
+
+.btn-powerup.double-down:hover:not(:disabled) {
+    background: #fff3e0;
+}
 
 .btn-powerup.bonus-haul {
     border-color: #81c784;
     color: #1b5e20;
 }
-.btn-powerup.bonus-haul:hover:not(:disabled) { background: #e8f5e9; }
+
+.btn-powerup.bonus-haul:hover:not(:disabled) {
+    background: #e8f5e9;
+}
 
 .btn-powerup.egg-swap {
     border-color: #9575cd;
     color: #4527a0;
 }
-.btn-powerup.egg-swap:hover:not(:disabled) { background: #ede7f6; }
+
+.btn-powerup.egg-swap:hover:not(:disabled) {
+    background: #ede7f6;
+}
 
 .powerup-used-tag {
     font-size: 0.55rem;
@@ -343,7 +380,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     align-items: center;
     justify-content: center;
@@ -360,7 +397,7 @@ body {
     padding: 1.5rem;
     max-width: 400px;
     width: 100%;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -436,7 +473,7 @@ body {
     position: fixed;
     inset: 0;
     z-index: 2000;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0, 0, 0, 0.85);
     overflow: hidden;
 }
 
@@ -469,14 +506,19 @@ body {
     font-size: 3rem;
     font-weight: 900;
     color: white;
-    text-shadow: 0 4px 20px rgba(255,255,255,0.3);
+    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
     margin-bottom: 0.5rem;
     animation: nameGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes nameGlow {
-    from { text-shadow: 0 4px 20px rgba(255,255,255,0.3); }
-    to { text-shadow: 0 4px 40px rgba(255, 213, 79, 0.6), 0 0 60px rgba(255, 213, 79, 0.3); }
+    from {
+        text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+    }
+
+    to {
+        text-shadow: 0 4px 40px rgba(255, 213, 79, 0.6), 0 0 60px rgba(255, 213, 79, 0.3);
+    }
 }
 
 .winner-score {
@@ -505,10 +547,23 @@ body {
 }
 
 @keyframes winnerBounce {
-    0%, 100% { transform: translateY(0) rotate(-3deg); }
-    25% { transform: translateY(-30px) rotate(3deg); }
-    50% { transform: translateY(0) rotate(-3deg); }
-    75% { transform: translateY(-20px) rotate(2deg); }
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    25% {
+        transform: translateY(-30px) rotate(3deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    75% {
+        transform: translateY(-20px) rotate(2deg);
+    }
 }
 
 .tied-winners {
@@ -539,9 +594,9 @@ body {
 
 .btn-dismiss {
     padding: 0.75rem 2rem;
-    border: 2px solid rgba(255,255,255,0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 2rem;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     font-size: 1rem;
     font-weight: 600;
@@ -552,8 +607,8 @@ body {
 }
 
 .btn-dismiss:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
 /* ============================================
@@ -595,6 +650,7 @@ body {
         transform: translateY(0) rotate(0deg) scale(1);
         opacity: 1;
     }
+
     100% {
         transform: translateY(105vh) rotate(720deg) scale(0.5);
         opacity: 0;
@@ -608,7 +664,7 @@ body {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     z-index: 3000;
     align-items: center;
     justify-content: center;
@@ -626,7 +682,7 @@ body {
     max-width: 360px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .confirm-box h3 {

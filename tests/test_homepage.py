@@ -24,7 +24,7 @@ def test_homepage_loads(page, web_server):
 def test_homepage_players_section(page, web_server):
     """Homepage shows all 9 player names."""
     page.goto(web_server)
-    for name in ["Reuben", "Raina", "Swathi", "Jason", "Nikith", "Shawn", "Shua", "Rutuja", "Shantanu"]:
+    for name in ["Reuben", "Raina", "Swathy", "Jason", "Nikith", "Shawn", "Shua", "Rutuja", "Shantanu"]:
         expect(page.locator(f"text={name}").first).to_be_visible()
 
     SCREENSHOTS_DIR.mkdir(exist_ok=True)
@@ -34,7 +34,7 @@ def test_homepage_players_section(page, web_server):
 def test_scoring_page_loads(page, web_server):
     """Scoring page loads with all player counters."""
     page.goto(f"{web_server}/scoring.html")
-    for name in ["Reuben", "Raina", "Swathi", "Jason", "Nikith"]:
+    for name in ["Reuben", "Raina", "Swathy", "Jason", "Nikith"]:
         expect(page.locator(f"text={name}").first).to_be_visible()
 
     SCREENSHOTS_DIR.mkdir(exist_ok=True)

@@ -2,7 +2,7 @@
 
 ## Core Game (Confirmed)
 
-- **Players:** 9 players *(CONFIRMED)* — Reuben, Raina, Swathi, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+- **Players:** 9 players *(CONFIRMED)* — Reuben, Raina, Swathy, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
 - **Eggs:** 200 total *(CONFIRMED)*
 - **Egg colors (10):** Red, Hot Pink, Light Pink, Blue, Sky Blue, Neon Green, Dark Green, Yellow, Purple, Violet *(CONFIRMED)*
   - Each color gets an easter-themed name *(TBD)*

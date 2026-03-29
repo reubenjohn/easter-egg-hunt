@@ -39,7 +39,7 @@ For timeline and phase overview, see [Master Plan](../README.md) (single source 
 
 These are the ONLY things that need Reuben/Raina decisions (everything else Claude can decide):
 
-1. **Player names** — RESOLVED: 9 players — Reuben, Raina, Swathi, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
+1. **Player names** — RESOLVED: 9 players — Reuben, Raina, Swathy, Jason, Nikith, Shawn, Shua, Rutuja, Shantanu
 2. **Event name** — RESOLVED: "Operation: Easter Egg - The Skittelling!" (see [WebsiteContent.md](WebsiteContent.md))
 3. **Park name & time** — RESOLVED: Garibaldi (Giuseppe) Park - 1520 W Polk St, Chicago IL 60607 (time TBD) (see [WebsiteContent.md](WebsiteContent.md))
 4. **Special colors** — RESOLVED: pink/purple combinations (top/bottom halves) (see [GameMechanics.md](GameMechanics.md))
