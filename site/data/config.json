@@ -88,7 +88,7 @@
         "specialColor": "green"
     },
     "skittles": {
-        "total": 300,
+        "total": 400,
         "distribution": [
             {
                 "perEgg": 1,
@@ -210,7 +210,7 @@
         {
             "icon": "&#128239;",
             "text": "Hop back when the hunting horn sounds!",
-            "detail": "The Great Hunt lasts 15 hops of the clock &mdash; then scurry home!"
+            "detail": "The Great Hunt lasts 30 hops of the clock &mdash; then scurry to the meeting point!"
         },
         {
             "icon": "&#129309;",
@@ -247,7 +247,7 @@
     "rules": [
         {
             "icon": "&#9200;",
-            "text": "The Great Hunt Lasts 15 Hops of the Clock!",
+            "text": "The Great Hunt Lasts 30 Hops of the Clock!",
             "detail": "When the clock runs out, even the speediest bunny has to stop hopping!"
         },
         {
@@ -338,7 +338,7 @@
         {
             "name": "Double Down",
             "icon": "\u26a1",
-            "description": "Use BEFORE cracking! Double the Skittles from your 3 highest-value eggs!",
+            "description": "Use BEFORE cracking! Double the Skittles from 3 eggs you choose!",
             "scoreBonus": 5,
             "count": 2,
             "topColor": "lightpink",
@@ -377,7 +377,10 @@
             "description": "Use after cracking! Give one of your task eggs to another player!",
             "scoreBonus": 0,
             "count": 2,
-            "topColors": ["hotpink", "lightpink"],
+            "topColors": [
+                "hotpink",
+                "lightpink"
+            ],
             "bottomColor": "green"
         }
     ]
